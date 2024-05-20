@@ -56,7 +56,11 @@ if (null !== (session('doneAnswer'))) {
     </div>
 </header>
 <div class="main-wrapper">
-    <div class="container">
+    @if(empty($donePronunciation))  
+        <div class="container">
+    @else
+        <div class="bigger-container">
+    @endif
 
         <!-- 初回ｱｸｾｽ時、正解時、不正解時を判定するif文（ページ上部に表示する文言） -->
         @if($judgeNum === 0) ようこそ！ @endif
