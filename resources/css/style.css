@@ -1,0 +1,166 @@
+
+.main-wrapper {
+  height: 75px;
+  width: 500px;
+  margin: auto;
+}
+
+
+.container {
+  height: 700px;
+  width: 500px;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 10px;
+  border: black solid 1px;
+  padding: 10px;
+}
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+#study {
+  /* background-image: url(../image/international_exchange_many_people.jpg); */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  /* height: 600px;
+  width: 500px;
+  background-color: white;
+
+  border-radius: 10px;
+  border: black solid 1px; */
+}
+#complete {
+  background-image: url(../image/S__80109596.jpg);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0; 
+  opacity:1.0;
+}
+#loginTop {
+  background-image: url(../image/international_exchange_many_people2.jpg);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  color: rgb(255, 0, 195);
+  width: 100%;
+  font-family: 'Murecho', sans-serif;
+}
+
+
+
+#langageSelect {
+  background-image: url(../image/flag_airplane.jpg);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+#home .page-title {
+  text-transform: none;
+}
+
+#question .page-title {
+  text-transform: none;
+}
+#content {
+	padding: 20px;
+	background: url(images/bg_content.png) left bottom no-repeat #ecf7fc;
+	width: 720px;
+	min-height: 490px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	font-size: 153.9%;
+}
+
+#createUser {
+  background-image: url(../image/flight.jpg);
+  min-height: 100vh;
+}
+
+p {
+  line-height: 5px;
+}
+
+.error {
+  color: red;
+  font-size: 8px;
+}
+
+/* ▼通常の表示 */
+
+label {
+  border: 1px solid #8080ff; /* 枠線 */
+  border-radius: 9px; /* 枠線の角丸 */
+  padding: 2px 6px 2px 2px; /* 内側の余白 */
+  margin-bottom: 4px;   /* 外側の下の余白 */
+  display: inline-block;  /* 途中で改行させない */
+  cursor: pointer; /* マウス形状を手形に */
+}
+
+/* ▼マウスが載ったときの追加装飾 */
+label:hover {
+  background-color: skyblue;  /* 背景色 */
+  color: white;            /* 文字色 */
+}
+
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+input.cmn-toggle-round + label {
+  padding: 2px;
+  width: 120px;
+  height: 60px;
+  background-color: #dddddd;
+  border-radius: 60px;
+} 
+input.cmn-toggle-round + label:before,
+input.cmn-toggle-round + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+} 
+
+input.cmn-toggle-round + label:before {
+  right: 1px;
+  background-color: #f1f1f1;
+  border-radius: 60px;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round + label:after {
+  width: 58px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: margin 0.4s;
+} 
+
+
+
+input.cmn-toggle-round:checked + label:before {
+  background-color: #8ce196;
+}
+input.cmn-toggle-round:checked + label:after {
+  margin-left: 60px;
+} 
