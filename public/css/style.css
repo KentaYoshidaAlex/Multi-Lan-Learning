@@ -15,6 +15,17 @@
   border: black solid 1px;
   padding: 10px;
 }
+
+.bigger-container {
+  height: 400px;
+  width: 500px;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 10px;
+  border: black solid 1px;
+  padding: 10px;
+}
+
 .big-bg {
   background-size: cover;
   background-position: center top;
