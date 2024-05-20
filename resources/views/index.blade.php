@@ -31,7 +31,7 @@ if((session('doneQuizList')) !== null) {
   <div id="loginTop" class="big-bg">
     <header>
       <div class="header">
-        <h1>多言語学習アプリ♫ ログインTOP</h1>
+        <h1>多言語学習アプリ♫ ログインTOP☆</h1>
       </div>
     </header>
     <br>
