@@ -31,12 +31,11 @@ class QuizMainController extends Controller
             // 再度loginResultに戻す
             return view('login/loginResult', compact('collectionNumber', 'loginId', 'userName', 'language_choice' , 'collection'));
         }
-        $collectionNumber = $request->collectionNumber;
-
 
         // '学習開始' ＆'回答' 共通のrequest内データを変数に代入
         $language = $request->language;
         $bttn = $request->bttn;
+        $collectionNumber = $request->collectionNumber;
 
         //既出問題文を入れる配列を初期化
         if (empty($doneQuizList)) {
@@ -107,7 +106,6 @@ class QuizMainController extends Controller
 
         // 1問目回答以降
         if ($request->bttn === '回答') {
-            // dd($request);
 
             // request内データを変数に代入
             $choice = $request->choice;
@@ -116,7 +114,7 @@ class QuizMainController extends Controller
 
             // 出題した問題を取り出し
             $selectedQuiz = session('selectedQuiz');
-
+            // dd($selectedQuiz);
             //回答の成否判定　
             //正解時、1を代入
             if ($choice === $selectedQuiz->answer) {
@@ -165,15 +163,17 @@ class QuizMainController extends Controller
                 $currentQuizAmount = session('currentQuizAmount');
 
                 // 「全問」選択以外の場合、現在の問題数をプラス1する
-                if(!((session('amountOfQuenstions') == '全問'))) {
+                if((session('amountOfQuenstions') == '全問')) {
                     $currentQuizAmount++; 
-                }
+                } 
+
 
                 // 問題開始時(0),正解時(1),不正解時(2)を判定する変数用意
                 $judgeNum = 1;
                            
                 // 回答済みの問題をリストに代入
                 // 既出問題がある場合
+
                 if(!(empty(session('doneQuizList')))) {
                     $doneQuizList = session('doneQuizList');
 
@@ -223,12 +223,11 @@ class QuizMainController extends Controller
                     // コレクション型からオブジェクト型を取得
                     foreach ($nextObj as $nextQuiz) { }
                     session(['selectedQuiz' => $nextQuiz]);
-               
+
                 // 残りの問題がない場合
                 } else {
                     session(['selectedQuiz' => ""]);
                 }
-
 
                 // sessionに値を保存
                 session(['currentQuizAmount' => $currentQuizAmount]);
