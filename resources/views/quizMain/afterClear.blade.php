@@ -7,8 +7,8 @@
     <p>目標達成です！おめでとうございます！</p><br>
 
     <!-- クイズ本文 -->
-    @if(($amountOfQuenstions != $currentQuizAmount) && (!empty($question)))
-        
+    {{-- @if(($amountOfQuenstions != $currentQuizAmount) && (!empty($question))) --}}
+    @if (!($selectedQuiz == ''))
         引き続きお楽しみの方はこちら↓ 
         <p>下記の問題の空欄に当てはまる単語を選択してください。</p>
         <h3>Q : {{ $question }}</h3>

@@ -4,13 +4,19 @@
 $currentQuizAmount = session('currentQuizAmount');
 $amountOfQuenstions = session('amountOfQuenstions');
 $selectedQuiz = session('selectedQuiz');
-$question = $selectedQuiz->question;
-$choice1 = $selectedQuiz->choice1;
-$choice2 = $selectedQuiz->choice2;
-$choice3 = $selectedQuiz->choice3;
-$choice4 = $selectedQuiz->choice4;
-$language = $selectedQuiz->language;
-$no = $selectedQuiz->no;
+
+// 問題文が残っていれば、変数代入
+if(!($selectedQuiz == '')) {
+    $question = $selectedQuiz->question;
+    $choice1 = $selectedQuiz->choice1;
+    $choice2 = $selectedQuiz->choice2;
+    $choice3 = $selectedQuiz->choice3;
+    $choice4 = $selectedQuiz->choice4;
+    $language = $selectedQuiz->language;
+    $no = $selectedQuiz->no;
+}
+
+// 他の変数代入
 $allQuizMusicData = session('allQuizMusicData');
 $judgeNum = session('judgeNum');
 $player = session('player');
@@ -29,7 +35,7 @@ if ((session('doneAnswer')) !== null) {
     $doneBackground = session('doneBackground');
     $tgrbtn = session('tgrbtn');
 }
-// dd($allQuizMusicData);
+
 @endphp
 
 <!DOCTYPE html>
@@ -91,18 +97,27 @@ if ((session('doneAnswer')) !== null) {
 
     {{-- 3問以上クリア時の画面表示 --}}
     @if($clearCount >= 3 &&  $missCount == 0)
-        @include('quizMain/afterClear',[
-            'question' => $question,
-            'choice1' => $choice1,
-            'choice2' => $choice2,
-            'choice3' => $choice3,
-            'choice4' => $choice4,
-            'language' => $language,
-            'no' => $no,
-            'tgrbtn' => $tgrbtn,
-            'reLoginId' => $reLoginId,
-            'reLoginPass' => $reLoginPass
-        ])
+        @if($selectedQuiz !== '')
+            @include('quizMain/afterClear',[
+                'question' => $question,
+                'choice1' => $choice1,
+                'choice2' => $choice2,
+                'choice3' => $choice3,
+                'choice4' => $choice4,
+                'language' => $language,
+                'no' => $no,
+                'tgrbtn' => $tgrbtn,
+                'reLoginId' => $reLoginId,
+                'reLoginPass' => $reLoginPass
+            ])
+        @else
+            @include('quizMain/afterClear',[
+                'tgrbtn' => $tgrbtn,
+                'reLoginId' => $reLoginId,
+                'reLoginPass' => $reLoginPass
+            ])
+        @endif
+
     {{-- 3問連続不正解時の画面表示 --}}
     @elseif($missCount >= 3 )
         @include('quizMain/gameOver',[
