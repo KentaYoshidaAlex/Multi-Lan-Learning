@@ -19,7 +19,12 @@ if((session('doneQuizList')) !== null) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>確認ページ</title>
 
-    <link rel="stylesheet" href={{ asset('/css/style.css') }} />
+    @if(app('env')=='local')
+    <link rel="stylesheet" href={{ asset('/css/style.css') }} >
+    @endif
+    @if(app('env')=='production')
+    <link rel="stylesheet" href={{ secure_asset('/css/style.css') }} >
+    @endif
 </head>
 
 <body>

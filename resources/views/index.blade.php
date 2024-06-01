@@ -19,7 +19,12 @@ if((session('doneQuizList')) !== null) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href={{ asset('/css/style.css') }} >
+  @if(app('env')=='local')
+    <link rel="stylesheet" href={{ asset('/css/style.css') }} >
+  @endif
+  @if(app('env')=='production')
+  <link rel="stylesheet" href={{ secure_asset('/css/style.css') }} >
+  @endif
 
   <title>ログインTOP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
