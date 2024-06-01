@@ -7,7 +7,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href={{ asset('/css/style.css') }}>
+    @if(app('env')=='local')
+    <link rel="stylesheet" href={{ asset('/css/style.css') }} >
+    @endif
+    @if(app('env')=='production')
+    <link rel="stylesheet" href={{ secure_asset('/css/style.css') }} >
+    @endif
 
     <title>新規登録</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">

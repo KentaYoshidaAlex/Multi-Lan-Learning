@@ -47,7 +47,13 @@ if ((session('doneAnswer')) !== null) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>問題回答ページ</title>
 
-    <link rel="stylesheet" href={{ asset('/css/style.css') }} />
+    @if(app('env')=='local')
+    <link rel="stylesheet" href={{ asset('/css/style.css') }} >
+    @endif
+    @if(app('env')=='production')
+    <link rel="stylesheet" href={{ secure_asset('/css/style.css') }} >
+    @endif
+
 </head>
 
 <body>
@@ -75,9 +81,19 @@ if ((session('doneAnswer')) !== null) {
                 <br>今、正解した「{{ $doneAnswer }} 」の発音を確認したい方はコチラ↓<br>
                 <br>
                 @if($tgrbtn == "1") 
-                    <audio src="{{ asset($donePronunciation) }}" controls>サポートされていません</audio>
+                    @if(app('env')=='local')
+                        <audio src="{{ asset($donePronunciation) }}" controls>サポートされていません</audio>
+                    @endif
+                    @if(app('env')=='production')
+                        <audio src="{{ secure_asset($donePronunciation) }}" controls>サポートされていません</audio>
+                    @endif
                 @else
-                    <audio src="{{ asset($donePronunciation) }}" muted controls>サポートされていません</audio>
+                    @if(app('env')=='local')
+                        <audio src="{{ asset($donePronunciation) }}" muted controls>サポートされていません</audio>
+                    @endif
+                    @if(app('env')=='production')
+                        <audio src="{{ secure_asset($donePronunciation) }}" muted controls>サポートされていません</audio>
+                    @endif
                 @endif
                 <br>
             @endif

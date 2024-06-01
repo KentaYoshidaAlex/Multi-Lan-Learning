@@ -7,8 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href={{ asset('/css/style.css') }} />
-
+  @if(app('env')=='local')
+    <link rel="stylesheet" href={{ asset('/css/style.css') }} >
+  @endif
+  @if(app('env')=='production')
+  <link rel="stylesheet" href={{ secure_asset('/css/style.css') }} >
+  @endif
+  
   <title>確認ページ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
