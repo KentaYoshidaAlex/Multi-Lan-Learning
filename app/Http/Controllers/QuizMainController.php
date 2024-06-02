@@ -42,11 +42,6 @@ class QuizMainController extends Controller
             $doneQuizList = array();
         }
 
-        // hiddenに埋め込んだオブジェクトを復元
-        // $playerObj = New CreateUser();
-        // $playerObj->forceFill(json_decode($request->collection,true));
-        // dd($request->loginId);
-
         // 学習開始時
         if ($request->bttn === '学習開始') {
 
@@ -114,7 +109,7 @@ class QuizMainController extends Controller
 
             // 出題した問題を取り出し
             $selectedQuiz = session('selectedQuiz');
-            // dd($selectedQuiz);
+
             //回答の成否判定　
             //正解時、1を代入
             if ($choice === $selectedQuiz->answer) {
@@ -163,11 +158,11 @@ class QuizMainController extends Controller
                 $currentQuizAmount = session('currentQuizAmount');
 
                 // 「全問」選択以外の場合、現在の問題数をプラス1する
-                if((session('amountOfQuenstions') == '全問')) {
+                if(!(session('amountOfQuenstions') == '全問')) {
                     $currentQuizAmount++; 
                 } 
 
-
+                
                 // 問題開始時(0),正解時(1),不正解時(2)を判定する変数用意
                 $judgeNum = 1;
                            
