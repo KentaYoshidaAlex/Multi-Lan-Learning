@@ -4,6 +4,9 @@
 $currentQuizAmount = session('currentQuizAmount');
 $amountOfQuenstions = session('amountOfQuenstions');
 $selectedQuiz = session('selectedQuiz');
+var_dump($currentQuizAmount);
+var_dump($amountOfQuenstions );
+
 
 // 問題文が残っていれば、変数代入
 if(!($selectedQuiz == '')) {
