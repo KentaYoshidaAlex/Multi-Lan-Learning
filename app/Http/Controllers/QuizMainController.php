@@ -65,6 +65,20 @@ class QuizMainController extends Controller
             where('language', $language)
             ->get();
 
+            // 共通で利用する変数をsessionに保存
+            session(['amountOfQuenstions' => $amountOfQuenstions]);
+            session(['allQuizMusicData' => $allQuizMusicData]);
+            session(['player' => $player]);     
+            session(['quizData' => $quizData]); 
+            session(['language' => $language]); 
+
+
+            // 事前学習選択時の分岐
+            if ($amountOfQuenstions === '事前学習') {
+                return view('quizMain/vocabularyList', compact('reLoginId','reLoginPass'));
+            }
+
+
             // 問題をランダムで出す為の番号取得
             $quizNo = mt_rand(1, count($quizData));
             
@@ -87,13 +101,10 @@ class QuizMainController extends Controller
             $clearCount = 0;
             $missCount = 0;
 
-            // sessionに値を保存
+            // クイズで利用する変数をsession保存
             session(['currentQuizAmount' => $currentQuizAmount]);
-            session(['amountOfQuenstions' => $amountOfQuenstions]);
             session(['selectedQuiz' => $selectedQuiz]);
-            session(['allQuizMusicData' => $allQuizMusicData]);
             session(['judgeNum' => $judgeNum]);
-            session(['player' => $player]);     
             
             return view('quizMain/play', compact('clearCount', 'missCount','reLoginId','reLoginPass'));
         }

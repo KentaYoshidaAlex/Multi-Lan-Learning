@@ -66,11 +66,13 @@ if((session('doneQuizList')) !== null) {
                         </select>
                                 
                         <select class="cp_sl06" name="amountOfQuenstions" id="amountOfQuenstions" required>
-                            <option value="全問">全問挑戦</option>
+                            <option value="事前学習">事前学習</option>
 
-                            <option value="3">3問挑戦</option>
+                            <option value="全問">クイズ全問挑戦</option>
 
-                            <option value="5">5問挑戦</option>
+                            <option value="3">クイズ3問挑戦</option>
+
+                            <option value="5">クイズ5問挑戦</option>
 
                         </select>                        
                         <br>
