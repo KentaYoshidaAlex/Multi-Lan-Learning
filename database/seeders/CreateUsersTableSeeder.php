@@ -19,6 +19,14 @@ class CreateUsersTableSeeder extends Seeder
 
         //初期データ用意(列名をキーとする連想配列)
         DB::table('createUsers')->insert([
+            [ 'loginId' => 'kenken', 
+              'loginPass' => '1234', 
+              'userName' => 'kenken',
+              'clearCount' => 0,
+              'missCount' => 0,
+              'created_at' => new DateTime(),
+              'updated_at' => new DateTime(),
+        ],
             [ 'loginId' => 'jojo', 
               'loginPass' => 'crdm', 
               'userName' => '東方仗助',
