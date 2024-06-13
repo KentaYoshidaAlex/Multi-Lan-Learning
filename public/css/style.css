@@ -1,13 +1,22 @@
 
 .main-wrapper {
-  height: 75px;
+  /* min-height: 750px;
+  max-height: 1000px; */
+  display: flex;
+  flex-direction: column; 
+
   width: 500px;
   margin: auto;
 }
 
 
 .container {
-  height: 700px;
+  /* min-height: 800px;
+  max-height: 950px; */
+
+  flex: 1; 
+  border: 1px solid #000; 
+
   width: 500px;
   background-color: white;
   opacity: 0.9;
@@ -29,7 +38,8 @@
 .big-bg {
   background-size: cover;
   background-position: center top;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
+  background-image: url(../image/vocabraryList.jpeg);
 }
 #study {
   /* background-image: url(../image/international_exchange_many_people.jpg); */

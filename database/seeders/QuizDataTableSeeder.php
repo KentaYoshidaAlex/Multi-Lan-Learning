@@ -328,6 +328,10 @@ class QuizDataTableSeeder extends Seeder
               'pathPronunciation' => '', 
               'pathBackground' => '../image/myanmar/danceByEveryone.jpg', 
             ],
+
+
+
+            
             // [ 'language' => 'ミャンマー語',            
             //   'question' => 'ミャンマー語で「」は？',
             //   'answer' => '', 
