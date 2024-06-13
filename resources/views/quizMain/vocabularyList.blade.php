@@ -37,7 +37,7 @@ $language = session('language');
 </head>
 
 <body>
-    <div id="study" class="big-bg" style="background-image: url(../image/vocabraryList.jpeg)"> 
+    <div id="study" class="big-bg" style="background-image: url(../image/vocabraryList.jpeg)" > 
 
         <header>
             <div class="header">
