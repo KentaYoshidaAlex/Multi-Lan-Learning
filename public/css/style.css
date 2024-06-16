@@ -185,3 +185,20 @@ input.cmn-toggle-round:checked + label:before {
 input.cmn-toggle-round:checked + label:after {
   margin-left: 60px;
 } 
+
+/* 画面幅が500px以下の場合のスタイル */
+@media screen and (max-width: 500px) {
+  body {
+    background-color: lightgray;
+    color: blue;
+  }
+}
+
+/* 画面幅が601pxから1200pxの場合のスタイル */
+@media screen and (min-width: 501px) and (max-width: 2000px) {
+  body {
+    background-color: lightblue;
+    color: darkblue;
+  }
+}
+
