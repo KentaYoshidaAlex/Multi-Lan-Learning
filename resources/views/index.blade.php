@@ -17,10 +17,11 @@ if((session('doneQuizList')) !== null) {
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   @if(app('env')=='local')
     <link rel="stylesheet" href={{ asset('/css/style.css') }} >
+    <media=”screen” >
   @endif
   @if(app('env')=='production')
   <link rel="stylesheet" href={{ secure_asset('/css/style.css') }} >
