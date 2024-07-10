@@ -10,7 +10,8 @@
     {{-- @if(($amountOfQuenstions != $currentQuizAmount) && (!empty($question))) --}}
     @if (($amountOfQuenstions != $currentQuizAmount) && (!($selectedQuiz == '')))
         引き続きお楽しみの方はこちら↓ 
-        <p>下記の問題の空欄に当てはまる単語を選択してください。</p>
+        
+        <div class="responsive-small"><p>下記の問題の空欄に当てはまる単語を選択してください。</p></div>
         <h3>Q : {{ $question }}</h3>
         <p>適切な回答を選択してください。</p>   
         <div class="form">
@@ -74,7 +75,9 @@
             </div>   
             </div>   
             <br>
-            <p>「よく頑張りました！おめでとうございます🎵あなたは天才です🌟』
+            <p>「よく頑張りました！おめでとうございます🎵</p>
+            <p>  あなたは天才です🌟』</p>
+            <br>
         <div id="complete" class="big-bg" >
         </div>  
     @endif 
