@@ -69,19 +69,21 @@ $language = session('language');
                     <br>
                 </div>
                 <br>
-                @foreach ($quizData as $quizDatum)
+                <div class="vocabulary"> 
+                    @foreach ($quizData as $quizDatum)
 
-                <p>{{ $quizDatum->no }}. {{ $quizDatum->answer }} / 
-                @php 
-                    $string = Str::swap([
-                        $quizDatum->language => '',
-                        'で「' => '',
-                        '」は？' => '',
-                        ], $quizDatum->question);
-                    echo $string;
-                @endphp
-                @endforeach
-                </p>
+                    <p>{{ $quizDatum->no }}. {{ $quizDatum->answer }} / 
+                    @php 
+                        $string = Str::swap([
+                            $quizDatum->language => '',
+                            'で「' => '',
+                            '」は？' => '',
+                            ], $quizDatum->question);
+                        echo $string;
+                    @endphp
+                    @endforeach
+                    </p>
+                </div>
             </div>
         </div>
     </div>

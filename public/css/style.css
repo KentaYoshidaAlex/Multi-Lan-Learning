@@ -185,3 +185,66 @@ input.cmn-toggle-round:checked + label:before {
 input.cmn-toggle-round:checked + label:after {
   margin-left: 60px;
 } 
+
+/* 画面幅が500px以下の場合のスタイル */
+@media screen and (max-width: 550px) {
+  background-image {
+    width:50%;
+  }
+
+  .main-wrapper {
+    display: flex;
+    flex-direction: column; 
+  
+    width: 100%;
+    margin: auto;
+  }
+
+  .container {
+    flex: 1; 
+    border: 1px solid #000; 
+  
+    width: 100%;
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 10px;
+    border: black solid 1px;
+    padding: 10px;
+  }
+  
+  header {
+    color: rgb(255, 0, 195);
+    width: 83%;
+    font-family: 'Murecho', sans-serif;
+  }
+
+  .container p {
+    font-size: 14px;
+  }
+
+  .vocabulary p {
+    font-size: 11px;
+  }
+
+  .responsive-small p {
+    font-size: 13px;
+  }
+  /* body {
+
+    background-color: lightgray;
+    color: blue;
+  } */
+}
+
+/* 画面幅が601pxから1200pxの場合のスタイル */
+@media screen and (min-width: 551px) and (max-width: 2000px) {
+  
+  background-image {
+    width: 100% ;
+    }
+  /* body {
+    background-color: lightblue;
+    color: darkblue;
+  } */
+}
+
