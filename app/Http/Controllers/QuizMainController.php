@@ -72,16 +72,14 @@ class QuizMainController extends Controller
             session(['quizData' => $quizData]); 
             session(['language' => $language]); 
 
-
             // 事前学習選択時の分岐
             if ($amountOfQuenstions === '事前学習') {
                 return view('quizMain/vocabularyList', compact('reLoginId','reLoginPass'));
             }
 
-
             // 問題をランダムで出す為の番号取得
             $quizNo = mt_rand(1, count($quizData));
-            
+
             // ランダムで問題文を取得
             $selectedObj = QuizDatum::
             where('language', $language)

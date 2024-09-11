@@ -35,7 +35,8 @@
                     <h1>下記の会員情報をご登録ください</h1>
                     <p>ID</p>
                     <input type="text" name="loginId" class="loginId" maxlength="30" value="{{ request()->query('loginId') }} "/>
-                    
+                    <br>
+                    <br>
                     <p>パスワード（※半角英数4文字以上でご入力ください）</p>
                     <input type="text" name="loginPass" class="loginPass" maxlength="20" value="{{ request()->query('loginPass') }} "/>
 

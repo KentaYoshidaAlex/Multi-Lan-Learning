@@ -1,7 +1,5 @@
 
 .main-wrapper {
-  /* min-height: 750px;
-  max-height: 1000px; */
   display: flex;
   flex-direction: column; 
 
@@ -9,15 +7,31 @@
   margin: auto;
 }
 
-
 .container {
-  /* min-height: 800px;
-  max-height: 950px; */
-
   flex: 1; 
   border: 1px solid #000; 
 
   width: 500px;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 10px;
+  border: black solid 1px;
+  padding: 10px;
+}
+
+.main-wrapper-world-greet {
+  display: flex;
+  flex-direction: column; 
+
+  width: 800px;
+  margin: auto;
+}
+
+.container-world-greet{
+  flex: 1; 
+  border: 1px solid #000; 
+
+  width: 800px;
   background-color: white;
   opacity: 0.9;
   border-radius: 10px;
@@ -42,17 +56,10 @@
   background-image: url(../image/vocabraryList.jpeg);
 }
 #study {
-  /* background-image: url(../image/international_exchange_many_people.jpg); */
   min-height: 100vh;
   margin: 0;
   padding: 0;
 
-  /* height: 600px;
-  width: 500px;
-  background-color: white;
-
-  border-radius: 10px;
-  border: black solid 1px; */
 }
 #complete {
   background-image: url(../image/S__80109596.jpg);
@@ -211,6 +218,26 @@ input.cmn-toggle-round:checked + label:after {
     border: black solid 1px;
     padding: 10px;
   }
+
+  .main-wrapper-world-greet {
+    display: flex;
+    flex-direction: column; 
+  
+    width: 100%;
+    margin: auto;
+  }
+
+  .container-world-greet {
+    flex: 1; 
+    border: 1px solid #000; 
+  
+    width: 100%;
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 10px;
+    border: black solid 1px;
+    padding: 10px;
+  }
   
   header {
     color: rgb(255, 0, 195);
@@ -222,6 +249,10 @@ input.cmn-toggle-round:checked + label:after {
     font-size: 14px;
   }
 
+  .container-world-greet p {
+    font-size: 14px;
+  }
+
   .vocabulary p {
     font-size: 11px;
   }
@@ -229,11 +260,7 @@ input.cmn-toggle-round:checked + label:after {
   .responsive-small p {
     font-size: 13px;
   }
-  /* body {
 
-    background-color: lightgray;
-    color: blue;
-  } */
 }
 
 /* 画面幅が601pxから1200pxの場合のスタイル */
@@ -242,9 +269,58 @@ input.cmn-toggle-round:checked + label:after {
   background-image {
     width: 100% ;
     }
-  /* body {
-    background-color: lightblue;
-    color: darkblue;
-  } */
+
 }
+
+/* 事前学習ページ 世界の挨拶の表についてのCSS */
+table{
+  width: 100%;
+  border-collapse:separate;
+  border-spacing: 0;
+}
+
+table th:first-child{
+  border-radius: 5px 0 0 0;
+}
+
+table th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+}
+
+table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  width: 25%;
+  padding: 10px 0;
+}
+
+table td{
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  width: 25%;
+  padding: 10px 0;
+}
+
+table td:last-child{
+  border-right: 1px solid #a8b7c5;
+}
+
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+
 

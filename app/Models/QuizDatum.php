@@ -21,6 +21,9 @@ class QuizDatum extends Model
         'choice3',
         'choice4',
         'pathPronunciation',
-        'pathBackground'
+        'pathBackground',
+        'subLanguage',
+        'jpGreetingWord'
+
     ];
 }
