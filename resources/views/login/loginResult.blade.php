@@ -40,15 +40,19 @@ if((session('doneQuizList')) !== null) {
                 
                 @if($collectionNumber == 1)
                     <p>ログインに成功しました！!</p>
-
                     <p>ようこそ {{ $userName }} さん</p>
-
-                    <br>
+                    <p style="line-height: 2px">-----------------------------------------</p>
                     <p>さっそく学習を開始しましょう♫</p>
-                    <p>学習したい言語を選択してください</p>
-                    <br>
+                    <p>学習したい言語と学習方法を一覧から選択してください</p>
+                    <p style="line-height: 0.1">
+                        <br>
+                    </p>
+                    <p>☆事前学習：選んだ言語を一覧で事前学習できます☆</p>
+                    <p>☆クイズ挑戦：1問ずつクイズ形式で学習できます☆</p>
+                    <p>（3問連続不正解はゲームオーバー）</p>
+                    
                     @isset($language_choice)
-                        <p>下記の一覧から選択してください</p>
+                        <p style="color: red;">※下記の一覧から選択してください</p>
                     @endisset
 
                     <form method='post' action="{{ route('quizMain') }}" class="quiz-form">
@@ -63,6 +67,11 @@ if((session('doneQuizList')) !== null) {
                             <option value="タガログ語">タガログ語</option>
 
                             <option value="フランス語">フランス語</option>
+
+                            <option value="関西弁">関西弁</option>
+
+                            <option value="世界の挨拶">世界の挨拶</option>
+
                         </select>
                                 
                         <select class="cp_sl06" name="amountOfQuenstions" id="amountOfQuenstions" required>
