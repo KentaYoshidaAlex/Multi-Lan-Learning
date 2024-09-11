@@ -8,8 +8,10 @@ $allQuizMusicData = session('allQuizMusicData');
 $player = session('player');
 $quizData = session('quizData');
 $language = session('language');
-// var_dump($quizData);
-// dd($quizData);
+$helloInOtherLan = '';
+$thankyouInOtherLan = '';
+$haveANiceDayInOtherLan = '';
+
 @endphp
 
 <!DOCTYPE html>
@@ -44,15 +46,26 @@ $language = session('language');
                 <h1>多言語学習アプリ♫ 事前学習ページ</h1>
             </div>
         </header>
-        <div class="main-wrapper">
-            <div class="container">
+        @if ($quizData[0]->language === '世界の挨拶')
+            <div class="main-wrapper-world-greet">
+                <div class="container-world-greet">
+        @else 
+            <div class="main-wrapper">
+                <div class="container">
+        @endif
                 <p>ようこそ！</p>
                 <p>{{ $player->userName }}さん</p>
 
                 <div class="parent">
                     <div class="child1">
                         <p><事前学習></p>
-                        <p>{{ $language }} / 日本語</p>
+                        @if ($quizData[0]->language === '関西弁')
+                            <p>関西弁 / 標準語</p>
+                        @elseif ($quizData[0]->language === '世界の挨拶')
+                            <p>世界の挨拶</p>
+                        @else
+                            <p>{{ $language }} / 日本語</p>
+                        @endif
                     </div>
                     <div class="child2">
                         <form action="{{ route('loginInput') }}" method="post">
@@ -70,18 +83,65 @@ $language = session('language');
                 </div>
                 <br>
                 <div class="vocabulary"> 
-                    @foreach ($quizData as $quizDatum)
 
-                    <p>{{ $quizDatum->no }}. {{ $quizDatum->answer }} / 
+                    {{-- 言語毎の行表示番号 初期化 --}}
                     @php 
-                        $string = Str::swap([
-                            $quizDatum->language => '',
-                            'で「' => '',
-                            '」は？' => '',
-                            ], $quizDatum->question);
-                        echo $string;
+                        $newNo = 0;
                     @endphp
-                    @endforeach
+
+                    {{-- 世界の挨拶を選択した場合の表示 --}}
+                    @if ($quizData[0]->language === '世界の挨拶')
+                        <table>
+                            <tr>
+                                <th>日本語</th><th>こんにちは</th><th>ありがとう</th><th>良い一日を</th>
+                            </tr>
+                        </table>
+                        @foreach ($quizData as $quizDatum)
+                            @php
+                                $newNo++;
+                                if ($quizDatum->jpGreetingWord === 'こんにちは') {
+                                    $helloInOtherLan = $quizDatum->answer;
+                                }
+                                if ($quizDatum->jpGreetingWord === 'ありがとう') {
+                                    $thankyouInOtherLan = $quizDatum->answer;
+                                }
+                                if ($quizDatum->jpGreetingWord === '良い一日を') {
+                                    $haveANiceDayInOtherLan = $quizDatum->answer;
+                                }
+
+                            @endphp
+                            @if (($newNo % 3) === 0)
+                                <table>
+                                    <tr>
+                                        <td>{{ $quizDatum->subLanguage }}</td><td>{{ $helloInOtherLan }}</td><td>{{ $thankyouInOtherLan }}</td><td>{{ $haveANiceDayInOtherLan }}</td>
+                                    </tr>
+                                </table>
+                            @endif
+                        @endforeach
+
+                    {{-- 世界の挨拶以外の表示 --}}
+                    @else
+                        @foreach ($quizData as $quizDatum)
+                            @php
+                            $newNo++;
+                            @endphp
+                            {{ $newNo }}. {{ $quizDatum->answer }} / 
+                            @php 
+                                $string = Str::swap([
+                                    $quizDatum->language => '',
+                                    'で「' => '',
+                                    '」は？' => '',
+                                    ], $quizDatum->question);
+                                echo $string;
+                            @endphp
+                            
+                            @if(!empty($quizDatum->pathPronunciation))  
+                                <br><audio src="{{ $quizDatum->pathPronunciation }}" controls></audio><br>
+                            @else
+                                <br>
+                            @endif
+                        @endforeach
+                    @endif
                     </p>
                 </div>
             </div>

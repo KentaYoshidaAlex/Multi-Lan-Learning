@@ -14,14 +14,16 @@ return new class extends Migration
         Schema::create('quizData', function (Blueprint $table) {
             $table->string('language', 20);
             $table->increments('no');
-            $table->string('question', 50);
-            $table->string('answer', 50);
-            $table->string('choice1', 20);
-            $table->string('choice2', 20);
-            $table->string('choice3', 20);
-            $table->string('choice4', 20);
+            $table->string('question', 100);
+            $table->string('answer', 100);
+            $table->string('choice1', 100);
+            $table->string('choice2', 100);
+            $table->string('choice3', 100);
+            $table->string('choice4', 100);
             $table->string('pathPronunciation', 50)->nullable();
-            $table->string('pathBackground', 50)->nullable();                       
+            $table->string('pathBackground', 50)->nullable();
+            $table->string('subLanguage', 20)->nullable();
+            $table->string('jpGreetingWord', 20)->nullable();                       
         });
     }
 
