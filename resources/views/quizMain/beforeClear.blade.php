@@ -39,7 +39,7 @@
                 <form action="{{ route('loginInput') }}" method="post">
                     @csrf
                     <input type="submit" value="言語選択画面に戻る" />
-                    <input type="hidden" name="loginId" value= '{{ $reLoginId }}' >
+                    <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
                     <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
                     <input type="hidden" name="bttn" value= 'ログイン' >
                 </form>

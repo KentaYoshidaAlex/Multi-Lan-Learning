@@ -22,14 +22,13 @@ class QuizMainController extends Controller
             
             //　インスタンス再代入
             $collectionNumber = $request->collectionNumber;
-            $userName = $request->userName;
-            $loginId = $request->loginId;
+            $loginId_userName = $request->loginId_userName;
 
             // リクエストパラメータを元に、ログインユーザーデータ再取得
-            $collection = CreateUser::where('loginId', $loginId)->get();
+            $collection = CreateUser::where('loginId_userName', $loginId_userName)->get();
 
             // 再度loginResultに戻す
-            return view('login/loginResult', compact('collectionNumber', 'loginId', 'userName', 'language_choice' , 'collection'));
+            return view('login/loginResult', compact('collectionNumber', 'loginId_userName', 'language_choice' , 'collection'));
         }
 
         // '学習開始' ＆'回答' 共通のrequest内データを変数に代入
@@ -46,17 +45,18 @@ class QuizMainController extends Controller
         if ($request->bttn === '学習開始') {
 
             // リクエストパラメータを元に、ユーザーデータを再取得
-            $userObj = CreateUser::where('loginId', $request->loginId)->get();        
+            $userObj = CreateUser::where('loginId_userName', $request->loginId_userName)->get();        
             foreach ($userObj as $player) { }
 
             // 学習画面→言語選択画面に戻る際に利用するため、代入
-            $reLoginId = $player->loginId;
+            $reLoginId = $player->loginId_userName;
             $reLoginPass = $player->loginPass;
 
             // request内データを変数に代入
             $amountOfQuenstions = $request->amountOfQuenstions;
-            $userName = $request->userName;
+            $loginId_userName = $request->loginId_userName;
 
+            $allQuizMusicData = '';
             // 全問題共通の効果音ファイルを再生するためのパスを取得
             foreach (AllQuizMusic::all() as $allQuizMusicData) { }
 
@@ -133,15 +133,14 @@ class QuizMainController extends Controller
             $player = session('player');
 
             // 学習画面→言語選択画面に戻る際に利用するため、代入
-            $reLoginId = $player->loginId;
+            $reLoginId = $player->loginId_userName;
             $reLoginPass = $player->loginPass;
 
             // 回答のlogを保存するためにLogインスタンス生成
             $log = New Log;
 
             // 正解不正解以外のlog情報を保存
-            $log->loginId = $player->loginId;
-            $log->userName = $player->userName;
+            $log->loginId_userName = $player->loginId_userName;
             $log->language = $selectedQuiz->language;
             $log->quizNo = $selectedQuiz->no;
             $log->question = $selectedQuiz->question;
@@ -299,4 +298,3 @@ class QuizMainController extends Controller
       
     }
 }
-

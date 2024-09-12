@@ -29,7 +29,7 @@ Route::prefix('createUser')
 // ->name('createUser.')
 ->group(function(){
     Route::get('/input', 'input')->name('input');
-    Route::get('/input/{loginId}{loginPass}{userName}', 'reInput')->name('reInput');
+    Route::get('/input/{loginId_userName}{loginPass}', 'reInput')->name('reInput');
     Route::post('/check_content', 'check_content')->name('check_content');
     Route::post('/', 'store')->name('store');
 });

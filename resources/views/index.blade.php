@@ -46,8 +46,8 @@ if((session('doneQuizList')) !== null) {
         <form action="{{ route('loginInput') }}" method="post" class="form">
           @csrf
           <h1>IDとパスワードをご入力ください</h1>
-          <p>ID</p>
-          <input type="text" class="loginId" name="loginId" maxlength="100">
+          <p>ID/ユーザー名</p>
+          <input type="text" class="loginId_userName" name="loginId_userName" maxlength="100">
           <p>パスワード</p>
           <input type="text" class="loginPass" name="loginPass" maxlength="20">
           <br>

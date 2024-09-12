@@ -13,8 +13,7 @@ class log extends Model
 
     //複数代入を可能にするモデル属性を定義
     protected $fillable = [
-        'userId',
-        'userName',
+        'loginId_userName',
         'language',
         'quizNo',
         'question',

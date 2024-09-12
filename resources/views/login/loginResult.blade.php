@@ -40,7 +40,7 @@ if((session('doneQuizList')) !== null) {
                 
                 @if($collectionNumber == 1)
                     <p>ログインに成功しました！!</p>
-                    <p>ようこそ {{ $userName }} さん</p>
+                    <p>ようこそ {{ $loginId_userName }} さん</p>
                     <p style="line-height: 2px">-----------------------------------------</p>
                     <p>さっそく学習を開始しましょう♫</p>
                     <p>学習したい言語と学習方法を一覧から選択してください</p>
@@ -87,9 +87,8 @@ if((session('doneQuizList')) !== null) {
                         <br>
                         <br>
                         <input type='submit' name='bttn' value='学習開始' class="btn-square btn">
-                        <input type='hidden' name='userName' value='{{ $userName }}'> 
+                        <input type='hidden' name='loginId_userName' value='{{ $loginId_userName }}'> 
                         <input type='hidden' name='collectionNumber' value='{{ $collectionNumber }}'> 
-                        <input type='hidden' name='loginId' value='{{ $loginId }}'> 
 
                     </form>
                     <br>
