@@ -154,9 +154,8 @@ return [
     */
 
     'attributes' => [
-        'loginId' => 'ID',
+        'loginId_userName' => 'ID/ユーザー名',
         'loginPass' => 'パスワード',
-        'userName' => 'ユーザー名'
     ],
 
 ];

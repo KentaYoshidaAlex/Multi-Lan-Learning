@@ -14,30 +14,28 @@ class CreateUserController extends Controller
         return view('createUser/input');
     }
 
-    public function reInput($loginId, $loginPass, $userName)
+    public function reInput($loginId_userName, $loginPass)
     {
         //ユーザー作成画面表示
         return view('createUser/input', [
-            'loginId' => $loginId, 'loginPass' => $loginPass, 'userName' => $userName
+            'loginId_userName' => $loginId_userName, 'loginPass' => $loginPass
         ]);
     }
 
     public function check_content(StoreUserRequest $request)
     {
-        $loginId = $request->input('loginId');
+        $loginId_userName = $request->input('loginId_userName');
         $loginPass = $request->input('loginPass');
-        $userName = $request->input('userName');
 
         //入力確認画面表示
-        return view('createUser/check_content', compact('loginId', 'loginPass', 'userName'));
+        return view('createUser/check_content', compact('loginId_userName', 'loginPass'));
     }
 
     public function store(Request $request)
     {
         $createUser = CreateUser::create([
-            'loginId' => $request->loginId,
+            'loginId_userName' => $request->loginId_userName,
             'loginPass' => $request->loginPass,
-            'userName' => $request->userName,
             'clearCount' => $request->clearCount,
             'missCount' => $request->missCount,
         ]);

@@ -35,20 +35,18 @@
           
             <form method="post" action="{{ route('store') }}" >
               @csrf
-              <h3>【ID】 {{ $loginId }}</h3>
+              <h3>【ID/ユーザー名】 {{ $loginId_userName }}</h3>
               <h3>【パスワード】 ※ 表示されません</h3>
-              <h3>【ユーザー名】 {{ $userName }} </h3>
               <input type="submit" value="登録する" />
 
-              <input type="hidden" name="loginId" class="loginId" maxlength="30" value="{{ $loginId }}"/>
+              <input type="hidden" name="loginId_userName" class="loginId_userName" maxlength="30" value="{{ $loginId_userName }}"/>
               <input type="hidden" name="loginPass" class="loginPass" maxlength="20" value="{{ $loginPass }}"/>
-              <input type="hidden" name="userName" class="userName" maxlength="20" value="{{ $userName }}"/>
               <input type="hidden" name="clearCount" value=0>
               <input type="hidden" name="missCount" value=0>
             </form>
             <br>
             <div>
-              <a href="{{ route('input', ['loginId' => $loginId, 'loginPass' => $loginPass, 'userName' => $userName]) }}">&laquo;&nbsp;書き直す</a> 
+              <a href="{{ route('input', ['loginId_userName' => $loginId_userName, 'loginPass' => $loginPass]) }}">&laquo;&nbsp;書き直す</a> 
             </div>
         </div>
       </div>

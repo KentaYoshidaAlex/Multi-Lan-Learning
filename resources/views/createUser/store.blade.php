@@ -34,7 +34,7 @@
             @if (!empty($createUser)) 
                 <br>
                     <p>新規登録に成功しました！</p>
-                    <p>{{ $createUser->userName }} さん</p>
+                    <p>{{ $createUser->loginId_userName }} さん</p>
                     <p class="text-coment">早速ログインしてクイズに挑戦しましょう！</p>
                     <a href="{{ route('index') }}">
                         <button class="btn-square btn">ログイン画面へ</button>

@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->increments('logNo');
-            $table->string('loginId', 20);
-            $table->string('userName', 20);
+            $table->string('loginId_userName', 30);
             $table->string('language', 20);
             $table->integer('quizNo');
             $table->string('question', 100);
