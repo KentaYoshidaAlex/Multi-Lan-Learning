@@ -11,13 +11,13 @@ class LoginController extends Controller
     {
 
         // リクエストパラメータの取得
-        $loginId = $request->loginId;
+        $loginId_userName = $request->loginId_userName;
         $loginPass = $request->loginPass;
         $bttn = $request->bttn;
 
         // リクエストパラメータを元に、ログインユーザーデータを取得
         $collection = CreateUser::
-        where('loginId', $loginId)
+        where('loginId_userName', $loginId_userName)
         ->where('loginPass',$loginPass)
         ->get();
 
@@ -32,12 +32,12 @@ class LoginController extends Controller
             $collectionNumber = $collection->count();
 
             // userObject情報代入
-            $userName = $userObject->userName;
+            $loginId_userName = $userObject->loginId_userName;
 
             if ($bttn === "ログイン") {
 
                 // ログイン結果画面に遷移
-                return view('login/loginResult', compact('collectionNumber','loginId','userName','collection'));
+                return view('login/loginResult', compact('collectionNumber','loginId_userName','collection'));
 
             }
         
