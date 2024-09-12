@@ -22,9 +22,8 @@ class StoreUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'loginId' => ['required','max:20'],
+            'loginId_userName' => ['required','max:30'],
             'loginPass' => ['required', 'alpha_num','max:20','min:4'],
-            'userName' => ['required','max:20']
         ];
     }
 }

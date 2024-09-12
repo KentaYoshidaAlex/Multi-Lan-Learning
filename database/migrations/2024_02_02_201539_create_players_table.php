@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('loginId', 20);
+            $table->string('loginId_userName', 30);
             $table->string('loginPass', 20);
-            $table->string('userName', 20);
             $table->integer('clearCount');
             $table->integer('missCount');
             $table->timestamps();

@@ -33,15 +33,12 @@
                 <x-input-error class="mb-4" :messages="$errors->all()"/>
                 <form action="{{ route('check_content') }}" method="POST">
                     <h1>下記の会員情報をご登録ください</h1>
-                    <p>ID</p>
-                    <input type="text" name="loginId" class="loginId" maxlength="30" value="{{ request()->query('loginId') }} "/>
+                    <p>ID/ユーザー名（※全角半角どちらでも入力可能です）</p>
+                    <input type="text" name="loginId_userName" class="loginId_userName" maxlength="30" value="{{ request()->query('loginId_userName') }} "/>
                     <br>
                     <br>
                     <p>パスワード（※半角英数4文字以上でご入力ください）</p>
                     <input type="text" name="loginPass" class="loginPass" maxlength="20" value="{{ request()->query('loginPass') }} "/>
-
-                    <p>ユーザー名</p>
-                    <input type="text" name="userName" class="userName" maxlength="20" value="{{ request()->query('userName') }} "/>
 
                     <br>
                     <input type="submit" value="登録">
