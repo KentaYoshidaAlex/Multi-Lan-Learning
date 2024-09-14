@@ -15,7 +15,7 @@ if(!($selectedQuiz == '')) {
     $language = $selectedQuiz->language;
     $no = $selectedQuiz->no;
 }
-
+// dd($selectedQuiz);
 // 他の変数代入
 $allQuizMusicData = session('allQuizMusicData');
 $judgeNum = session('judgeNum');
