@@ -16,6 +16,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CreateUsersTableSeeder::class);
         $this->call(QuizDataTableSeeder::class);
         $this->call(AllQuizMusicTableSeeder::class);
-
+        $this->call(QMyanmarTableSeeder::class);
+        $this->call(QTagalogTableSeeder::class);
+        $this->call(QKansaibenTableSeeder::class);
+        $this->call(QWorldGreetingsTableSeeder::class);
     }
 }
