@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\QuizDatum;
+use App\Models\QuizMyanmarDatum;
+use App\Models\QuizTagalogDatum;
+use App\Models\QuizKansaibenDatum;
+use App\Models\QuizWorldGreetingsDatum;
 use App\Models\CreateUser;
 use App\Models\AllQuizMusic;
+use Illuminate\Support\Facades\DB;
 use App\Models\Log;
 
 use Illuminate\Http\Request;
@@ -60,12 +65,26 @@ class QuizMainController extends Controller
             // 全問題共通の効果音ファイルを再生するためのパスを取得
             foreach (AllQuizMusic::all() as $allQuizMusicData) { }
 
-            // 選択した言語の問題を取得し、quizDataに代入
-            $quizData = QuizDatum::
-            where('language', $language)
-            ->get();
+            // 選択した言語毎に問題を取得し、quizDataに代入
+            //ミャンマー語選択
+            if ($language == 'qMyanmar') {	
+                $quizData = QuizMyanmarDatum::all();
+            } 	
+            
+            //タガログ語選択
+            if ($language == 'qTagalog') {	
+                $quizData = QuizTagalogDatum::all();
+            } 
+            //関西弁選択
+            if ($language == 'qKansaiben') {	
+                $quizData = QuizKansaibenDatum::all();
+            }             
+            //世界の挨拶選択
+            if ($language == 'qWorldGreetings') {	
+                $quizData = QuizWorldGreetingsDatum::all();
+            } 
 
-            // 共通で利用する変数をsessionに保存
+            // 共通で利用する変数をsessionに保存z
             session(['amountOfQuenstions' => $amountOfQuenstions]);
             session(['allQuizMusicData' => $allQuizMusicData]);
             session(['player' => $player]);     
@@ -81,14 +100,35 @@ class QuizMainController extends Controller
             $quizNo = mt_rand(1, count($quizData));
 
             // ランダムで問題文を取得
-            $selectedObj = QuizDatum::
-            where('language', $language)
-            ->where('no',$quizNo)
-            ->get();
+            //ミャンマー語選択
+            if ($language === 'qMyanmar') {
+                $selectedObj = QuizMyanmarDatum::
+                where('no',$quizNo)
+                ->get();
+            }
+            //タガログ語選択
+            if ($language === 'qTagalog') {
+                $selectedObj = QuizTagalogDatum::
+                where('no',$quizNo)
+                ->get();
+            }
+            //関西弁選択
+            if ($language === 'qKansaiben') {
+                $selectedObj = QuizKansaibenDatum::
+                where('no',$quizNo)
+                ->get();
+            }
+            //世界の挨拶選択
+            if ($language === 'qWorldGreetings') {
+                $selectedObj = QuizWorldGreetingsDatum::
+                where('no',$quizNo)
+                ->get();
+            }
+
 
             // 問題開始時(0),正解時(1),不正解時(2)を判定する変数用意
             $judgeNum = 0;
-
+            
             // コレクション型からオブジェクト型を取得
             foreach ($selectedObj as $selectedQuiz) { }
 
@@ -98,7 +138,7 @@ class QuizMainController extends Controller
             // 問題文分岐の為、初期のカウント数代入
             $clearCount = 0;
             $missCount = 0;
-
+            
             // クイズで利用する変数をsession保存
             session(['currentQuizAmount' => $currentQuizAmount]);
             session(['selectedQuiz' => $selectedQuiz]);
@@ -198,12 +238,32 @@ class QuizMainController extends Controller
                 $donePronunciation = $doneQuiz->pathPronunciation;
                 $doneBackground = $doneQuiz->pathBackground;
                 array_push($doneQuizList, $doneQuiz->no);
-
+                
                 // 出題していない問題を取得
-                $restOfQuiz = QuizDatum::
-                where('language', $doneQuiz->language)
-                ->whereNotIn('no',$doneQuizList)
-                ->get();
+                //ミャンマー語選択
+                if ($language == 'ミャンマー語') {	
+                    $restOfQuiz = QuizMyanmarDatum::
+                    whereNotIn('no',$doneQuizList)
+                    ->get();
+                }
+                //タガログ語選択
+                if ($language == 'タガログ語') {	
+                    $restOfQuiz = QuizTagalogDatum::
+                    whereNotIn('no',$doneQuizList)
+                    ->get();
+                }
+                //関西弁選択
+                if ($language == '関西弁') {	
+                    $restOfQuiz = QuizKansaibenDatum::
+                    whereNotIn('no',$doneQuizList)
+                    ->get();
+                }
+                //世界の挨拶選択
+                if ($language == '世界の挨拶') {	
+                    $restOfQuiz = QuizWorldGreetingsDatum::
+                    whereNotIn('no',$doneQuizList)
+                    ->get();
+                }
 
                 // 残りの問題がある場合
                 if(count($restOfQuiz)) {
@@ -216,16 +276,35 @@ class QuizMainController extends Controller
 
                     // 残りの問題のnoをランダムで取得
                     $nextQuizNo = array_rand($restOfNo, 1);
-
+                    
                     // 次の問題をランダムで取得
-                    $nextObj = QuizDatum::
-                    where('language', $doneQuiz->language)
-                    ->where('no',$restOfNo[$nextQuizNo])   
-                    ->get();
+                    //ミャンマー語選択
+                    if ($language === 'qMyanmar') {
+                        $nextObj = QuizMyanmarDatum::
+                        where('no',$restOfNo[$nextQuizNo])   
+                        ->get();
+                    }
 
-                    // コレクション型からオブジェクト型を取得
-                    foreach ($nextObj as $nextQuiz) { }
-                    session(['selectedQuiz' => $nextQuiz]);
+                    //タガログ語選択
+                    if ($language === 'qTagalog') {
+                        $nextObj = QuizTagalogDatum::
+                        where('no',$restOfNo[$nextQuizNo])   
+                        ->get();
+                    }
+                    //関西弁選択
+                    if ($language === 'qKansaiben') {
+                        $nextObj = QuizKansaibenDatum::
+                        where('no',$restOfNo[$nextQuizNo])   
+                        ->get();
+                    }
+                    //語選択
+                    if ($language === 'qWorldGreetings') {
+                        $nextObj = QuizWorldGreetingsDatum::
+                        where('no',$restOfNo[$nextQuizNo])   
+                        ->get();
+                    }
+
+                    session(['selectedQuiz' => $nextObj]);
 
                 // 残りの問題がない場合
                 } else {
@@ -260,8 +339,6 @@ class QuizMainController extends Controller
                 // $clearCount, $missCountを変数代入
                 $clearCount = $player->clearCount;
                 $missCount = $player->missCount;
-
-                // dd($player->loginId);
 
                 // 不正解時log情報を保存
                 $log->logRight = 0;

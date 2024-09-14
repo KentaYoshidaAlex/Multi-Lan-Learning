@@ -60,17 +60,17 @@ if((session('doneQuizList')) !== null) {
                         <select class="cp_sl06" name="language" id="language" required>
                             <option value="選択してください">言語一覧</option>
 
-                            <option value="ミャンマー語">ミャンマー語</option>
+                            <option value="qMyanmar">ミャンマー語</option>
 
-                            <option value="スペイン語">スペイン語</option>
+                            <option value="qSpain">スペイン語</option>
 
-                            <option value="タガログ語">タガログ語</option>
+                            <option value="qTagalog">タガログ語</option>
 
-                            <option value="フランス語">フランス語</option>
+                            <option value="qFrance">フランス語</option>
 
-                            <option value="関西弁">関西弁</option>
+                            <option value="qKansaiben">関西弁</option>
 
-                            <option value="世界の挨拶">世界の挨拶</option>
+                            <option value="qWorldGreetings">世界の挨拶</option>
 
                         </select>
                                 

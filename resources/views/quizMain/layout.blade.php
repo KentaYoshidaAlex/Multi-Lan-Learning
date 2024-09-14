@@ -6,7 +6,6 @@ $amountOfQuenstions = session('amountOfQuenstions');
 $selectedQuiz = session('selectedQuiz');
 $question = $selectedQuiz->question;
 $choice1 = $selectedQuiz->choice1;
-// dd($question);
 $choice2 = $selectedQuiz->choice2;
 $choice3 = $selectedQuiz->choice3;
 $choice4 = $selectedQuiz->choice4;

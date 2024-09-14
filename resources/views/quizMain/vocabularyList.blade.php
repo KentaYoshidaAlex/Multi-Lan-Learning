@@ -8,6 +8,7 @@ $allQuizMusicData = session('allQuizMusicData');
 $player = session('player');
 $quizData = session('quizData');
 $language = session('language');
+
 $helloInOtherLan = '';
 $thankyouInOtherLan = '';
 $haveANiceDayInOtherLan = '';
@@ -46,7 +47,7 @@ $haveANiceDayInOtherLan = '';
                 <h1>多言語学習アプリ♫ 事前学習ページ</h1>
             </div>
         </header>
-        @if ($quizData[0]->language === '世界の挨拶')
+        @if ($language === 'qWorldGreetings')
             <div class="main-wrapper-world-greet">
                 <div class="container-world-greet">
         @else 
@@ -59,12 +60,14 @@ $haveANiceDayInOtherLan = '';
                 <div class="parent">
                     <div class="child1">
                         <p><事前学習></p>
-                        @if ($quizData[0]->language === '関西弁')
+                        @if ($language === 'qMyanmar')
+                            <p>ミャンマー語 / 日本語</p>
+                        @elseif ($language === 'qTagalog')
+                            <p>タガログ語 / 日本語</p>
+                        @elseif ($language === 'qKansaiben')
                             <p>関西弁 / 標準語</p>
-                        @elseif ($quizData[0]->language === '世界の挨拶')
+                        @elseif ($language === 'qWorldGreetings')
                             <p>世界の挨拶</p>
-                        @else
-                            <p>{{ $language }} / 日本語</p>
                         @endif
                     </div>
                     <div class="child2">
@@ -90,7 +93,7 @@ $haveANiceDayInOtherLan = '';
                     @endphp
 
                     {{-- 世界の挨拶を選択した場合の表示 --}}
-                    @if ($quizData[0]->language === '世界の挨拶')
+                    @if ($language === 'qWorldGreetings')
                         <table>
                             <tr>
                                 <th>日本語</th><th>こんにちは</th><th>ありがとう</th><th>良い一日を</th>
