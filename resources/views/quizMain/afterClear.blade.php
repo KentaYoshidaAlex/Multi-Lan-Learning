@@ -4,12 +4,10 @@
     @if($tgrbtn == "1") 
         <audio src="{{ $allQuizMusicData->correctS }}" autoplay></audio>
     @endif 
-    <p>目標達成です！おめでとうございます！</p><br>
 
     <!-- クイズ本文 -->
     {{-- @if(($amountOfQuenstions != $currentQuizAmount) && (!empty($question))) --}}
     @if (($amountOfQuenstions != $currentQuizAmount) && (!($selectedQuiz == '')))
-        引き続きお楽しみの方はこちら↓ 
         
         <div class="responsive-small"><p>下記の問題の空欄に当てはまる単語を選択してください。</p></div>
         <h3>Q : {{ $question }}</h3>
@@ -55,12 +53,14 @@
         @if($tgrbtn == "1") 
             <audio src="{{ $allQuizMusicData->congratulationsS }}" autoplay></audio>
         @endif
-        <p>全問正解しました！</p>
+
+        <p>目標達成おめでとうございます！</p>
+        <p>全問正解しました！！</p>
             <br>
             <form action="{{ route('loginInput') }}" method="post">
                 @csrf
                 <input type="submit" value="言語選択画面に戻る" />
-                <input type="hidden" name="loginId" value= '{{ $reLoginId }}' >
+                <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
                 <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
                 <input type="hidden" name="bttn" value= 'ログイン' >
             </form>
