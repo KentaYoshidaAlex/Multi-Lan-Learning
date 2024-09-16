@@ -185,7 +185,6 @@ class QuizMainController extends Controller
             $log->quizNo = $selectedQuiz->no;
             $log->question = $selectedQuiz->question;
 
-
             // 正解時の処理
             if ($anserJudge == '1') {
 
@@ -209,7 +208,6 @@ class QuizMainController extends Controller
                 if(!(session('amountOfQuenstions') == '全問')) {
                     $currentQuizAmount++; 
                 } 
-
                 
                 // 問題開始時(0),正解時(1),不正解時(2)を判定する変数用意
                 $judgeNum = 1;
@@ -270,38 +268,37 @@ class QuizMainController extends Controller
 
                     // 出題していない問題のnoを、配列に保存
                     $restOfNo = [];
-                    foreach ($restOfQuiz as $nextObj) { 
-                        array_push($restOfNo, $nextObj->no);
+                    foreach ($restOfQuiz as $quiz) { 
+                        array_push($restOfNo, $quiz->no);
                     }
 
                     // 残りの問題のnoをランダムで取得
-                    $nextQuizNo = array_rand($restOfNo, 1);
-                    
+                    $nextQuizNo = array_rand($restOfNo);
+
                     // 次の問題をランダムで取得
                     //ミャンマー語選択
-                    if ($language === 'qMyanmar') {
+                    if ($language === 'ミャンマー語') {
                         $nextObj = QuizMyanmarDatum::
                         where('no',$restOfNo[$nextQuizNo])   
-                        ->get();
+                        ->firstOrFail();
                     }
-
                     //タガログ語選択
-                    if ($language === 'qTagalog') {
+                    if ($language === 'タガログ語') {
                         $nextObj = QuizTagalogDatum::
                         where('no',$restOfNo[$nextQuizNo])   
-                        ->get();
+                        ->firstOrFail();
                     }
                     //関西弁選択
-                    if ($language === 'qKansaiben') {
+                    if ($language === '関西弁') {
                         $nextObj = QuizKansaibenDatum::
                         where('no',$restOfNo[$nextQuizNo])   
-                        ->get();
+                        ->firstOrFail();
                     }
-                    //語選択
-                    if ($language === 'qWorldGreetings') {
+                    //世界の挨拶選択
+                    if ($language === '世界の挨拶') {
                         $nextObj = QuizWorldGreetingsDatum::
                         where('no',$restOfNo[$nextQuizNo])   
-                        ->get();
+                        ->firstOrFail();
                     }
 
                     session(['selectedQuiz' => $nextObj]);

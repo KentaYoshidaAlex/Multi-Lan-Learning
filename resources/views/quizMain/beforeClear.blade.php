@@ -1,4 +1,7 @@
                 <!-- 通常時問題表示 -->
+                @if($tgrbtn == "1") 
+                <audio src="{{ $allQuizMusicData->correctS }}" autoplay></audio>
+                @endif 
                 
                 下記の問題の空欄に当てはまる単語を選択してください。
                 <h3>Q : {{ $question }}</h3>

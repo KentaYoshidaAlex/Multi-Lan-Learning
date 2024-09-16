@@ -9,7 +9,6 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     {
-
         // リクエストパラメータの取得
         $loginId_userName = $request->loginId_userName;
         $loginPass = $request->loginPass;

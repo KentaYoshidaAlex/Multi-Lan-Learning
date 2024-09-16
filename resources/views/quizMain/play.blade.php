@@ -15,11 +15,13 @@ if(!($selectedQuiz == '')) {
     $language = $selectedQuiz->language;
     $no = $selectedQuiz->no;
 }
-// dd($selectedQuiz);
+
 // 他の変数代入
 $allQuizMusicData = session('allQuizMusicData');
 $judgeNum = session('judgeNum');
 $player = session('player');
+
+// var_dump($allQuizMusicData);
 
 // $tgrbtn初期化
 $tgrbtn = null;
@@ -110,7 +112,6 @@ if ((session('doneAnswer')) !== null) {
         <br>
 
 <!-- ******************************************************************************************* -->
-
     {{-- 3問以上クリア時の画面表示 --}}
     @if($clearCount >= 3 &&  $missCount == 0)
         @if($selectedQuiz !== '')
