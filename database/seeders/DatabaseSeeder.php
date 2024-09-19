@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         //クラス呼び込み、シーディングコマンド実行
         $this->call(CreateUsersTableSeeder::class);
-        $this->call(QuizDataTableSeeder::class);
         $this->call(AllQuizMusicTableSeeder::class);
         $this->call(QMyanmarTableSeeder::class);
         $this->call(QTagalogTableSeeder::class);
