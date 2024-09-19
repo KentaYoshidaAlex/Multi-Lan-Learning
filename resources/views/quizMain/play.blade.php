@@ -106,7 +106,7 @@ if ((session('doneAnswer')) !== null) {
 <!-- ******************************************************************************************* -->
 
         <!-- クイズパートメイン部分 -->
-        {{ $player->loginId_userName }} さん
+        {{ $player->loginId_userName }} さん　　（残り❤️@php echo (3 - $missCount) @endphp）
         <br>
         現在のクリア数は{{ $player->clearCount }} 問です。
         <br>
