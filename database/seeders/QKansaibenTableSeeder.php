@@ -28,7 +28,7 @@ class QKansaibenTableSeeder extends Seeder
             'choice3' => 'かんにん', 
             'choice4' => 'あかん', 
             'pathPronunciation' => '', 
-            'pathBackground' => '../image/myanmar/dotonbori.jpg', 
+            'pathBackground' => '../image/picture_osaka/dotonbori.jpg', 
             'subLanguage' => '', 
             'jpGreetingWord' => '', 
         ],
