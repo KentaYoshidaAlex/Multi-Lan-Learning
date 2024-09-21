@@ -59,9 +59,11 @@ if ((session('doneAnswer')) !== null) {
 </head>
 
 <body>
-
+@php @endphp
 @if(!empty($selectedQuiz->pathBackground)) 
-        <div id="study" class="big-bg" style="background-image: url({{ $selectedQuiz->pathBackground }} "> 
+        {{-- <div id="study" class="big-bg" style="background-image: url({{ $selectedQuiz->pathBackground }} ">  --}}
+        {{-- <div id="study" class="big-bg" style="background-image: url({{ $selectedQuiz->pathBackground }})">  --}}
+        <div id="study" class="big-bg" style="background-image: url(../image/myanmar/dotonbori.jpg)"> 
 @else
         <div id="study" class="big-bg" style="background-image: url({{ $doneBackground }})"> 
 @endif
