@@ -49,11 +49,16 @@
   padding: 10px;
 }
 
-.big-bg {
+.big-bg-vocabrary {
   background-size: cover;
   background-position: center top;
   background-repeat: repeat-y;
   background-image: url(../image/vocabraryList.jpeg);
+}
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: repeat-y;
 }
 #study {
   min-height: 100vh;
