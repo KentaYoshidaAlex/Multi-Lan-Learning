@@ -7,6 +7,8 @@ use App\Models\QuizMyanmarDatum;
 use App\Models\QuizTagalogDatum;
 use App\Models\QuizKansaibenDatum;
 use App\Models\QuizWorldGreetingsDatum;
+use App\Models\QuizSpanishDatum;
+use App\Models\QuizFrenchDatum;
 use App\Models\CreateUser;
 use App\Models\AllQuizMusic;
 use Illuminate\Support\Facades\DB;
@@ -83,6 +85,14 @@ class QuizMainController extends Controller
             if ($language == 'qWorldGreetings') {	
                 $quizData = QuizWorldGreetingsDatum::all();
             } 
+            //スペイン語選択
+            if ($language == 'qSpanish') {	
+                $quizData = QuizSpanishDatum::all();
+            } 
+            //フランス語選択
+            if ($language == 'qFrench') {	
+                $quizData = QuizFrenchDatum::all();
+            } 
 
             // 共通で利用する変数をsessionに保存z
             session(['amountOfQuenstions' => $amountOfQuenstions]);
@@ -121,6 +131,18 @@ class QuizMainController extends Controller
             //世界の挨拶選択
             if ($language === 'qWorldGreetings') {
                 $selectedObj = QuizWorldGreetingsDatum::
+                where('no',$quizNo)
+                ->get();
+            }
+            //スペイン語選択
+            if ($language === 'qSpanish') {
+                $selectedObj = QuizSpanishDatum::
+                where('no',$quizNo)
+                ->get();
+            }
+            //フランス語選択
+            if ($language === 'qFrench') {
+                $selectedObj = QuizFrenchDatum::
                 where('no',$quizNo)
                 ->get();
             }
@@ -262,6 +284,18 @@ class QuizMainController extends Controller
                     whereNotIn('no',$doneQuizList)
                     ->get();
                 }
+                //スペイン語選択
+                if ($language == 'スペイン語') {	
+                    $restOfQuiz = QuizSpanishDatum::
+                    whereNotIn('no',$doneQuizList)
+                    ->get();
+                }
+                //フランス語選択
+                if ($language == 'フランス語') {	
+                    $restOfQuiz = QuizFrenchDatum::
+                    whereNotIn('no',$doneQuizList)
+                    ->get();
+                }
 
                 // 残りの問題がある場合
                 if(count($restOfQuiz)) {
@@ -297,6 +331,18 @@ class QuizMainController extends Controller
                     //世界の挨拶選択
                     if ($language === '世界の挨拶') {
                         $nextObj = QuizWorldGreetingsDatum::
+                        where('no',$restOfNo[$nextQuizNo])   
+                        ->firstOrFail();
+                    }
+                    //スペイン語選択
+                    if ($language == 'スペイン語') {	
+                        $nextObj = QuizSpanishDatum::
+                        where('no',$restOfNo[$nextQuizNo])   
+                        ->firstOrFail();
+                    }
+                    //フランス語選択
+                    if ($language == 'フランス語') {	
+                        $nextObj = QuizFrenchDatum::
                         where('no',$restOfNo[$nextQuizNo])   
                         ->firstOrFail();
                     }
