@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(QTagalogTableSeeder::class);
         $this->call(QKansaibenTableSeeder::class);
         $this->call(QWorldGreetingsTableSeeder::class);
+        $this->call(QSpanishTableSeeder::class);
+        $this->call(QFrenchTableSeeder::class);
     }
 }
