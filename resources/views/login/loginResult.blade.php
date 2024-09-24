@@ -62,11 +62,11 @@ if((session('doneQuizList')) !== null) {
 
                             <option value="qMyanmar">ミャンマー語</option>
 
-                            <option value="qSpain">スペイン語</option>
+                            <option value="qSpanish">スペイン語</option>
 
                             <option value="qTagalog">タガログ語</option>
 
-                            <option value="qFrance">フランス語</option>
+                            <option value="qFrench">フランス語</option>
 
                             <option value="qKansaiben">関西弁</option>
 

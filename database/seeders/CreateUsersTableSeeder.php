@@ -39,6 +39,13 @@ class CreateUsersTableSeeder extends Seeder
               'missCount' => 0,
               'created_at' => new DateTime(),
               'updated_at' => new DateTime(),
+        ],
+            [ 'loginId_userName' => 'Khine', 
+              'loginPass' => 'EiEi87', 
+              'clearCount' => 0,
+              'missCount' => 0,
+              'created_at' => new DateTime(),
+              'updated_at' => new DateTime(),
               ]
         ]);
     }

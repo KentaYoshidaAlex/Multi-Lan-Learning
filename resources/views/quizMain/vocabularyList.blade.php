@@ -68,6 +68,10 @@ $haveANiceDayInOtherLan = '';
                             <p>関西弁 / 標準語</p>
                         @elseif ($language === 'qWorldGreetings')
                             <p>世界の挨拶</p>
+                        @elseif ($language === 'qSpanish')
+                            <p>スペイン語 / 日本語</p>
+                        @elseif ($language === 'qFrench')
+                            <p>フランス語 / 日本語</p>
                         @endif
                     </div>
                     <div class="child2">
