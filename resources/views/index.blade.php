@@ -45,7 +45,10 @@ if((session('doneQuizList')) !== null) {
       <div class="container">
         <form action="{{ route('loginInput') }}" method="post" class="form">
           @csrf
-          <h1>IDとパスワードをご入力ください</h1>
+          <h2>〜 Let's enjoy language learning 〜</h2>
+          <p>☆登録済みの方は、ID/ユーザー名・パスワードをご入力ください</p>
+          <p>☆会員登録せずに遊びたい方は、「ゲストログイン」からお入り下さい</p>
+          <br>
           <p>ID/ユーザー名</p>
           <input type="text" class="loginId_userName" name="loginId_userName" maxlength="100">
           <p>パスワード</p>
