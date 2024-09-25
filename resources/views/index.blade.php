@@ -48,10 +48,10 @@ if((session('doneQuizList')) !== null) {
           <h2 style="background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;" >
           〜 Let's enjoy language learning 〜</h2>
-          
-          <p>☆登録済みの方は、登録内容を入力しログインしてください</p>
-          <p>☆未登録の方は、「新規登録はこちら」から内容をご入力ください</p>
-          <p>☆登録せずに遊びたい方は、「ゲストログイン」からお入り下さい</p>
+          <br>
+          ☆登録済みの方は、登録内容を入力しログインしてください<br>
+          ☆未登録の方は、「新規登録はこちら」から内容をご入力ください<br>
+          ☆登録せずに遊びたい方は、「ゲストログイン」からお入り下さい<br>
           <br>
           <p>ID/ユーザー名</p>
           <input type="text" class="loginId_userName" name="loginId_userName" maxlength="100">

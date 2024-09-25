@@ -21,12 +21,14 @@ use App\Http\Controllers\QuizMainController;
 Route::get('/', function () {
     return view('index');
 })->name('index');
+
 Route::get('/login/input', function () {
     return view('index');
-})->name('index');
+})->name('loginInput');
+
 Route::get('/quizMain', function () {
     return view('index');
-})->name('index');
+})->name('quizMain');
 
 
 Route::prefix('createUser')
