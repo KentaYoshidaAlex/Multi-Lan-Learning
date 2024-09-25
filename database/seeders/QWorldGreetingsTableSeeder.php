@@ -44,7 +44,7 @@ class QWorldGreetingsTableSeeder extends Seeder
             'jpGreetingWord' => 'ありがとう', 
           ],
           [ 'language' => '世界の挨拶',            
-            'question' => '良い一日を',
+            'question' => '英語で「良い一日を」は？',
             'answer' => 'Have a nice day', 
             'choice1' => 'See you', 
             'choice2' => 'Aloha', 
