@@ -32,15 +32,15 @@ class LoginController extends Controller
 
             // userObject情報代入
             $loginId_userName = $userObject->loginId_userName;
-
-            if ($bttn === "ログイン") {
-
+ 
+            if ($bttn === "ログイン" || $bttn === "ゲストログイン") {
                 // ログイン結果画面に遷移
                 return view('login/loginResult', compact('collectionNumber','loginId_userName','collection'));
 
             }
         
         } else {
+            dd('fuse');
             // ログイン失敗時
             $collectionNumber = 0;
 
