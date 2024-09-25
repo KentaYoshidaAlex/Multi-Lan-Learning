@@ -45,9 +45,13 @@ if((session('doneQuizList')) !== null) {
       <div class="container">
         <form action="{{ route('loginInput') }}" method="post" class="form">
           @csrf
-          <h2>〜 Let's enjoy language learning 〜</h2>
-          <p>☆登録済みの方は、ID/ユーザー名・パスワードをご入力ください</p>
-          <p>☆会員登録せずに遊びたい方は、「ゲストログイン」からお入り下さい</p>
+          <h2 style="background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
+          -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;" >
+          〜 Let's enjoy language learning 〜</h2>
+          
+          <p>☆登録済みの方は、登録内容を入力しログインしてください</p>
+          <p>☆未登録の方は、「新規登録はこちら」から内容をご入力ください</p>
+          <p>☆登録せずに遊びたい方は、「ゲストログイン」からお入り下さい</p>
           <br>
           <p>ID/ユーザー名</p>
           <input type="text" class="loginId_userName" name="loginId_userName" maxlength="100">
@@ -60,6 +64,16 @@ if((session('doneQuizList')) !== null) {
         </form>
         <br>
         <a href="{{ route('input') }}" class="newAccount">新規登録はこちら</a>
+        <br>
+        <br>
+
+        <form action="{{ route('loginInput') }}" method="post" class="form">
+          @csrf
+          <input type="submit" name="bttn" value="ゲストログイン" class="btn-square btn">
+          <input type="hidden" name="loginId_userName" name="loginId_userName" value="ゲスト">
+          <input type="hidden" class="loginPass" name="loginPass" value="9999">
+
+        </form>
       </div>
     </div>
   </div>
