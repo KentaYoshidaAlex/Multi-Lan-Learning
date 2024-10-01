@@ -1,12 +1,9 @@
-<!-- 3問以上正解時の問題表示 -->
-    
-    <!-- 3問以上正解時の効果音 -->
-    @if($tgrbtn == "1") 
+    <!-- 効果音をONにして正解した場合、自動で正解音を鳴らす -->
+    @if($tgrbtn == "1" && $missCount == 0) 
         <audio src="{{ $allQuizMusicData->correctS }}" autoplay></audio>
     @endif 
 
     <!-- クイズ本文 -->
-    {{-- @if(($amountOfQuenstions != $currentQuizAmount) && (!empty($question))) --}}
     @if (($amountOfQuenstions != $currentQuizAmount) && (!($selectedQuiz == '')))
         
         <div class="responsive-small"><p>下記の問題の空欄に当てはまる単語を選択してください。</p></div>
@@ -49,8 +46,8 @@
         </div>  
     @else
 
-        <!-- 全問正解の効果音 -->
-        @if($tgrbtn == "1") 
+        <!-- 全問正解時の効果音 -->
+        @if($tgrbtn == "1" && $missCount == 0) 
             <audio src="{{ $allQuizMusicData->congratulationsS }}" autoplay></audio>
         @endif
 

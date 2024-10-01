@@ -21,8 +21,6 @@ $allQuizMusicData = session('allQuizMusicData');
 $judgeNum = session('judgeNum');
 $player = session('player');
 
-// var_dump($allQuizMusicData);
-
 // $tgrbtn初期化
 $tgrbtn = null;
 
@@ -31,7 +29,7 @@ if ((session('doneQuizList')) !== null) {
     $doneQuizList = session('doneQuizList');
 }
 
-if ((session('doneAnswer')) !== null) { 
+if ((session('doneAnswer')) !== null || $missCount == 1) { 
     $doneAnswer = session('doneAnswer');
     $donePronunciation = session('donePronunciation');
     $doneBackground = session('doneBackground');
@@ -111,10 +109,17 @@ if ((session('doneAnswer')) !== null) {
         <br>
 
 <!-- ******************************************************************************************* -->
-    {{-- 3問以上クリア時の画面表示 --}}
-    @if($clearCount >= 3 &&  $missCount == 0)
-        @if($selectedQuiz !== '')
-            @include('quizMain/afterClear',[
+        {{-- 3問連続不正解時の画面表示 --}}
+        @if($missCount >= 3 )
+            @include('quizMain/gameOver',[
+                'tgrbtn' => $tgrbtn,
+                'reLoginId' => $reLoginId,
+                'loginPass' => $reLoginPass
+            ])
+
+        {{-- 通常時の画面表示（問題文が残っている場合） --}}
+        @elseif($selectedQuiz !== '')
+            @include('quizMain/quizGamen',[
                 'question' => $question,
                 'choice1' => $choice1,
                 'choice2' => $choice2,
@@ -124,35 +129,14 @@ if ((session('doneAnswer')) !== null) {
                 'no' => $no,
                 'tgrbtn' => $tgrbtn,
                 'reLoginId' => $reLoginId,
-                'reLoginPass' => $reLoginPass
+                'reLoginPass' => $reLoginPass,
+                'missCount' => $missCount
             ])
+        {{-- 通常時の画面表示（問題文が残っていない場合） --}}
         @else
-            @include('quizMain/afterClear',[
+            @include('quizMain/quizGamen',[
                 'tgrbtn' => $tgrbtn,
                 'reLoginId' => $reLoginId,
                 'reLoginPass' => $reLoginPass
             ])
         @endif
-
-    {{-- 3問連続不正解時の画面表示 --}}
-    @elseif($missCount >= 3 )
-        @include('quizMain/gameOver',[
-            'tgrbtn' => $tgrbtn,
-            'reLoginId' => $reLoginId,
-            'loginPass' => $reLoginPass
-        ])
-    {{-- 通常時の画面表示 --}}
-    @else
-        @include('quizMain/beforeClear',[
-            'question' => $question,
-            'choice1' => $choice1,
-            'choice2' => $choice2,
-            'choice3' => $choice3,
-            'choice4' => $choice4,
-            'language' => $language,
-            'no' => $no,
-            'tgrbtn' => $tgrbtn,
-            'reLoginId' => $reLoginId,
-            'loginPass' => $reLoginPass
-        ])
-    @endif
