@@ -75,6 +75,8 @@
 }
 #loginTop {
   background-image: url(../image/international_exchange_many_people2.jpg);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -212,7 +214,7 @@ input.cmn-toggle-round:checked + label:after {
     margin: auto;
   }
 
-  .container {
+  .✅ {
     flex: 1; 
     border: 1px solid #000; 
   
