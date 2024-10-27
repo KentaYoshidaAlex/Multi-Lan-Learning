@@ -18,36 +18,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <div id="createUser" class="big-bg">
+<body class="createUser">
         <header>
             <div class="header">
-                <h1>多言語学習アプリ♫ 新規登録ページ</h1>
+                <h1>&emsp;Hello World!!</h1>
             </div>
         </header>
         <br>
+
         <div class="main-wrapper">
             <div class="container">
                 <x-input-error class="mb-4" :messages="$errors->all()"/>
                 <form action="{{ route('check_content') }}" method="POST">
-                    <h1>下記の会員情報をご登録ください</h1>
-                    <p>ID/ユーザー名（※全角半角どちらでも入力可能です）</p>
-                    <input type="text" name="loginId_userName" class="loginId_userName" maxlength="30" value="{{ request()->query('loginId_userName') }} "/>
-                    <br>
-                    <br>
-                    <p>パスワード（※半角英数4文字以上でご入力ください）</p>
-                    <input type="text" name="loginPass" class="loginPass" maxlength="20" value="{{ request()->query('loginPass') }} "/>
-
-                    <br>
-                    <input type="submit" value="登録">
+                    <div id="KleeOne400">
+                        <h2 class="font-orange">&nbsp;下記の会員情報をご登録ください</h2>
+                        <p>&emsp;ID/ユーザー名（※全角半角どちらでも入力可能です）</p>
+                        &emsp;<input type="text" name="loginId_userName" class="loginId_userName" maxlength="30" value="{{ request()->query('loginId_userName') }} "/>
+                        <br>
+                        <br>
+                        <p>&emsp;パスワード（※半角英数4文字以上でご入力ください）</p>
+                        &emsp;<input type="text" name="loginPass" class="loginPass" maxlength="20" value="{{ request()->query('loginPass') }} "/>
+                    </div>
+                    <div class="btn-wrap">
+                        <input type="submit" value="登録"  class="btn btn-switch" >
+                    </div>
                     @csrf
 
                 </form>
                 <br>
-                <a href="{{ route('index') }}"> 戻る</a>
+                &emsp;<a href="{{ route('index') }}" id="KleeOne400"> 戻る</a>
             </div>
         </div>
-    </div>
-</body>
+    </body>

@@ -40,7 +40,6 @@ class LoginController extends Controller
             }
         
         } else {
-            dd('fuse');
             // ログイン失敗時
             $collectionNumber = 0;
 
