@@ -2,12 +2,42 @@
 .main-wrapper {
   display: flex;
   flex-direction: column; 
-
   width: 500px;
   margin: auto;
+  border: 1px solid #000; 
+  border-radius: 10px;
+  background-color: white;
+  opacity: 0.93;
+
+}
+.main {
+  display: flex;
+
 }
 
 .container {
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+
+}
+
+.container-left {
+  flex: 1; 
+  width: 240px;
+  padding: 10px;
+
+}
+
+.container-right {
+  flex: 1; 
+  width: 260px;
+  padding: 20px 30px 10px 0px;
+
+}
+
+.extra-space{
   flex: 1; 
   border: 1px solid #000; 
 
@@ -39,6 +69,26 @@
   padding: 10px;
 }
 
+.main-wrapper-others {
+  display: flex;
+  flex-direction: column; 
+
+  width: 550px;
+  margin: auto;
+}
+
+.container-others {
+  flex: 1; 
+  border: 1px solid #000; 
+
+  width: 550px;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 10px;
+  border: black solid 1px;
+  padding: 10px;
+}
+
 .bigger-container {
   height: 400px;
   width: 500px;
@@ -49,51 +99,88 @@
   padding: 10px;
 }
 
-.big-bg-vocabrary {
-  background-size: cover;
-  background-position: center top;
-  background-repeat: repeat-y;
-  background-image: url(../image/vocabraryList.jpeg);
-}
-.big-bg {
-  background-size: cover;
-  background-position: center top;
-  background-repeat: repeat-y;
-}
-#study {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
 
-}
+
+
+
 #complete {
   background-image: url(../image/S__80109596.jpg);
   min-height: 100vh;
   margin: 0;
   padding: 0; 
   opacity:1.0;
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: repeat-y;
 }
-#loginTop {
-  background-image: url(../image/international_exchange_many_people2.jpg);
-  min-height: 100vh;
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
+body {
+  background-size: cover; /* 画像が全体に広がるように */
+  background-position: center center; /* 画像を中央に配置 */
+  background-repeat: no-repeat; /* 画像が繰り返されないように */
+  height: 100vh; /* ビューポートの高さに合わせる */
+}
+
+
+/* ▼背景写真▼ */
+/* トップページ */
+body.loginTop {
+  background-image: url(../image/international_exchange_many_people2.jpg);
+}
+
+/* 言語選択ページ */
+body.langageSelect {
+  background-image: url(../image/flag_airplane.jpg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: repeat-y;
+}
+
+/* 新規会員登録ページ */
+body.createUser {
+  background-image: url(../image/flight.jpg);
+}
+
+/* 事前学習ページ */
+body.vocabularyList {
+  background-image: url(../image/vocabraryList.jpeg);
+  background-size: contain;
+  background-size:cover;
+  background-repeat: repeat;/*画像が繰り返すのを防ぐ*/
+}
+/* ▲　背景写真設定　▲ */
+
+/* ▼事前学習ページ上部分幅揃え▼ */
+.parent {
+  display: flex;
+  justify-content: space-between;
+  }
+/* ▲事前学習ページ上部分幅揃え▲ */
+
+
 
 header {
-  color: rgb(255, 0, 195);
+  /* color: rgb(255, 0, 195); */
+  /* color: #FCFDFE; */
   width: 100%;
-  font-family: 'Murecho', sans-serif;
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-size:1.5rem;
+  background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  display: inline-block;  
+
 }
 
-
-
-#langageSelect {
-  background-image: url(../image/flag_airplane.jpg);
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-}
 
 
 
@@ -114,10 +201,7 @@ header {
 	font-size: 153.9%;
 }
 
-#createUser {
-  background-image: url(../image/flight.jpg);
-  min-height: 100vh;
-}
+
 
 p {
   line-height: 5px;
@@ -179,7 +263,7 @@ input.cmn-toggle-round + label:before {
   right: 1px;
   background-color: #f1f1f1;
   border-radius: 60px;
-  transition: background 0.4s;
+  transition: background-color 0.4s;
 }
 input.cmn-toggle-round + label:after {
   width: 58px;
@@ -198,7 +282,8 @@ input.cmn-toggle-round:checked + label:after {
   margin-left: 60px;
 } 
 
-/* 画面幅が500px以下の場合のスタイル */
+ /* ▼画面幅が500px以下の場合のスタイル▼  */
+
 @media screen and (max-width: 550px) {
   background-image {
     width:50%;
@@ -222,6 +307,7 @@ input.cmn-toggle-round:checked + label:after {
     border-radius: 10px;
     border: black solid 1px;
     padding: 10px;
+    text-align: center;
   }
 
   .main-wrapper-world-greet {
@@ -244,15 +330,11 @@ input.cmn-toggle-round:checked + label:after {
     padding: 10px;
   }
   
-  header {
-    color: rgb(255, 0, 195);
-    width: 83%;
-    font-family: 'Murecho', sans-serif;
-  }
 
   .container p {
     font-size: 14px;
   }
+
 
   .container-world-greet p {
     font-size: 14px;
@@ -265,19 +347,22 @@ input.cmn-toggle-round:checked + label:after {
   .responsive-small p {
     font-size: 13px;
   }
-
 }
 
-/* 画面幅が601pxから1200pxの場合のスタイル */
+ /* ▲画面幅が500px以下の場合のスタイル▲   */
+
+
+ /* ▼画面幅が601pxから1200pxの場合のスタイル▼  */
 @media screen and (min-width: 551px) and (max-width: 2000px) {
-  
   background-image {
     width: 100% ;
     }
-
 }
+ /* ▲画面幅が601pxから1200pxの場合のスタイル▲  */
 
-/* 事前学習ページ 世界の挨拶の表についてのCSS */
+▲ 
+
+ /* ▼事前学習ページ 世界の挨拶の表についてのCSS▼ */
 table{
   width: 100%;
   border-collapse:separate;
@@ -326,6 +411,165 @@ table tr:last-child td:first-child {
 table tr:last-child td:last-child {
   border-radius: 0 0 5px 0;
 }
+ /* ▲事前学習ページ 世界の挨拶の表についてのCSS▲ */
+
+
+/* ▼ログイン後画面の「事前学習」、「学習開始」ボタンデザイン */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+.btn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+.btn-hover.blueColor {
+  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+.btn-hover.greenColor {
+  background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+/* ▲ログイン後画面の「事前学習」、「学習開始」ボタンデザイン */
+
+/* ▼全体ボタンデザイン */
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+/*背景*/
+.btn-wrap {
+  margin: 20px;
+}
+
+.btn-switch {
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 100vh;
+  background: #fbfbfc;
+  background: -webkit-linear-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#fbfbfc),
+    to(#dcddde)
+  );
+  background: -webkit-linear-gradient(top, #fbfbfc 0%, #dcddde 100%);
+  background: linear-gradient(180deg, #fbfbfc 0%, #dcddde 100%);
+  -webkit-box-shadow: -1px -5px 6px rgba(0, 0, 0, 0.2), 3px 3px 5px white,
+    0 10px 10px rgba(0, 0, 0, 0.1), inset 0 -4px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px -5px 6px rgba(0, 0, 0, 0.2), 3px 3px 5px white,
+    0 10px 10px rgba(0, 0, 0, 0.1), inset 0 -4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-switch span {
+  display: inline-block;
+
+  -webkit-transition: all 0.3s;
+
+  transition: all 0.3s;
+}
+
+.btn-switch:hover {
+  -webkit-box-shadow: -1px -5px 6px rgba(0, 0, 0, 0.2), 3px 3px 5px white,
+    0 10px 10px rgba(0, 0, 0, 0.1), inset 0 -4px 5px rgba(0, 0, 0, 0.1),
+    inset 0 3px 3px rgba(0, 0, 0, 0.18);
+  box-shadow: -1px -5px 6px rgba(0, 0, 0, 0.2), 3px 3px 5px white,
+    0 10px 10px rgba(0, 0, 0, 0.1), inset 0 -4px 5px rgba(0, 0, 0, 0.1),
+    inset 0 3px 3px rgba(0, 0, 0, 0.18);
+}
+
+.btn-switch:hover span {
+  -webkit-transform: scale(0.96);
+  transform: scale(0.96);
+}
+/* ▲全体ボタンデザイン */
+
+.honbun {
+  font-family: "Caveat", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.rainbow {
+  background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  display: inline-block;
+}
+
+#KleeOne400 {
+  font-family: "Klee One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#KleeOne600 {
+  font-family: "Klee One", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h2.font-orange {
+  color: #F69454;
+}
+
+h1.font-orange {
+  color: #F69454;
+}
+.center {
+  text-align: center;
+}
+
+
+
 
 
 

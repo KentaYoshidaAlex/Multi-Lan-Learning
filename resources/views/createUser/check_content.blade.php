@@ -18,39 +18,42 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sacramento&display=swap" rel="stylesheet">
+
 </head>
 
-<body>
-
-  <div id="createUser" class="big-bg">
+<body class="createUser">
     <header>
       <div class="header">
-          <h1>多言語学習アプリ♫ 入力内容確認ページ</h1>
+          <h1>&emsp;Hello World!!</h1>
       </div>
     </header>
     <br>
       <div class="main-wrapper">
         <div class="container">
-          <h1>下記の内容で登録しますか？</h1>
+          <div id="KleeOne400">
+
+            <h2 class="font-orange">&nbsp;下記の内容で登録しますか？</h2>
           
-            <form method="post" action="{{ route('store') }}" >
-              @csrf
-              <h3>【ID/ユーザー名】 {{ $loginId_userName }}</h3>
-              <h3>【パスワード】 ※ 表示されません</h3>
-              <input type="submit" value="登録する" />
+              <form method="post" action="{{ route('store') }}" >
+                @csrf
+                <h3>【ID/ユーザー名】 {{ $loginId_userName }}</h3>
+                <h3>【パスワード】 ※ 表示されません</h3>
+                <div class="btn-wrap">
+                <input type="submit" value="登録する"  class="btn btn-switch" />
+                </div>
 
-              <input type="hidden" name="loginId_userName" class="loginId_userName" maxlength="30" value="{{ $loginId_userName }}"/>
-              <input type="hidden" name="loginPass" class="loginPass" maxlength="20" value="{{ $loginPass }}"/>
-              <input type="hidden" name="clearCount" value=0>
-              <input type="hidden" name="missCount" value=0>
-            </form>
-            <br>
-            <div>
-              <a href="{{ route('input', ['loginId_userName' => $loginId_userName, 'loginPass' => $loginPass]) }}">&laquo;&nbsp;書き直す</a> 
-            </div>
+                <input type="hidden" name="loginId_userName" class="loginId_userName" maxlength="30" value="{{ $loginId_userName }}"/>
+                <input type="hidden" name="loginPass" class="loginPass" maxlength="20" value="{{ $loginPass }}"/>
+                <input type="hidden" name="clearCount" value=0>
+                <input type="hidden" name="missCount" value=0>
+              </form>
+              <br>
+              <div>
+                &emsp;<a href="{{ route('input', ['loginId_userName' => $loginId_userName, 'loginPass' => $loginPass]) }}">&laquo;&nbsp;書き直す</a> 
+              </div>
+          </div>
         </div>
-      </div>
-
 </body>
 
 </html>

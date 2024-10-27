@@ -12,19 +12,23 @@
         <audio src="{{ $allQuizMusicData->gameOverS }}" autoplay></audio>
     @endif
     <br>
-    <p>残念！ゲームオーバーです😭</p>
-    <br>
+    <p>&emsp; 残念！ゲームオーバーです😭</p>
     <form action="{{ route('loginInput') }}" method="post">
         @csrf
-        <input type="submit" value="言語選択画面に戻る" />
+        <div class="btn-wrap">
+        <input type="submit" value="言語選択画面に戻る" class="btn btn-switch" />
+        </div>
+
         <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
         <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
         <input type="hidden" name="bttn" value= 'ログイン' >
     </form>
-    <br>
-    <br>
+
     <form action="{{ route('index') }}" method="get">
-        <input type="submit" value="ログアウト" />
+        <div class="btn-wrap">
+        <input type="submit" value="ログアウト" class="btn btn-switch" />
+        </div>
+
     </form>
 
     
