@@ -21,23 +21,6 @@ class QuizMainController extends Controller
 {     
     public function quizMain(Request $request) {
 
-        // 言語が選択されていなかった場合、言語選択画面に戻す
-        if ($request->language === '選択してください') {
-
-            // 言語未選択時、変数代入
-            $language_choice = 'no';
-            
-            //　インスタンス再代入
-            $collectionNumber = $request->collectionNumber;
-            $loginId_userName = $request->loginId_userName;
-
-            // リクエストパラメータを元に、ログインユーザーデータ再取得
-            $collection = CreateUser::where('loginId_userName', $loginId_userName)->get();
-
-            // 再度loginResultに戻す
-            return view('login/loginResult', compact('collectionNumber', 'loginId_userName', 'language_choice' , 'collection'));
-        }
-
         // '学習開始' ＆'回答' 共通のrequest内データを変数に代入
         $language = $request->language;
         $bttn = $request->bttn;
@@ -49,7 +32,7 @@ class QuizMainController extends Controller
         }
 
         // 学習開始時
-        if ($request->bttn === '学習開始') {
+        if ($request->bttn === '学習開始' || $request->bttn === '事前学習') {
 
             // リクエストパラメータを元に、ユーザーデータを再取得
             $userObj = CreateUser::where('loginId_userName', $request->loginId_userName)->get();        
@@ -102,7 +85,7 @@ class QuizMainController extends Controller
             session(['language' => $language]); 
 
             // 事前学習選択時の分岐
-            if ($amountOfQuenstions === '事前学習') {
+            if ($request->bttn === '事前学習') {
                 return view('quizMain/vocabularyList', compact('reLoginId','reLoginPass'));
             }
 

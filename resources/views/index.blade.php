@@ -31,50 +31,50 @@ if((session('doneQuizList')) !== null) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <div id="loginTop" class="big-bg">
+<body class="loginTop">
     <header>
       <div class="header">
-        <h1>多言語学習アプリ♫ ログインTOP☆</h1>
+        <h1>&emsp;Hello World!!</h1>
       </div>
-    </header>
+    </header> 
     <br>
     <div class="main-wrapper">
       <div class="container">
         <form action="{{ route('loginInput') }}" method="post" class="form">
           @csrf
-          <h2 style="background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
-          -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;" >
-          〜 Let's enjoy language learning 〜</h2>
+          <h2 class="rainbow" id="KleeOne600"><span class="center">&emsp;&nbsp;〜 Let's enjoy language learning 〜</span></h2>
           <br>
-          ☆登録済みの方は、登録内容を入力しログインしてください<br>
-          ☆未登録の方は、「新規登録はこちら」から内容をご入力ください<br>
-          ☆登録せずに遊びたい方は、「ゲストログイン」からお入り下さい<br>
-          <br>
-          <p>ID/ユーザー名</p>
-          <input type="text" class="loginId_userName" name="loginId_userName" maxlength="100">
-          <p>パスワード</p>
-          <input type="text" class="loginPass" name="loginPass" maxlength="20">
-          <br>
-          <br>
-          <input type="submit" name="bttn" value="ログイン" class="btn-square btn">
-
+          <div class="honbun">
+            &nbsp;☆登録済みの方は、登録内容を入力しログインしてください<br>
+            &nbsp;☆未登録の方は、「新規登録はこちら」から内容をご入力ください<br>
+            &nbsp;☆登録せずに遊びたい方は、「ゲストログイン」からお入り下さい<br>
+            <br>
+          </div>
+          <div id="KleeOne400">
+            <p>&emsp;ID/ユーザー名</p>
+            &emsp; <input type="text" class="loginId_userName" name="loginId_userName" maxlength="100">
+            <p>&emsp;パスワード</p>
+            &emsp; <input type="text" class="loginPass" name="loginPass" maxlength="20">
+            <br>
+          </div>
+          <div class="btn-wrap">
+          <input type="submit" name="bttn" value="ログイン"  class="btn btn-switch" >
+          </div>
         </form>
         <br>
-        <a href="{{ route('input') }}" class="newAccount">新規登録はこちら</a>
+        &emsp;<a href="{{ route('input') }}" class="newAccount"  id="KleeOne400">新規登録はこちら</a>
         <br>
-        <br>
-
         <form action="{{ route('loginInput') }}" method="post" class="form">
           @csrf
-          <input type="submit" name="bttn" value="ゲストログイン" class="btn-square btn">
-          <input type="hidden" name="loginId_userName" name="loginId_userName" value="ゲスト">
-          <input type="hidden" class="loginPass" name="loginPass" value="9999">
-
+          <div class="btn-wrap">
+            <input type="submit" name="bttn" value="ゲストログイン"  class="btn btn-switch">
+          </div>
+            <input type="hidden" name="loginId_userName" name="loginId_userName" value="ゲスト">
+            <input type="hidden" class="loginPass" name="loginPass" value="9999">
         </form>
       </div>
     </div>
-  </div>
 </body>

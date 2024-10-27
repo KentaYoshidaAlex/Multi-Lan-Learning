@@ -54,89 +54,94 @@ if ((session('doneAnswer')) !== null || $missCount == 1) {
     <link rel="stylesheet" href={{ secure_asset('/css/style.css') }} >
     @endif
 
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sacramento&display=swap" rel="stylesheet">
 
-<body>
-@if(!empty($selectedQuiz->pathBackground)) 
-        <div id="study" class="big-bg" style="background-image: url({{ $selectedQuiz->pathBackground }})"> 
-@else
-        <div id="study" class="big-bg" style="background-image: url({{ $doneBackground }})"> 
-@endif
+</head>
 
 <header>
     <div class="header">
-        <h1>多言語学習アプリ♫ 学習ページ</h1>
+        <h1>&emsp;Hello World!!</h1>
     </div>
 </header>
-<div class="main-wrapper">
-    <div class="container">
 
-        <!-- 初回ｱｸｾｽ時、正解時、不正解時を判定するif文（ページ上部に表示する文言） -->
-        @if($judgeNum === 0) ようこそ！ @endif
-        @if($judgeNum === 1) 
-            正解です！
+@if(!empty($selectedQuiz->pathBackground)) 
+    <body style="background-image: url({{ $selectedQuiz->pathBackground }})">
+@else
+    <body style="background-image: url({{ $doneBackground }})">
+@endif
+        <div class="main-wrapper">
+            <div class="container">
+                <div id="KleeOne400">
+                    <!-- 初回ｱｸｾｽ時、正解時、不正解時を判定するif文（ページ上部に表示する文言） -->
+                    @if($judgeNum === 0) ようこそ！ @endif
+                    @if($judgeNum === 1) 
+                        正解です！
 
-            @if(!empty($donePronunciation))  
-                <br>今、正解した「{{ $doneAnswer }} 」の発音を確認したい方はコチラ↓<br>
-                <br>
-                @if($tgrbtn == "1") 
-                    @if(app('env')=='local')
-                        <audio src="{{ asset($donePronunciation) }}" controls>サポートされていません</audio>
+                        @if(!empty($donePronunciation))  
+                            <br>今、正解した「{{ $doneAnswer }} 」の発音を確認したい方はコチラ↓<br>
+                            <br>
+                            @if($tgrbtn == "1") 
+                                @if(app('env')=='local')
+                                    <audio src="{{ asset($donePronunciation) }}" controls>サポートされていません</audio>
+                                @endif
+                                @if(app('env')=='production')
+                                    <audio src="{{ secure_asset($donePronunciation) }}" controls>サポートされていません</audio>
+                                @endif
+                            @else
+                                @if(app('env')=='local')
+                                    <audio src="{{ asset($donePronunciation) }}" muted controls>サポートされていません</audio>
+                                @endif
+                                @if(app('env')=='production')
+                                    <audio src="{{ secure_asset($donePronunciation) }}" muted controls>サポートされていません</audio>
+                                @endif
+                            @endif
+                            <br>
+                        @endif
                     @endif
-                    @if(app('env')=='production')
-                        <audio src="{{ secure_asset($donePronunciation) }}" controls>サポートされていません</audio>
+
+                    @if($judgeNum === 2) 残念、不正解です！ @endif 
+                
+        <!-- ******************************************************************************************* -->
+
+                    <!-- クイズパートメイン部分 -->
+                    {{ $player->loginId_userName }} さん&emsp;&emsp;（残り❤️@php echo (3 - $missCount) @endphp）
+                    <br>
+                    現在のクリア数は{{ $player->clearCount }} 問です。
+                    <br>
+                </div>
+
+        <!-- ******************************************************************************************* -->
+                    {{-- 3問連続不正解時の画面表示 --}}
+                    @if($missCount >= 3 )
+                        @include('quizMain/gameOver',[
+                            'tgrbtn' => $tgrbtn,
+                            'reLoginId' => $reLoginId,
+                            'loginPass' => $reLoginPass
+                        ])
+
+                    {{-- 通常時の画面表示（問題文が残っている場合） --}}
+                    @elseif($selectedQuiz !== '')
+                        @include('quizMain/quizGamen',[
+                            'question' => $question,
+                            'choice1' => $choice1,
+                            'choice2' => $choice2,
+                            'choice3' => $choice3,
+                            'choice4' => $choice4,
+                            'language' => $language,
+                            'no' => $no,
+                            'tgrbtn' => $tgrbtn,
+                            'reLoginId' => $reLoginId,
+                            'reLoginPass' => $reLoginPass,
+                            'missCount' => $missCount
+                        ])
+                    {{-- 通常時の画面表示（問題文が残っていない場合） --}}
+                    @else
+                        @include('quizMain/quizGamen',[
+                            'tgrbtn' => $tgrbtn,
+                            'reLoginId' => $reLoginId,
+                            'reLoginPass' => $reLoginPass
+                        ])
                     @endif
-                @else
-                    @if(app('env')=='local')
-                        <audio src="{{ asset($donePronunciation) }}" muted controls>サポートされていません</audio>
-                    @endif
-                    @if(app('env')=='production')
-                        <audio src="{{ secure_asset($donePronunciation) }}" muted controls>サポートされていません</audio>
-                    @endif
-                @endif
-                <br>
-            @endif
-        @endif
-
-        @if($judgeNum === 2) 残念、不正解です！ @endif 
-        
-<!-- ******************************************************************************************* -->
-
-        <!-- クイズパートメイン部分 -->
-        {{ $player->loginId_userName }} さん　　（残り❤️@php echo (3 - $missCount) @endphp）
-        <br>
-        現在のクリア数は{{ $player->clearCount }} 問です。
-        <br>
-
-<!-- ******************************************************************************************* -->
-        {{-- 3問連続不正解時の画面表示 --}}
-        @if($missCount >= 3 )
-            @include('quizMain/gameOver',[
-                'tgrbtn' => $tgrbtn,
-                'reLoginId' => $reLoginId,
-                'loginPass' => $reLoginPass
-            ])
-
-        {{-- 通常時の画面表示（問題文が残っている場合） --}}
-        @elseif($selectedQuiz !== '')
-            @include('quizMain/quizGamen',[
-                'question' => $question,
-                'choice1' => $choice1,
-                'choice2' => $choice2,
-                'choice3' => $choice3,
-                'choice4' => $choice4,
-                'language' => $language,
-                'no' => $no,
-                'tgrbtn' => $tgrbtn,
-                'reLoginId' => $reLoginId,
-                'reLoginPass' => $reLoginPass,
-                'missCount' => $missCount
-            ])
-        {{-- 通常時の画面表示（問題文が残っていない場合） --}}
-        @else
-            @include('quizMain/quizGamen',[
-                'tgrbtn' => $tgrbtn,
-                'reLoginId' => $reLoginId,
-                'reLoginPass' => $reLoginPass
-            ])
-        @endif
