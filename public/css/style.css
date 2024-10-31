@@ -244,8 +244,8 @@ label:hover {
 
 input.cmn-toggle-round + label {
   padding: 2px;
-  width: 120px;
-  height: 60px;
+  width: 115px;
+  height: 55px;
   background-color: #dddddd;
   border-radius: 60px;
 } 
@@ -281,6 +281,17 @@ input.cmn-toggle-round:checked + label:before {
 input.cmn-toggle-round:checked + label:after {
   margin-left: 60px;
 } 
+
+.foo {
+  text-align: right;
+
+}
+
+/* .rigit-side {
+  margin: 0 0 0 auto;
+  height: 50px;
+  width:  50px;
+} */
 
  /* ▼画面幅が500px以下の場合のスタイル▼  */
 
@@ -483,16 +494,25 @@ button.btn {
   color: #212529;
   border-radius: 0.5rem;
 }
+.sound-control-position {
+  margin: 0px 0px 0px 20px;
+}
 
 /*背景*/
 .btn-wrap {
   margin: 20px;
 }
 
+.btn-wrap-for-quizGamen {
+  padding: 0px 20px 15px 0px;
+}
+
 .btn-switch {
   color: #333;
   border: 1px solid #ddd;
   border-radius: 100vh;
+  width: 10em;
+  height:3em;
   background: #fbfbfc;
   background: -webkit-linear-gradient(
     linear,
@@ -531,6 +551,48 @@ button.btn {
   transform: scale(0.96);
 }
 /* ▲全体ボタンデザイン */
+
+
+/* background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75); */
+/* ▼selectボックスデザイン */
+.cp_ipselect04 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 10em;
+  margin: 1em 0em 0em 1em;
+  border: 2px solid #007A02;
+  border-radius: 50px;
+}
+/*プルダウンの三角を設定*/
+.cp_ipselect04::before {
+  position: absolute;
+  right: 15px;
+  content: '';
+  width: 16px;
+  height: 8px;
+  background: #007A02;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.cp_ipselect04 select {
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+  color: #007A02;
+  cursor: pointer;
+  text-overflow: ellipsis;/*テキストがオーバーしたら'...'で省略*/
+  z-index: 1;
+  /* 標準のスタイルを無効にする */
+  border: none;
+  appearance: none;
+  outline: none;
+  background: transparent;
+}
+/* ▲selectボックスデザイン */
+
+
+
+
 
 .honbun {
   font-family: "Caveat", serif;
