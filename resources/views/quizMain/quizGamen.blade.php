@@ -14,38 +14,59 @@
                         <div class="top-text">
                             <form method="post" action="{{ route('quizMain') }}">
                                 @csrf
-                                &emsp;<label for="choice1"><input type='radio' name='choice' id='choice1' value='{{ $choice1 }}' required>{{ $choice1 }}</label><br>
-                                &emsp;<label for="choice2"><input type='radio' name='choice' id='choice2' value='{{ $choice2 }}'>{{ $choice2 }}</label><br>
-                                &emsp;<label for="choice3"><input type='radio' name='choice' id='choice3' value='{{ $choice3 }}'>{{ $choice3 }}</label><br>
-                                &emsp;<label for="choice4"><input type='radio' name='choice' id='choice4' value='{{ $choice4 }}'>{{ $choice4 }}</label><br>
+                                <div class="parent">
+                                    <div class="child1">
+                                        &emsp;<label for="choice1"><input type='radio' name='choice' id='choice1' value='{{ $choice1 }}' required>{{ $choice1 }}</label><br>
+                                        &emsp;<label for="choice2"><input type='radio' name='choice' id='choice2' value='{{ $choice2 }}'>{{ $choice2 }}</label><br>
+                                        &emsp;<label for="choice3"><input type='radio' name='choice' id='choice3' value='{{ $choice3 }}'>{{ $choice3 }}</label><br>
+                                        &emsp;<label for="choice4"><input type='radio' name='choice' id='choice4' value='{{ $choice4 }}'>{{ $choice4 }}</label><br>
 
-                                    <input type='hidden' name='language' value='{{ $language }}'>
-                                    <input type='hidden' name='no' value='{{ $no }}'>
-                                <div class="btn-wrap">
+                                            <input type='hidden' name='language' value='{{ $language }}'>
+                                            <input type='hidden' name='no' value='{{ $no }}'>
+                                    </div>
+                                    <div class="child2">
+                                    <div class="btn-wrap">
+                                    <br>
                                 <input type='submit' name='bttn' value='回答'  class="btn btn-switch" >
                                 </div>
-                                &ensp;音声出力（グレー：無 / 緑：有）
-                                <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type='checkbox' name='tgrbtn' value='1' 
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
 
-                                @if($tgrbtn == "1")  checked @endif >
-                                <label for="cmn-toggle-1"></label>
+                                <div class="parent">
+                                    <div class="sound-control-position">
+                                        音声出力（グレー：無 / 緑：有）
+                                        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type='checkbox' name='tgrbtn' value='1' 
+
+                                        @if($tgrbtn == "1")  checked @endif >
+                                        <label for="cmn-toggle-1"></label>
+                                    </div>
+                                    <div class="child2">
                             </form>
                         </div>
+                                    
                         <form action="{{ route('loginInput') }}" method="post">
                             @csrf
                             <div class="btn-wrap">
                             <input type="submit" value="言語選択画面に戻る"  class="btn btn-switch" />
                             </div>
-
+                                    </div>
+                                </div>
                             <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
                             <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
                             <input type="hidden" name="bttn" value= 'ログイン'>
                         </form>
-                        <form action="{{ route('index') }}" method="get">
-                            <div class="btn-wrap">
-                            <input type="submit" value="ログアウト"  class="btn btn-switch" />
+                        <div class="foo">
+                            <div class="rigit-side">
+                                <form action="{{ route('index') }}" method="get">
+                                    <div class="btn-wrap-for-quizGamen">
+                                    <input type="submit" value="ログアウト"  class="btn btn-switch" />
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
+                                    
                     </div>
                 </div>
             @else

@@ -55,8 +55,22 @@ $haveANiceDayInOtherLan = '';
             <div class="container-others">
     @endif
                 <div id="KleeOne400">
-                    <p>&emsp;ようこそ！</p>
-                    <p>&emsp;{{ $player->loginId_userName }}さん</p>
+                    <div class="parent">
+                        <div class="child1">
+                            <p>&emsp;ようこそ！</p>
+                            <p>&emsp;{{ $player->loginId_userName }}さん</p>
+                        </div>
+                        <div class="child2">
+                            <br>
+                            <form action="{{ route('loginInput') }}" method="post">
+                                @csrf
+                                <input type="submit" value="言語選択画面に戻る" class="btn-switch" />&emsp;&emsp;
+                                <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
+                                <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
+                                <input type="hidden" name="bttn" value= 'ログイン' >
+                            </form>
+                        </div>
+                    </div>
 
                     <div class="parent">
                         <div class="child1">
@@ -76,20 +90,13 @@ $haveANiceDayInOtherLan = '';
                             @endif
                         </div>
                         <div class="child2">
-                            <form action="{{ route('loginInput') }}" method="post">
-                                @csrf
-                                <div class="btn-wrap">
-                                <input type="submit" value="言語選択画面に戻る" class="btn btn-switch" />&emsp;
-                                <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
-                                <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
-                                <input type="hidden" name="bttn" value= 'ログイン' >
-                            </form>
+                            <br>
                             <form action="{{ route('index') }}" method="get">
-                                <input type="submit" value="ログアウト"  class="btn btn-switch" />&emsp;
-                                </div>
+                                <input type="submit" value="ログアウト"  class="btn-switch" />&emsp;&emsp;
                             </form>
                         </div>
                     </div>
+                    <br>
                     <div class="vocabulary"> 
 
                         {{-- 言語毎の行表示番号 初期化 --}}

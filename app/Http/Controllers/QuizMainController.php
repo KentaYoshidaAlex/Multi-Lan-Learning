@@ -21,6 +21,7 @@ class QuizMainController extends Controller
 {     
     public function quizMain(Request $request) {
 
+        // dd($request);
         // '学習開始' ＆'回答' 共通のrequest内データを変数に代入
         $language = $request->language;
         $bttn = $request->bttn;
@@ -76,6 +77,7 @@ class QuizMainController extends Controller
             if ($language == 'qFrench') {	
                 $quizData = QuizFrenchDatum::all();
             } 
+            // dd($quizData);
 
             // 共通で利用する変数をsessionに保存z
             session(['amountOfQuenstions' => $amountOfQuenstions]);
