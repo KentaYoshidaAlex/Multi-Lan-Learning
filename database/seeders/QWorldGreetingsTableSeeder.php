@@ -352,7 +352,7 @@ class QWorldGreetingsTableSeeder extends Seeder
              'choice3' => 'ボンジョルネ', 
              'choice4' => 'ケテンガ ブエンディーア', 
              'pathPronunciation' => '', 
-             'pathBackground' => '../image/picture_spain/tougyu.webp', 
+             'pathBackground' => '../image/picture_spain/tougyu.jpeg', 
              'subLanguage' => 'スペイン語', 
              'jpGreetingWord' => '良い一日を', 
            ],

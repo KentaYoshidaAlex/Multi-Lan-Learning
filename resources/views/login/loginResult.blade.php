@@ -71,15 +71,14 @@
                         <br>
                         〜問題数を選択してください〜
                         <br>
-                        <select  name="amountOfQuenstions" id="amountOfQuenstions" required>
-                            <option value="全問">クイズ全問挑戦</option>
-                            <option value="3">クイズ3問挑戦</option>
-                            <option value="5">クイズ5問挑戦</option>
-                        </select> 
-                        <br>
+                        <div class="cp_ipselect04">
+                            <select  name="amountOfQuenstions" id="amountOfQuenstions" required>
+                                <option value="全問">クイズ全問挑戦</option>
+                                <option value="3">クイズ3問挑戦</option>
+                                <option value="5">クイズ5問挑戦</option>
+                            </select>
+                        </div>
                         <input type='submit' name='bttn' value='学習開始' class="buttons btn-hover greenColor">
-                        <br>
-                        <br>      
                         <input type='hidden' name='loginId_userName' value='{{ $loginId_userName }}'> 
                         <input type='hidden' name='collectionNumber' value='{{ $collectionNumber }}'> 
                     </form>
