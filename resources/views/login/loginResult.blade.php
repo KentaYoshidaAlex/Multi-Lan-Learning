@@ -1,3 +1,15 @@
+@php
+
+// 回答済みの問題があれば初期化
+if((session('doneAnswer')) !== null) {
+  session(['doneAnswer' => null]);
+}
+if((session('doneQuizList')) !== null) {
+  session(['doneQuizList' => null]);
+}
+
+@endphp
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
