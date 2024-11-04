@@ -72,34 +72,22 @@ if ((session('doneAnswer')) !== null || $missCount == 1) {
 @else
     <body style="background-image: url({{ $doneBackground }})">
 @endif
-        <div class="main-wrapper">
+    
+    <div class="main-wrapper">
+
+        {{-- 目標クイズ数正解時、白枠背景を伸ばす --}}
+        @if (!(($amountOfQuenstions != $currentQuizAmount) && (!($selectedQuiz == ''))))
+            <div class="container-complete">
+        {{-- 通常時クイズの白枠背景 --}}
+        @else
             <div class="container">
+        @endif
                 <div id="KleeOne400">
                     <!-- 初回ｱｸｾｽ時、正解時、不正解時を判定するif文（ページ上部に表示する文言） -->
                     @if($judgeNum === 0) ようこそ！ @endif
                     @if($judgeNum === 1) 
                         正解です！
 
-                        @if(!empty($donePronunciation))  
-                            <br>今、正解した「{{ $doneAnswer }} 」の発音を確認したい方はコチラ↓<br>
-                            <br>
-                            @if($tgrbtn == "1") 
-                                @if(app('env')=='local')
-                                    <audio src="{{ asset($donePronunciation) }}" controls>サポートされていません</audio>
-                                @endif
-                                @if(app('env')=='production')
-                                    <audio src="{{ secure_asset($donePronunciation) }}" controls>サポートされていません</audio>
-                                @endif
-                            @else
-                                @if(app('env')=='local')
-                                    <audio src="{{ asset($donePronunciation) }}" muted controls>サポートされていません</audio>
-                                @endif
-                                @if(app('env')=='production')
-                                    <audio src="{{ secure_asset($donePronunciation) }}" muted controls>サポートされていません</audio>
-                                @endif
-                            @endif
-                            <br>
-                        @endif
                     @endif
 
                     @if($judgeNum === 2) 残念、不正解です！ @endif 
@@ -111,6 +99,28 @@ if ((session('doneAnswer')) !== null || $missCount == 1) {
                     <br>
                     現在のクリア数は{{ $player->clearCount }} 問です。
                     <br>
+
+                    @if(!empty($donePronunciation))  
+                    <br>
+                    今、正解した「{{ $doneAnswer }} 」の発音を確認したい方はコチラ↓
+                    <br>
+                        @if($tgrbtn == "1") 
+                            @if(app('env')=='local')
+                                <audio src="{{ asset($donePronunciation) }}" controls>サポートされていません</audio>
+                            @endif
+                            @if(app('env')=='production')
+                                <audio src="{{ secure_asset($donePronunciation) }}" controls>サポートされていません</audio>
+                            @endif
+                        @else
+                            @if(app('env')=='local')
+                                <audio src="{{ asset($donePronunciation) }}" muted controls>サポートされていません</audio>
+                            @endif
+                            @if(app('env')=='production')
+                                <audio src="{{ secure_asset($donePronunciation) }}" muted controls>サポートされていません</audio>
+                            @endif
+                        @endif
+                    <br>
+                    @endif
                 </div>
 
         <!-- ******************************************************************************************* -->

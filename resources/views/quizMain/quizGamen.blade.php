@@ -8,14 +8,16 @@
                 <div id="KleeOne400">
                     <br>
                     <div class="responsive-small">
-                        <p>&emsp;下記の問題の空欄に当てはまる単語を選択してください。</p>
-                        <h3>&emsp;Q : {{ $question }}</h3>
-                        <p>&emsp; 適切な回答を選択してください。</p>   
+                        <div class="question-width">
+                            <p>下記の問題の空欄に当てはまる単語を選択してください。</p>
+                            <h3>Q : {{ $question }}</h3>
+                            <p>&nbsp; 適切な回答を選択してください。</p>   
+                        </div>
                         <div class="top-text">
                             <form method="post" action="{{ route('quizMain') }}">
                                 @csrf
                                 <div class="parent">
-                                    <div class="child1">
+                                    <div class="child1-play-gamen">
                                         &emsp;<label for="choice1"><input type='radio' name='choice' id='choice1' value='{{ $choice1 }}' required>{{ $choice1 }}</label><br>
                                         &emsp;<label for="choice2"><input type='radio' name='choice' id='choice2' value='{{ $choice2 }}'>{{ $choice2 }}</label><br>
                                         &emsp;<label for="choice3"><input type='radio' name='choice' id='choice3' value='{{ $choice3 }}'>{{ $choice3 }}</label><br>
@@ -24,13 +26,17 @@
                                             <input type='hidden' name='language' value='{{ $language }}'>
                                             <input type='hidden' name='no' value='{{ $no }}'>
                                     </div>
-                                    <div class="child2">
-                                    <div class="btn-wrap">
-                                    <br>
-                                <input type='submit' name='bttn' value='回答'  class="btn btn-switch" >
-                                </div>
+                                    <div class="child2-play-gamen">
+                                        <div class="btn-wrap-answer">
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+
+                                        <input type='submit' name='bttn' value='回答'  id="btn-widh-answer" class="btn btn-switch" >
                                     </div>
                                 </div>
+                        </div>
                                 <br>
                                 <br>
 
@@ -49,7 +55,7 @@
                         <form action="{{ route('loginInput') }}" method="post">
                             @csrf
                             <div class="btn-wrap">
-                            <input type="submit" value="言語選択画面に戻る"  class="btn btn-switch" />
+                            <input type="submit" value="言語選択画面に戻る" class="btn btn-switch" />
                             </div>
                                     </div>
                                 </div>
@@ -61,12 +67,12 @@
                             <div class="rigit-side">
                                 <form action="{{ route('index') }}" method="get">
                                     <div class="btn-wrap-for-quizGamen">
-                                    <input type="submit" value="ログアウト"  class="btn btn-switch" />
+                                    <input type="submit" value="ログアウト" class="btn btn-switch" />
                                     </div>
                                 </form>
                             </div>
                         </div>
-                                    
+                              
                     </div>
                 </div>
             @else
@@ -79,6 +85,16 @@
 
                     <h3>&ensp;目標達成おめでとうございます!!</h3>
                     <h3>&ensp;全問正解しました!!</h3>
+                </div>
+
+                <div class="poyon">
+                    <img src="../image/character_illustrations/message_congratulations.png">
+                    <br>
+                    <img src="../image/character_illustrations/world_peace_smile.png">
+                </div>
+                <div class="parent">
+                    
+                    <div class="child1">
                         <form action="{{ route('loginInput') }}" method="post">
                             @csrf
                             <div class="btn-wrap">
@@ -88,29 +104,19 @@
                             <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
                             <input type="hidden" name="bttn" value= 'ログイン' >
                         </form>
+                    </div>
+                    <div class="child2">
                         <form action="{{ route('index') }}" method="get">
                             @csrf
                             <div class="btn-wrap">
                             <input type="submit" value="ログアウト" class="btn btn-switch" />
                             </div>
                         </form>
-                        <br>
-                        <p>↓下記にお祝いメッセージ🥂があります↓<p>
-                        
                     </div>
-                </div>
-            
-            </body>
-            </p>
-            <div class="extra-space" id="KleeOne400">
-                <br>
-                <p>「よく頑張りました！おめでとうございます🎵</p>
-                <p>  あなたは天才です🌟』</p>
-                <br>
-            </div>
-            <div id="complete" class="big-bg" >
-                
-            </div>  
-        
+            </div>      
+        </div>  
+    </body>
+
     @endif 
+    
 </html>
