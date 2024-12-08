@@ -57,14 +57,14 @@ $haveANiceDayInOtherLan = '';
                 <div id="KleeOne400">
                     <div class="parent">
                         <div class="child1">
-                            <p>&emsp;ようこそ！</p>
-                            <p>&emsp;{{ $player->loginId_userName }}さん</p>
+                            <p>ようこそ！</p>
+                            <p>{{ $player->loginId_userName }}さん</p>
                         </div>
                         <div class="child2">
                             <br>
                             <form action="{{ route('loginInput') }}" method="post">
                                 @csrf
-                                <input type="submit" value="言語選択画面に戻る" class="btn-switch" />&emsp;&emsp;
+                                &emsp;<input type="submit" value="言語選択画面に戻る" class="btn-switch" />&emsp;
                                 <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
                                 <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
                                 <input type="hidden" name="bttn" value= 'ログイン' >
@@ -74,25 +74,25 @@ $haveANiceDayInOtherLan = '';
 
                     <div class="parent">
                         <div class="child1">
-                            <p>&emsp;<事前学習></p>
+                            <p><事前学習></p>
                             @if ($language === 'qMyanmar')
-                                <p>&emsp;ミャンマー語 / 日本語</p>
+                                <p>ミャンマー語 / 日本語</p>
                             @elseif ($language === 'qTagalog')
-                                <p>&emsp;タガログ語 / 日本語</p>
+                                <p>タガログ語 / 日本語</p>
                             @elseif ($language === 'qKansaiben')
-                                <p>&emsp;関西弁 / 標準語</p>
+                                <p>関西弁 / 標準語</p>
                             @elseif ($language === 'qWorldGreetings')
-                                <p>&emsp;世界の挨拶</p>
+                                <p>世界の挨拶</p>
                             @elseif ($language === 'qSpanish')
-                                <p>&emsp;スペイン語 / 日本語</p>
+                                <p>スペイン語 / 日本語</p>
                             @elseif ($language === 'qFrench')
-                                <p>&emsp;フランス語 / 日本語</p>
+                                <p>フランス語 / 日本語</p>
                             @endif
                         </div>
                         <div class="child2">
                             <br>
                             <form action="{{ route('index') }}" method="get">
-                                <input type="submit" value="ログアウト"  class="btn-switch" />&emsp;&emsp;
+                                &emsp;<input type="submit" value="ログアウト"  class="btn-switch" />&emsp;
                             </form>
                         </div>
                     </div>
@@ -127,7 +127,7 @@ $haveANiceDayInOtherLan = '';
                                 @endphp
                                 @if (($newNo % 3) === 0)
                                         <tr>
-                                            <td>{{ $quizDatum->subLanguage }}</td><td>{{ $helloInOtherLan }}</td><td>{{ $thankyouInOtherLan }}</td><td>{{ $haveANiceDayInOtherLan }}</td>
+                                            <td>{!! $quizDatum->subLanguage !!}</td><td>{!! $helloInOtherLan !!}</td><td>{!! $thankyouInOtherLan !!}</td><td>{!! $haveANiceDayInOtherLan !!}</td>
                                         </tr>
                                 @endif
                             @endforeach
@@ -135,11 +135,11 @@ $haveANiceDayInOtherLan = '';
                         {{-- 世界の挨拶以外の表示 --}}
                         @else
                             @foreach ($quizData as $quizDatum)
-                                &emsp;
+                                
                                 @php
                                 $newNo++;
                                 @endphp
-                                {{ $newNo }}. {{ $quizDatum->answer }} / 
+                                {{ $newNo }}. {!! $quizDatum->answer !!} / 
                                 @php 
                                     $string = Str::swap([
                                         $quizDatum->language => '',
