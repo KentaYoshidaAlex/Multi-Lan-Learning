@@ -12,7 +12,7 @@
         <audio src="{{ $allQuizMusicData->gameOverS }}" autoplay></audio>
     @endif
     <br>
-    <p>&emsp; 残念！ゲームオーバーです😭</p>
+    <p>残念！ゲームオーバーです😭</p>
     <form action="{{ route('loginInput') }}" method="post">
         @csrf
         <div class="btn-wrap">

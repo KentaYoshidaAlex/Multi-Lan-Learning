@@ -7,21 +7,22 @@
             @if (($amountOfQuenstions != $currentQuizAmount) && (!($selectedQuiz == '')))
                 <div id="KleeOne400">
                     <br>
-                    <div class="responsive-small">
                         <div class="question-width">
-                            <p>下記の問題の空欄に当てはまる単語を選択してください。</p>
-                            <h3>Q : {{ $question }}</h3>
-                            <p>&nbsp; 適切な回答を選択してください。</p>   
+                            <p>下記の問題の適切な回答を選択してください。</p>
                         </div>
+                            <div class="quiz-sentence">
+                                Q : {{ $question }}
+                            </div>
+                            <br>
                         <div class="top-text">
                             <form method="post" action="{{ route('quizMain') }}">
                                 @csrf
                                 <div class="parent">
                                     <div class="child1-play-gamen">
-                                        &emsp;<label for="choice1"><input type='radio' name='choice' id='choice1' value='{{ $choice1 }}' required>{{ $choice1 }}</label><br>
-                                        &emsp;<label for="choice2"><input type='radio' name='choice' id='choice2' value='{{ $choice2 }}'>{{ $choice2 }}</label><br>
-                                        &emsp;<label for="choice3"><input type='radio' name='choice' id='choice3' value='{{ $choice3 }}'>{{ $choice3 }}</label><br>
-                                        &emsp;<label for="choice4"><input type='radio' name='choice' id='choice4' value='{{ $choice4 }}'>{{ $choice4 }}</label><br>
+                                        &emsp;<label for="choice1"><input type='radio' name='choice' id='choice1' value='{{ $choice1 }}' required>{!! $choice1 !!}</label><br>
+                                        &emsp;<label for="choice2"><input type='radio' name='choice' id='choice2' value='{{ $choice2 }}'>{!! $choice2 !!}</label><br>
+                                        &emsp;<label for="choice3"><input type='radio' name='choice' id='choice3' value='{{ $choice3 }}'>{!! $choice3 !!}</label><br>
+                                        &emsp;<label for="choice4"><input type='radio' name='choice' id='choice4' value='{{ $choice4 }}'>{!! $choice4 !!}</label><br>
 
                                             <input type='hidden' name='language' value='{{ $language }}'>
                                             <input type='hidden' name='no' value='{{ $no }}'>
@@ -32,8 +33,8 @@
                                         <br>
                                         <br>
                                         <br>
-
-                                        <input type='submit' name='bttn' value='回答'  id="btn-widh-answer" class="btn btn-switch" >
+                                        
+                                        <input type='submit' name='bttn' value='回答'  id="btn-width-answer" class="btn btn-switch" >
                                     </div>
                                 </div>
                         </div>
@@ -42,7 +43,9 @@
 
                                 <div class="parent">
                                     <div class="sound-control-position">
-                                        音声出力（グレー：無 / 緑：有）
+                                        &nbsp;音声出力
+                                        <br>
+                                        （グレー：無 / 緑：有）
                                         <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type='checkbox' name='tgrbtn' value='1' 
 
                                         @if($tgrbtn == "1")  checked @endif >
@@ -72,8 +75,7 @@
                                 </form>
                             </div>
                         </div>
-                              
-                    </div>
+
                 </div>
             @else
                 <div id="KleeOne400">

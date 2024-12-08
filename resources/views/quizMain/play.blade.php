@@ -68,9 +68,9 @@ if ((session('doneAnswer')) !== null || $missCount == 1) {
 </header>
 
 @if(!empty($selectedQuiz->pathBackground)) 
-    <body style="background-image: url({{ $selectedQuiz->pathBackground }})">
+    <body style="background-image: url({{ $selectedQuiz->pathBackground }})" class="quiz-gamen">
 @else
-    <body style="background-image: url({{ $doneBackground }})">
+    <body style="background-image: url({{ $doneBackground }})" class="quiz-gamen">
 @endif
     
     <div class="main-wrapper">
@@ -90,7 +90,7 @@ if ((session('doneAnswer')) !== null || $missCount == 1) {
 
                     @endif
 
-                    @if($judgeNum === 2) 残念、不正解です！ @endif 
+                    @if($judgeNum === 2) 残念、不正解です！<br> @endif 
                 
         <!-- ******************************************************************************************* -->
 
@@ -102,7 +102,7 @@ if ((session('doneAnswer')) !== null || $missCount == 1) {
 
                     @if(!empty($donePronunciation))  
                     <br>
-                    今、正解した「{{ $doneAnswer }} 」の発音を確認したい方はコチラ↓
+                    今、正解した「{!! $doneAnswer !!} 」の発音を確認したい方はコチラ↓
                     <br>
                         @if($tgrbtn == "1") 
                             @if(app('env')=='local')
