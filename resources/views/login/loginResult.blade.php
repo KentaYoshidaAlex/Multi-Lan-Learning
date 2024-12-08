@@ -29,6 +29,7 @@ if((session('doneQuizList')) !== null) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body class="langageSelect">
@@ -47,14 +48,17 @@ if((session('doneQuizList')) !== null) {
                 <p style="line-height: 2px">-----------------------------------------</p>
                 <p>さっそく学習を開始しましょう♫</p>
                 <p>学習したい言語と学習方法を一覧から選択してください</p>
-                <p style="line-height: 0.1">
-                <br>
-                </p>
-                <p>☆事前学習：選んだ言語を一覧で事前学習できます☆</p>
-                <p>☆クイズ挑戦：1問ずつクイズ形式で学習できます☆</p>
-                <p>（3問連続不正解の場合はゲームオーバー）</p>
 
-        </div>
+            <details class="details">
+                <summary class="details-summary icon-webfont">利用案内</summary>
+                    <p style="line-height: 0.1">
+                    </p>
+                    <p>☆事前学習：選んだ言語を一覧で事前学習できます☆</p>
+                    <p>☆クイズ挑戦：1問ずつクイズ形式で学習できます☆</p>
+                    <p>（3問連続不正解の場合はゲームオーバー）</p>
+            </details>
+
+        
         <div class="main">
             <div class="container-left">
                     <form method='post' action="{{ route('quizMain') }}" class="quiz-form">
@@ -79,10 +83,12 @@ if((session('doneQuizList')) !== null) {
 
                         <input type='submit' name='bttn' value="事前学習" class="buttons btn-hover blueColor" >
                         <br>
-                        ＜クイズ挑戦＞
                         <br>
-                        〜問題数を選択してください〜
-                        <br>
+                        <div class="right-sentence">
+                            ＜クイズ挑戦＞
+                            <br>
+                            〜問題数を選択してください〜
+                        </div>
                         <div class="cp_ipselect04">
                             <select  name="amountOfQuenstions" id="amountOfQuenstions" required>
                                 <option value="全問">クイズ全問挑戦</option>
@@ -102,6 +108,7 @@ if((session('doneQuizList')) !== null) {
                 &emsp;<input type="submit" value="ログアウト" class="btn btn-switch" />
             </div>
         </form>
+        </div>
                 
     </div>
             @else
