@@ -465,6 +465,102 @@ input.cmn-toggle-round:checked + label:after {
     width: 25px; 
     height: 12px; 
   }
+
+
+  /* デフォルトの矢印を削除する */
+summary {
+	display: block;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+/* アコーディオンのタイトル 共通設定 */
+.details-summary {
+	position: relative;
+	padding-left: 25px;
+  margin-left: 15px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+/* 1つ目のアコーディオンのタイトル CSSのみでカスタマイズ */
+.icon-arrow {
+	&:before {
+		position: absolute;
+		content: '';
+		width: 18px;
+		height: 18px;
+		background: #00a5a0;
+		border-radius: 50%;
+		top: 50%;
+		left: 0;
+		margin-top: -7px;
+    margin-left:
+	}
+	&:after {
+		position: absolute;
+		content: '';
+		width: 4px;
+		height: 4px;
+		border-top: solid 1px #fff;
+		border-right: solid 1px #fff;
+		top: 50%;
+		left: 5px;
+		transform: rotate(45deg);
+		margin-top: -1px;
+	}
+}
+/* 1つ目のアコーディオンのタイトル オープン時 */
+.details-smartPhone[open] .icon-arrow {
+	&:after {
+		transform: rotate(135deg);
+		left: 7px;
+	}
+}
+
+/* 2つ目のアコーディオンのタイトル 画像を使用してカスタマイズ*/
+.icon-img {
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,0 65,35 100,35 75,60 85,95 50,75 15,95 25,60 0,35 35,35' fill='%23ff6600'%3E%3C/polygon%3E%3C/svg%3E");
+		width: 16px;
+		height: 16px;
+	}
+}
+
+/* 2つ目のアコーディオンのタイトル オープン時 */
+.details-smartPhone[open] .icon-img {
+	&:before {
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,0 65,35 100,35 75,60 85,95 50,75 15,95 25,60 0,35 35,35' fill='%23999999'%3E%3C/polygon%3E%3C/svg%3E");
+	}
+}
+
+/* 3つ目のアコーディオンのタイトル Webフォントアイコンを使用したカスタマイズ*/
+.icon-webfont {
+	&:before {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		content: '\e812';
+		font-family: 'Material Icons';
+		width: 16px;
+		height: 16px;
+    
+	}
+}
+/* 3つ目のアコーディオンのタイトル オープン時 */
+.details-smartPhone[open] .icon-webfont {
+	&:before {
+		content: '\e7f2';
+	}
+}
 }
 
  /* ▲画面幅が440px以下の場合のスタイル▲   */
@@ -758,6 +854,105 @@ body.vocabularyList {
     width: 50px; 
     height: 25px; 
   }
+
+
+
+/* デフォルトの矢印を削除する */
+summary {
+	display: block;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+/* アコーディオンのタイトル 共通設定 */
+.details-summary {
+	position: relative;
+	padding-left: 25px;
+  margin-left: 15px;
+	font-size: 20px;
+	cursor: pointer;
+
+}
+
+/* 1つ目のアコーディオンのタイトル CSSのみでカスタマイズ */
+.icon-arrow {
+	&:before {
+		position: absolute;
+		content: '';
+		width: 18px;
+		height: 18px;
+		background: #00a5a0;
+		border-radius: 50%;
+		top: 50%;
+		left: 0;
+		margin-top: -7px;
+    margin-left:
+	}
+	&:after {
+		position: absolute;
+		content: '';
+		width: 4px;
+		height: 4px;
+		border-top: solid 1px #fff;
+		border-right: solid 1px #fff;
+		top: 50%;
+		left: 5px;
+		transform: rotate(45deg);
+		margin-top: -1px;
+	}
+}
+/* 1つ目のアコーディオンのタイトル オープン時 */
+.details[open] .icon-arrow {
+	&:after {
+		transform: rotate(135deg);
+		left: 7px;
+	}
+}
+
+/* 2つ目のアコーディオンのタイトル 画像を使用してカスタマイズ*/
+.icon-img {
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,0 65,35 100,35 75,60 85,95 50,75 15,95 25,60 0,35 35,35' fill='%23ff6600'%3E%3C/polygon%3E%3C/svg%3E");
+		width: 16px;
+		height: 16px;
+	}
+}
+
+/* 2つ目のアコーディオンのタイトル オープン時 */
+.details[open] .icon-img {
+	&:before {
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,0 65,35 100,35 75,60 85,95 50,75 15,95 25,60 0,35 35,35' fill='%23999999'%3E%3C/polygon%3E%3C/svg%3E");
+	}
+}
+
+/* 3つ目のアコーディオンのタイトル Webフォントアイコンを使用したカスタマイズ*/
+.icon-webfont {
+	&:before {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		content: '\e812';
+		font-family: 'Material Icons';
+		width: 16px;
+		height: 16px;
+    
+	}
+}
+/* 3つ目のアコーディオンのタイトル オープン時 */
+.details[open] .icon-webfont {
+	&:before {
+		content: '\e7f2';
+	}
+}
+
 }
  /* ▲画面幅が601pxから1200pxの場合のスタイル▲  */
 
@@ -1008,108 +1203,3 @@ h1.font-orange {
 
 
 
-
-
-/* デフォルトの矢印を削除する */
-summary {
-	display: block;
-}
-
-summary::-webkit-details-marker {
-	display: none;
-}
-
-/* アコーディオンのタイトル 共通設定 */
-.details-summary {
-	position: relative;
-	padding-left: 25px;
-  margin-left: 15px;
-	font-size: 20px;
-	cursor: pointer;
-}
-
-/* 1つ目のアコーディオンのタイトル CSSのみでカスタマイズ */
-.icon-arrow {
-	&:before {
-		position: absolute;
-		content: '';
-		width: 18px;
-		height: 18px;
-		background: #00a5a0;
-		border-radius: 50%;
-		top: 50%;
-		left: 0;
-		margin-top: -7px;
-    margin-left:
-	}
-	&:after {
-		position: absolute;
-		content: '';
-		width: 4px;
-		height: 4px;
-		border-top: solid 1px #fff;
-		border-right: solid 1px #fff;
-		top: 50%;
-		left: 5px;
-		transform: rotate(45deg);
-		margin-top: -1px;
-	}
-}
-/* 1つ目のアコーディオンのタイトル オープン時 */
-.details[open] .icon-arrow {
-	&:after {
-		transform: rotate(135deg);
-		left: 7px;
-	}
-}
-
-/* 2つ目のアコーディオンのタイトル 画像を使用してカスタマイズ*/
-.icon-img {
-	&:before {
-		content: "";
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		left: 0;
-		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,0 65,35 100,35 75,60 85,95 50,75 15,95 25,60 0,35 35,35' fill='%23ff6600'%3E%3C/polygon%3E%3C/svg%3E");
-		width: 16px;
-		height: 16px;
-	}
-}
-
-/* 2つ目のアコーディオンのタイトル オープン時 */
-.details[open] .icon-img {
-	&:before {
-		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,0 65,35 100,35 75,60 85,95 50,75 15,95 25,60 0,35 35,35' fill='%23999999'%3E%3C/polygon%3E%3C/svg%3E");
-	}
-}
-
-/* 3つ目のアコーディオンのタイトル Webフォントアイコンを使用したカスタマイズ*/
-.icon-webfont {
-	&:before {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		left: 0;
-		content: '\e812';
-		font-family: 'Material Icons';
-		width: 16px;
-		height: 16px;
-    
-	}
-}
-/* 3つ目のアコーディオンのタイトル オープン時 */
-.details[open] .icon-webfont {
-	&:before {
-		content: '\e7f2';
-	}
-}
-
-/* 以下の記述は不要です */
-/* body {
-	margin: 20px;
-} */
-
-.table {
-  text-align:left:
-}
