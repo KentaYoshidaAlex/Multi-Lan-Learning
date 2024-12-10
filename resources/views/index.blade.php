@@ -56,7 +56,14 @@ if((session('doneQuizList')) !== null) {
               &nbsp;☆登録済みの方は、情報を入力し「ログイン」からお入り下さい<br>
               &nbsp;☆未登録の方は、「新規登録はこちら」から内容をご入力ください<br>
               &nbsp;☆登録せずに遊びたい方は、「ゲストログイン」からお入り下さい<br>
-              <br>
+            
+          </details>
+          <details class="details-smartPhone">
+            <summary class="details-summary icon-arrow">利用案内</summary>
+            
+              &nbsp;☆登録済みの方は、情報を入力し「ログイン」からお入り下さい<br>
+              &nbsp;☆未登録の方は、「新規登録はこちら」からお入り下さい<br>
+              &nbsp;☆登録せず遊びたい方は、「ゲストログイン」からお入り下さい<br>
             
           </details>
           </div>
