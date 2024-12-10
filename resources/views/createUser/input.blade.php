@@ -35,11 +35,17 @@
                 <form action="{{ route('check_content') }}" method="POST">
                     <div id="KleeOne400">
                         <h2 class="font-orange">&nbsp;下記の会員情報をご登録ください</h2>
-                        <p>&emsp;ID/ユーザー名（※全角半角どちらでも入力可能です）</p>
+                        &emsp;ID/ユーザー名
+                        <br>
+                        （※全角半角どちらでも入力可能です）
+                        <br>
                         &emsp;<input type="text" name="loginId_userName" class="loginId_userName" maxlength="30" value="{{ request()->query('loginId_userName') }} "/>
                         <br>
                         <br>
-                        <p>&emsp;パスワード（※半角英数4文字以上でご入力ください）</p>
+                        &emsp;パスワード
+                        <br>
+                        （※半角英数4文字以上でご入力ください）
+                        <br>
                         &emsp;<input type="text" name="loginPass" class="loginPass" maxlength="20" value="{{ request()->query('loginPass') }} "/>
                     </div>
                     <div class="btn-wrap">

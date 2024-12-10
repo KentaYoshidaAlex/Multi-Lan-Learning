@@ -22,13 +22,16 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/login/input', function () {
-    return view('index');
-})->name('loginInput');
+// ▼1208コメントアウト
+// Route::get('/login/input', function () {
+//     return view('index');
+// })->name('loginInput');
 
-Route::get('/quizMain', function () {
-    return view('index');
-})->name('quizMain');
+// Route::get('/quizMain', function () {
+//     return view('index');
+// })->name('quizMain');
+// ▲1208コメントアウト
+
 
 
 Route::prefix('createUser')

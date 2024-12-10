@@ -1,7 +1,7 @@
                
             <!-- 効果音をONにして正解した場合、自動で正解音を鳴らす -->
             @if($tgrbtn == "1" && $missCount == 0) 
-                <audio src="{{ $allQuizMusicData->correctS }}" autoplay></audio>
+                <audio src="{{ $allQuizMusicData->correctS }}" autoplay playsinline></audio>
             @endif 
             <!-- クイズ本文 -->
             @if (($amountOfQuenstions != $currentQuizAmount) && (!($selectedQuiz == '')))
@@ -43,7 +43,7 @@
 
                                 <div class="parent">
                                     <div class="sound-control-position">
-                                        &nbsp;音声出力
+                                        &nbsp;＜効果音設定＞
                                         <br>
                                         （グレー：無 / 緑：有）
                                         <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type='checkbox' name='tgrbtn' value='1' 

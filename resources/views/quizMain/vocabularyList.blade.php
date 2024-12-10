@@ -57,8 +57,8 @@ $haveANiceDayInOtherLan = '';
                 <div id="KleeOne400">
                     <div class="parent">
                         <div class="child1">
-                            <p>ようこそ！</p>
-                            <p>{{ $player->loginId_userName }}さん</p>
+                            <p>&emsp;ようこそ！</p>
+                            <p>&emsp;{{ $player->loginId_userName }}さん</p>
                         </div>
                         <div class="child2">
                             <br>
@@ -74,19 +74,19 @@ $haveANiceDayInOtherLan = '';
 
                     <div class="parent">
                         <div class="child1">
-                            <p><事前学習></p>
+                            <p>&emsp;<事前学習></p>
                             @if ($language === 'qMyanmar')
-                                <p>ミャンマー語 / 日本語</p>
+                                <p>&emsp;ミャンマー語 / 日本語</p>
                             @elseif ($language === 'qTagalog')
-                                <p>タガログ語 / 日本語</p>
+                                <p>&emsp;タガログ語 / 日本語</p>
                             @elseif ($language === 'qKansaiben')
-                                <p>関西弁 / 標準語</p>
+                                <p>&emsp;関西弁 / 標準語</p>
                             @elseif ($language === 'qWorldGreetings')
-                                <p>世界の挨拶</p>
+                                <p>&emsp;世界の挨拶</p>
                             @elseif ($language === 'qSpanish')
-                                <p>スペイン語 / 日本語</p>
+                                <p>&emsp;スペイン語 / 日本語</p>
                             @elseif ($language === 'qFrench')
-                                <p>フランス語 / 日本語</p>
+                                <p>&emsp;フランス語 / 日本語</p>
                             @endif
                         </div>
                         <div class="child2">
@@ -105,7 +105,8 @@ $haveANiceDayInOtherLan = '';
                         @endphp
 
                         {{-- 世界の挨拶を選択した場合の表示 --}}
-                        <table>
+                        <table class="table">
+
                         @if ($language === 'qWorldGreetings')
                             <tr>
                                 <th>日本語</th><th>こんにちは</th><th>ありがとう</th><th>良い一日を</th>
@@ -114,6 +115,7 @@ $haveANiceDayInOtherLan = '';
                             @foreach ($quizData as $quizDatum)
                                 @php
                                     $newNo++;
+                                    
                                     if ($quizDatum->jpGreetingWord === 'こんにちは') {
                                         $helloInOtherLan = $quizDatum->answer;
                                     }
@@ -126,9 +128,19 @@ $haveANiceDayInOtherLan = '';
 
                                 @endphp
                                 @if (($newNo % 3) === 0)
-                                        <tr>
-                                            <td>{!! $quizDatum->subLanguage !!}</td><td>{!! $helloInOtherLan !!}</td><td>{!! $thankyouInOtherLan !!}</td><td>{!! $haveANiceDayInOtherLan !!}</td>
-                                        </tr>
+                                        <tr >
+                                            <div class="vocabrary-web">
+                                                @if ($quizDatum->subLanguage === '英語') 
+                                                    <td><img src="../image/Flags/America.svg" alt="picture" class="EnCountries">
+                                                            <img src="../image/Flags/England.svg" alt="picture" class="EnCountries">
+                                                            <img src="../image/Flags/Australia.svg" alt="picture" class="EnCountries">
+                                                @else
+                                                    <td><img src="{!! $quizDatum->flag !!}" alt="picture" class="Countries">
+                                                @endif
+                                                    {!! $quizDatum->subLanguage !!}</td><td>{!! $helloInOtherLan !!}</td><td>{!! $thankyouInOtherLan !!}</td><td>{!! $haveANiceDayInOtherLan !!}</td>
+                                            </div>
+
+                                         </tr>
                                 @endif
                             @endforeach
 
