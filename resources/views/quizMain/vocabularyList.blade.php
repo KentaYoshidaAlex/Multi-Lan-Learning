@@ -57,8 +57,8 @@ $haveANiceDayInOtherLan = '';
                 <div id="KleeOne400">
                     <div class="parent">
                         <div class="child1">
-                            <p>&emsp;ようこそ！</p>
-                            <p>&emsp;{{ $player->loginId_userName }}さん</p>
+                            <p>&nbsp;ようこそ！</p>
+                            <p>&nbsp;{{ $player->loginId_userName }}さん</p>
                         </div>
                         <div class="child2">
                             <br>
@@ -74,19 +74,23 @@ $haveANiceDayInOtherLan = '';
 
                     <div class="parent">
                         <div class="child1">
-                            <p>&emsp;<事前学習></p>
+                            <p>&nbsp;<事前学習></p>
                             @if ($language === 'qMyanmar')
-                                <p>&emsp;ミャンマー語 / 日本語</p>
+                                <p>&nbsp;<img src="../image/Flags/Myanmar.svg" alt="picture" class="Countries">
+                                    ミャンマー語 / 日本語</p>
                             @elseif ($language === 'qTagalog')
-                                <p>&emsp;タガログ語 / 日本語</p>
+                                <p>&nbsp;<img src="../image/Flags/Philippines.svg" alt="picture" class="Countries">
+                                    タガログ語 / 日本語</p>
                             @elseif ($language === 'qKansaiben')
-                                <p>&emsp;関西弁 / 標準語</p>
+                                <p>&nbsp;関西弁 / 標準語</p>
                             @elseif ($language === 'qWorldGreetings')
-                                <p>&emsp;世界の挨拶</p>
+                                &nbsp;世界の挨拶
                             @elseif ($language === 'qSpanish')
-                                <p>&emsp;スペイン語 / 日本語</p>
+                                <p>&nbsp;<img src="../image/Flags/Spain.svg" alt="picture" class="Countries">
+                                    スペイン語 / 日本語</p>
                             @elseif ($language === 'qFrench')
-                                <p>&emsp;フランス語 / 日本語</p>
+                                <p>&nbsp;<img src="../image/Flags/France.svg" alt="picture" class="Countries">
+                                    フランス語 / 日本語</p>
                             @endif
                         </div>
                         <div class="child2">
