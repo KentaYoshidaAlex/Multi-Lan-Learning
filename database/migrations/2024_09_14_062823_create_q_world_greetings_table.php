@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('pathBackground', 50)->nullable();
             $table->string('subLanguage', 20)->nullable();
             $table->string('jpGreetingWord', 20)->nullable(); 
+            $table->string('flag', 100)->nullable(); 
         });
     }
 

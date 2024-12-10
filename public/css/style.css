@@ -1,55 +1,12 @@
 
-.main-wrapper {
-  display: flex;
-  flex-direction: column; 
-  width: 520px;
-  margin: auto;
-  border: 1px solid #000; 
-  border-radius: 10px;
-  background-color: white;
-  opacity: 0.93;
-}
+
 
   
 .main {
   display: flex;
-
 }
 
-.container {
-  width: 518px;
-  /* height: 500px; */
-  background-color: white;
-  border-radius: 10px;
-  padding: 10px 10px 10px 20px;
-  /* margin-left: 20px; */
-
-}
-.container-complete {
-  width: 500px;
-  height: auto;
-  background-color: white;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.container-left {
-  flex: 1; 
-  width: 240px;
-  /* padding: 10px; */
-
-}
-
-.container-right {
-  flex: 1; 
-  width: 240px;
-  /* padding: 20px 30px 10px 0px; */
-
-}
-
-
-
-.extra-space{
+.extra-space {
   flex: 1; 
   border: 1px solid #000; 
   width: 500px;
@@ -58,46 +15,6 @@
   border-radius: 10px;
   border: black solid 1px;
   padding: 10px;
-}
-
-.main-wrapper-world-greet {
-  display: flex;
-  flex-direction: column; 
-
-  width: 800px;
-  margin: auto;
-}
-
-.container-world-greet{
-  flex: 1; 
-  border: 1px solid #000; 
-
-  width: 800px;
-  background-color: white;
-  opacity: 0.9;
-  border-radius: 10px;
-  border: black solid 1px;
-  padding: 10px;
-}
-
-.main-wrapper-others {
-  display: flex;
-  flex-direction: column; 
-
-  width: 550px;
-  margin: auto;
-}
-
-.container-others {
-  flex: 1; 
-  border: 1px solid #000; 
-
-  width: 550px;
-  background-color: white;
-  opacity: 0.9;
-  border-radius: 10px;
-  border: black solid 1px;
-  padding: 20px;
 }
 
 .bigger-container {
@@ -109,9 +26,6 @@
   border: black solid 1px;
   padding: 10px;
 }
-
-
-
 
 
 #complete {
@@ -143,32 +57,12 @@ body.langageSelect {
   background-repeat: repeat-y;
 }
 
-/* 新規会員登録ページ */
-body.createUser {
-  background-image: url(../image/flight.jpg);
-}
-
-/* 事前学習ページ */
-body.vocabularyList {
-  background-image: url(../image/vocabraryList.jpeg);
-  background-size: contain;
-  background-size:cover;
-  background-repeat: repeat;/*画像が繰り返すのを防ぐ*/
-}
-/* ▲　背景写真設定　▲ */
-
 /* ▼事前学習ページ上部分幅揃え▼ */
 .parent {
   display: flex;
   justify-content: space-between;
   }
 /* ▲事前学習ページ上部分幅揃え▲ */
-
-
-
-
-
-
 
 
 #home .page-title {
@@ -271,14 +165,9 @@ input.cmn-toggle-round:checked + label:after {
 
 .foo {
   text-align: right;
-
 }
 
-/* .rigit-side {
-  margin: 0 0 0 auto;
-  height: 50px;
-  width:  50px;
-} */
+
 
  /* ▼画面幅が440px以下の場合のスタイル▼  */
 
@@ -313,6 +202,10 @@ input.cmn-toggle-round:checked + label:after {
     height: 700px;
   }
 
+  .vocabrary-web {
+    display: none;
+  }
+
   .quiz-gamen {
     width: 100%;
 
@@ -343,7 +236,7 @@ input.cmn-toggle-round:checked + label:after {
   
     width: 100%;
     background-color: white;
-    opacity: 0.9;
+    opacity: 0.98;
     border-radius: 10px;
     border: black solid 1px;
     padding: 10px;
@@ -423,7 +316,7 @@ input.cmn-toggle-round:checked + label:after {
 
   #index-left {
     flex: 1; 
-    width: 150px;
+    width: 190px;
 
     /* padding: 10px; */
   
@@ -431,7 +324,7 @@ input.cmn-toggle-round:checked + label:after {
   
   #index-right {
     flex: 1; 
-    width: 120px;
+    width: 80px;
     margin-left: 10px;
 
     /* padding: 20px 30px 10px 0px; */
@@ -467,6 +360,13 @@ input.cmn-toggle-round:checked + label:after {
   .vocabulary {
     font-size: 13px;
   }
+  body.vocabularyList {
+    background-image: url(../image/vocabraryList.jpeg);
+    background-size: contain;
+    background-size:cover;
+    background-repeat: repeat;/*画像が繰り返すのを防ぐ*/
+  }
+  /* ▲　背景写真設定　▲ */
   
 
   h2.font-orange {
@@ -491,8 +391,12 @@ input.cmn-toggle-round:checked + label:after {
     font-size: 11px;
   }
 
+  .details {
+    display:none
+  }
+
   .quiz-sentence {
-    font-size: 15px;
+    font-size: 13px;
     width: 100%;
     font-weight: bold;
   }
@@ -501,6 +405,13 @@ input.cmn-toggle-round:checked + label:after {
     font-size: 12px;
     width: 100%;
 
+  }
+
+  .honbun {
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 12px;
   }
 
   .btn-hover {
@@ -545,13 +456,154 @@ input.cmn-toggle-round:checked + label:after {
   100% { transform: scale(1.0, 1.0) translate(0%, 0%); }
   }
   /* ▲目標クイズ数達成時アニメーション */
+
+  .EnCountries {
+    width: 25px; 
+    height: 12px; 
+  }
+  .Contries {
+    width: 25px; 
+    height: 12px; 
+  }
 }
 
  /* ▲画面幅が440px以下の場合のスタイル▲   */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  /* ▼画面幅が441pxから2000pxの場合のスタイル▼  */
 @media screen and (min-width: 441px) and (max-width: 2000px) {
+
+  .main-wrapper {
+    display: flex;
+    flex-direction: column; 
+    width: 520px;
+    margin: auto;
+    border: 1px solid #000; 
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.93;
+  }
+
+  .container {
+  width: 518px;
+  /* height: 500px; */
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 10px 10px 20px;
+  /* margin-left: 20px; */
+}
+
+.container-left {
+  flex: 1; 
+  width: 240px;
+  /* padding: 10px; */
+
+}
+
+.container-right {
+  flex: 1; 
+  width: 240px;
+  /* padding: 20px 30px 10px 0px; */
+
+}
+
+
+.container-complete {
+  width: 500px;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.main-wrapper-world-greet {
+  display: flex;
+  flex-direction: column; 
+
+  width: 800px;
+  margin: auto;
+}
+
+.container-world-greet{
+  flex: 1; 
+  border: 1px solid #000; 
+
+  width: 800px;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 10px;
+  border: black solid 1px;
+  padding: 10px;
+}
+
+.main-wrapper-others {
+  display: flex;
+  flex-direction: column; 
+
+  width: 550px;
+  margin: auto;
+}
+
+.container-others {
+  flex: 1; 
+  border: 1px solid #000; 
+
+  width: 550px;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 10px;
+  border: black solid 1px;
+  padding: 20px;
+}
+
+/* 新規会員登録ページ */
+body.createUser {
+  background-image: url(../image/flight.jpg);
+}
+
+/* 事前学習ページ */
+body.vocabularyList {
+  background-image: url(../image/vocabraryList.jpeg);
+  background-size: contain;
+  background-size:cover;
+  background-repeat: repeat;/*画像が繰り返すのを防ぐ*/
+}
+/* ▲　背景写真設定　▲ */
 
   body {
     background-size: cover; /* 画像が全体に広がるように */
@@ -614,6 +666,19 @@ input.cmn-toggle-round:checked + label:after {
     #index-right {
       flex: 1; 
       width: 210px;
+    }
+
+    .honbun {
+      font-family: "Caveat", serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-size: 15px;
+    }
+    .details-smartPhone {
+      display: none
+    }
+    .vocabrary-smartphone {
+      display: none
     }
 
 
@@ -685,6 +750,14 @@ input.cmn-toggle-round:checked + label:after {
   }
   /* ▲目標クイズ数達成時アニメーション */
 
+  .EnCountries {
+    width: 40px; 
+    height: 20px; 
+  }
+  .Countries {
+    width: 50px; 
+    height: 25px; 
+  }
 }
  /* ▲画面幅が601pxから1200pxの場合のスタイル▲  */
 
@@ -896,11 +969,7 @@ button.btn {
 
 
 
-.honbun {
-  font-family: "Caveat", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
+
 
 .rainbow {
   background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
@@ -1040,3 +1109,7 @@ summary::-webkit-details-marker {
 /* body {
 	margin: 20px;
 } */
+
+.table {
+  text-align:left:
+}
