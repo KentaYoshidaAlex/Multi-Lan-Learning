@@ -19,7 +19,8 @@ class QWorldGreetingsTableSeeder extends Seeder
         //初期データ用意(列名をキーとする連想配列)
         DB::table('qWorldGreetings')->insert([
 
-            [ 'language' => '世界の挨拶',            
+            [ 
+            'language' => '世界の挨拶',            
             'question' => '英語で「こんにちは」は？',
             'answer' => 'Hello', 
             'choice1' => 'See you', 
@@ -30,6 +31,7 @@ class QWorldGreetingsTableSeeder extends Seeder
             'pathBackground' => '../image/picture_english/Ayers_Rock.jpeg', 
             'subLanguage' => '英語', 
             'jpGreetingWord' => 'こんにちは', 
+            'flag' => '',
           ],
           [ 'language' => '世界の挨拶',            
             'question' => '英語で「ありがとう」は？',
@@ -42,6 +44,8 @@ class QWorldGreetingsTableSeeder extends Seeder
             'pathBackground' => '../image/picture_english/statueOfLiberty.jpg', 
             'subLanguage' => '英語', 
             'jpGreetingWord' => 'ありがとう', 
+            'flag' => '',
+
           ],
           [ 'language' => '世界の挨拶',            
             'question' => '英語で「良い一日を」は？',
@@ -54,6 +58,8 @@ class QWorldGreetingsTableSeeder extends Seeder
             'pathBackground' => '../image/picture_english/harry_potter.jpeg', 
             'subLanguage' => '英語', 
             'jpGreetingWord' => '良い一日を', 
+            'flag' => '',
+
           ],
              [ 'language' => '世界の挨拶',            
                'question' => 'ミャンマー語で「こんにちは」は？',
@@ -66,6 +72,8 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_myanmar/danceByEveryone.jpg', 
                'subLanguage' => 'ミャンマー語', 
                'jpGreetingWord' => 'こんにちは', 
+               'flag' => '../image/Flags/Myanmar.svg',
+
              ],
              [ 'language' => '世界の挨拶',            
                'question' => 'ミャンマー語で「ありがとう」は？',
@@ -78,6 +86,8 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_myanmar/danceByEveryone.jpg', 
                'subLanguage' => 'ミャンマー語', 
                'jpGreetingWord' => 'ありがとう', 
+               'flag' => '../image/Flags/Myanmar.svg',
+
              ],
              [ 'language' => '世界の挨拶',            
                'question' => 'ミャンマー語で「良い一日を」は？',
@@ -90,6 +100,8 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_myanmar/danceByEveryone.jpg', 
                'subLanguage' => 'ミャンマー語', 
                'jpGreetingWord' => '良い一日を', 
+               'flag' => '../image/Flags/Myanmar.svg',
+
              ],
 
              [ 'language' => '世界の挨拶',            
@@ -103,6 +115,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_china/greatWallOfChina.jpg', 
                'subLanguage' => '中国語', 
                'jpGreetingWord' => 'こんにちは', 
+               'flag' => '../image/Flags/China.svg',
              ],
              [ 'language' => '世界の挨拶',            
                'question' => '中国語で「ありがとう」は？',
@@ -115,6 +128,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_china/kyusaikou.jpeg', 
                'subLanguage' => '中国語', 
                'jpGreetingWord' => 'ありがとう', 
+               'flag' => '../image/Flags/China.svg',
              ],
 
              [ 'language' => '世界の挨拶',            
@@ -128,6 +142,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_china/pandas.jpg', 
                'subLanguage' => '中国語', 
                'jpGreetingWord' => '良い一日を',
+               'flag' => '../image/Flags/China.svg',
             ],
              [ 'language' => '世界の挨拶',            
                'question' => '韓国語で「こんにちは」は？',
@@ -140,6 +155,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_korea/Cheonggye-cheon.webp', 
                'subLanguage' => '韓国語', 
                'jpGreetingWord' => 'こんにちは', 
+               'flag' => '../image/Flags/Korea.svg',
              ],
              [ 'language' => '世界の挨拶',            
                'question' => '韓国語で「ありがとう」は？',
@@ -152,6 +168,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_korea/Gyeongbokgung_Palace.webp', 
                'subLanguage' => '韓国語', 
                'jpGreetingWord' => 'ありがとう', 
+               'flag' => '../image/Flags/Korea.svg',
              ],
              [ 'language' => '世界の挨拶',            
                'question' => '韓国語で「良い一日を」は？',
@@ -164,6 +181,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_korea/various_kimchi.webp', 
                'subLanguage' => '韓国語', 
                'jpGreetingWord' => '良い一日を', 
+               'flag' => '../image/Flags/Korea.svg',
              ],
 
              [ 'language' => '世界の挨拶',            
@@ -177,6 +195,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_philippines/beach.jpg', 
                'subLanguage' => 'タガログ語', 
                'jpGreetingWord' => 'こんにちは', 
+               'flag' => '../image/Flags/Philippines.svg',
              ],
              [ 'language' => '世界の挨拶',            
                'question' => 'タガログ語で「ありがとう」は？',
@@ -188,7 +207,8 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathPronunciation' => '', 
                'pathBackground' => '../image/picture_philippines/chocolate_hills.jpeg', 
                'subLanguage' => 'タガログ語', 
-               'jpGreetingWord' => 'ありがとう', 
+               'jpGreetingWord' => 'ありがとう',
+               'flag' => '../image/Flags/Philippines.svg', 
              ],
              [ 'language' => '世界の挨拶',            
                'question' => 'タガログ語で「良い一日を」は？',
@@ -201,6 +221,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_philippines/Bohol_Island.jpg', 
                'subLanguage' => 'タガログ語', 
                'jpGreetingWord' => '良い一日を', 
+               'flag' => '../image/Flags/Philippines.svg',
              ],
 
              [ 'language' => '世界の挨拶',            
@@ -214,6 +235,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_thailand/chiang_mai.jpg', 
                'subLanguage' => 'タイ語', 
                'jpGreetingWord' => 'こんにちは', 
+               'flag' => '../image/Flags/Thailand.svg',
              ],
              [ 'language' => '世界の挨拶',            
                'question' => 'タイ語で「ありがとう」は？',
@@ -226,6 +248,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_thailand/floating_market.jpg', 
                'subLanguage' => 'タイ語', 
                'jpGreetingWord' => 'ありがとう', 
+               'flag' => '../image/Flags/Thailand.svg',
              ],
              [ 'language' => '世界の挨拶',            
                'question' => 'タイ語で「良い一日を」は？',
@@ -238,6 +261,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_thailand/Khao_San_Road.jpg', 
                'subLanguage' => 'タイ語', 
                'jpGreetingWord' => '良い一日を', 
+               'flag' => '../image/Flags/Thailand.svg',
              ],
 
 
@@ -252,6 +276,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_indonesia/bali_island.jpg', 
                'subLanguage' => 'インドネシア語', 
                'jpGreetingWord' => 'こんにちは', 
+               'flag' => '../image/Flags/Indonesia.svg',
              ],
              [ 'language' => '世界の挨拶',            
                'question' => 'インドネシア語で「ありがとう」は？',
@@ -264,6 +289,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_indonesia/java_island.jpg', 
                'subLanguage' => 'インドネシア語', 
                'jpGreetingWord' => 'ありがとう', 
+               'flag' => '../image/Flags/Indonesia.svg',
              ],
 
 
@@ -278,6 +304,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_indonesia/Taman_Ayun.jpg', 
                'subLanguage' => 'インドネシア語', 
                'jpGreetingWord' => '良い一日を', 
+               'flag' => '../image/Flags/Indonesia.svg',
              ],
 
              [ 'language' => '世界の挨拶',            
@@ -291,6 +318,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_italy/Amalfi.jpg', 
                'subLanguage' => 'イタリア語', 
                'jpGreetingWord' => 'こんにちは', 
+               'flag' => '../image/Flags/Italy.svg',
              ],
              [ 'language' => '世界の挨拶',            
                'question' => 'イタリア語で「ありがとう」は？',
@@ -303,6 +331,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_italy/Colosseum.jpg', 
                'subLanguage' => 'イタリア語', 
                'jpGreetingWord' => 'ありがとう', 
+               'flag' => '../image/Flags/Italy.svg',
              ],
 
 
@@ -317,6 +346,7 @@ class QWorldGreetingsTableSeeder extends Seeder
                'pathBackground' => '../image/picture_italy/venice.jpg', 
                'subLanguage' => 'イタリア語', 
                'jpGreetingWord' => '良い一日を', 
+               'flag' => '../image/Flags/Italy.svg',
              ],
              [ 'language' => '世界の挨拶',            
              'question' => 'スペイン語で「こんにちは」は？',
@@ -329,6 +359,7 @@ class QWorldGreetingsTableSeeder extends Seeder
              'pathBackground' => '../image/picture_spain/furamenko.jpg', 
              'subLanguage' => 'スペイン語', 
              'jpGreetingWord' => 'こんにちは', 
+             'flag' => '../image/Flags/Spain.svg',
            ],
            [ 'language' => '世界の挨拶',            
              'question' => 'スペイン語で「ありがとう」は？',
@@ -341,6 +372,7 @@ class QWorldGreetingsTableSeeder extends Seeder
              'pathBackground' => '../image/picture_spain/Sagrada_Familia.jpg', 
              'subLanguage' => 'スペイン語', 
              'jpGreetingWord' => 'ありがとう', 
+             'flag' => '../image/Flags/Spain.svg',
            ],
 
 
@@ -355,6 +387,7 @@ class QWorldGreetingsTableSeeder extends Seeder
              'pathBackground' => '../image/picture_spain/tougyu.jpeg', 
              'subLanguage' => 'スペイン語', 
              'jpGreetingWord' => '良い一日を', 
+             'flag' => '../image/Flags/Spain.svg',
            ],
            [ 'language' => '世界の挨拶',            
            'question' => 'フランス語で「こんにちは」は？',
@@ -367,6 +400,7 @@ class QWorldGreetingsTableSeeder extends Seeder
            'pathBackground' => '../image/picture_france/Eiffel_Tower.jpg', 
            'subLanguage' => 'フランス語', 
            'jpGreetingWord' => 'こんにちは', 
+           'flag' => '../image/Flags/France.svg',
          ],
          [ 'language' => '世界の挨拶',            
            'question' => 'フランス語で「ありがとう」は？',
@@ -379,6 +413,7 @@ class QWorldGreetingsTableSeeder extends Seeder
            'pathBackground' => '../image/picture_france/gaisenmon.jpg', 
            'subLanguage' => 'フランス語', 
            'jpGreetingWord' => 'ありがとう', 
+           'flag' => '../image/Flags/France.svg',
          ],
 
 
@@ -393,6 +428,7 @@ class QWorldGreetingsTableSeeder extends Seeder
            'pathBackground' => '../image/picture_france/Mont-Saint-Michel.jpg', 
            'subLanguage' => 'フランス語', 
            'jpGreetingWord' => '良い一日を', 
+           'flag' => '../image/Flags/France.svg',
          ],
 
          [ 'language' => '世界の挨拶',            
@@ -406,6 +442,7 @@ class QWorldGreetingsTableSeeder extends Seeder
            'pathBackground' => '../image/picture_germany/Dresden.jpg', 
            'subLanguage' => 'ドイツ語', 
            'jpGreetingWord' => 'こんにちは', 
+           'flag' => '../image/Flags/German.svg',
          ],
          [ 'language' => '世界の挨拶',            
            'question' => 'ドイツ語で「ありがとう」は？',
@@ -418,6 +455,7 @@ class QWorldGreetingsTableSeeder extends Seeder
            'pathBackground' => '../image/picture_germany/Heidelberg_castle.jpg', 
            'subLanguage' => 'ドイツ語', 
            'jpGreetingWord' => 'ありがとう', 
+           'flag' => '../image/Flags/German.svg',
          ],
 
 
@@ -432,6 +470,7 @@ class QWorldGreetingsTableSeeder extends Seeder
            'pathBackground' => '../image/picture_germany/Rothenburg.jpeg', 
            'subLanguage' => 'ドイツ語', 
            'jpGreetingWord' => '良い一日を', 
+           'flag' => '../image/Flags/German.svg',
          ],
         
 

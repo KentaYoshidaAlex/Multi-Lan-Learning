@@ -23,7 +23,8 @@ class QuizWorldGreetingsDatum extends Model
         'pathPronunciation',
         'pathBackground',
         'subLanguage',
-        'jpGreetingWord'
+        'jpGreetingWord',
+        'flag'
 
     ];
 

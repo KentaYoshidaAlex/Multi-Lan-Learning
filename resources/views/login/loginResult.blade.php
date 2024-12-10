@@ -50,7 +50,16 @@ if((session('doneQuizList')) !== null) {
                 <p>学習したい言語と学習方法を一覧から選択してください</p>
 
             <details class="details">
-                <summary class="details-summary icon-webfont">利用案内</summary>
+                <summary class="details-summary icon-webfont">遊び方</summary>
+                    <p style="line-height: 0.1">
+                    </p>
+                    <p>☆事前学習：選んだ言語を一覧で事前学習できます☆</p>
+                    <p>☆クイズ挑戦：1問ずつクイズ形式で学習できます☆</p>
+                    <p>（3問連続不正解の場合はゲームオーバー）</p>
+            </details>
+
+            <details class="details-smartPhone">
+                <summary class="details-summary icon-webfont">遊び方</summary>
                     <p style="line-height: 0.1">
                     </p>
                     <p>☆事前学習：選んだ言語を一覧で事前学習できます☆</p>
@@ -67,11 +76,11 @@ if((session('doneQuizList')) !== null) {
 
                         &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qWorldGreetings" checked>世界の挨拶</input></label>
                         <br>
+                        &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qTagalog">タガログ語</input></label>
+                        <br>
                         &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qMyanmar">ミャンマー語</input></label>
                         <br>
                         &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qSpanish">スペイン語</input></label>
-                        <br>
-                        &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qTagalog">タガログ語</input></label>
                         <br>
                         &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qFrench">フランス語</input></label>                        
                         <br>
