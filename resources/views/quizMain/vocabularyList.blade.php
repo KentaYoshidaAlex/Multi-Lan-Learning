@@ -76,20 +76,20 @@ $haveANiceDayInOtherLan = '';
                         <div class="child1">
                             <p>&nbsp;<事前学習></p>
                             @if ($language === 'qMyanmar')
-                                <p>&nbsp;<img src="../image/Flags/Myanmar.svg" alt="picture" class="Countries">
+                                <p>&nbsp;<img src="../image/Flags/Myanmar.svg" alt="picture" width="30" height="15">
                                     ミャンマー語 / 日本語</p>
                             @elseif ($language === 'qTagalog')
-                                <p>&nbsp;<img src="../image/Flags/Philippines.svg" alt="picture" class="Countries">
+                                <p>&nbsp;<img src="../image/Flags/Philippines.svg" alt="picture" width="30" height="15">
                                     タガログ語 / 日本語</p>
                             @elseif ($language === 'qKansaiben')
                                 <p>&nbsp;関西弁 / 標準語</p>
                             @elseif ($language === 'qWorldGreetings')
                                 &nbsp;世界の挨拶
                             @elseif ($language === 'qSpanish')
-                                <p>&nbsp;<img src="../image/Flags/Spain.svg" alt="picture" class="Countries">
+                                <p>&nbsp;<img src="../image/Flags/Spain.svg" alt="picture" width="30" height="15">
                                     スペイン語 / 日本語</p>
                             @elseif ($language === 'qFrench')
-                                <p>&nbsp;<img src="../image/Flags/France.svg" alt="picture" class="Countries">
+                                <p>&nbsp;<img src="../image/Flags/France.svg" alt="picture" width="30" height="15">
                                     フランス語 / 日本語</p>
                             @endif
                         </div>
@@ -133,7 +133,6 @@ $haveANiceDayInOtherLan = '';
                                 @endphp
                                 @if (($newNo % 3) === 0)
                                         <tr >
-                                            <div class="vocabrary-web">
                                                 @if ($quizDatum->subLanguage === '英語') 
                                                     <td><img src="../image/Flags/America.svg" alt="picture" class="EnCountries">
                                                             <img src="../image/Flags/England.svg" alt="picture" class="EnCountries">
@@ -142,7 +141,6 @@ $haveANiceDayInOtherLan = '';
                                                     <td><img src="{!! $quizDatum->flag !!}" alt="picture" class="Countries">
                                                 @endif
                                                     {!! $quizDatum->subLanguage !!}</td><td>{!! $helloInOtherLan !!}</td><td>{!! $thankyouInOtherLan !!}</td><td>{!! $haveANiceDayInOtherLan !!}</td>
-                                            </div>
 
                                          </tr>
                                 @endif
