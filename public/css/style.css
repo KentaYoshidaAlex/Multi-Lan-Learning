@@ -27,6 +27,9 @@
   padding: 10px;
 }
 
+/* .asobikata { */
+  /* font-color: orange;
+} */
 
 #complete {
   background-image: url(../image/S__80109596.jpg);
@@ -202,9 +205,6 @@ input.cmn-toggle-round:checked + label:after {
     height: 700px;
   }
 
-  .vocabrary-web {
-    display: none;
-  }
 
   .quiz-gamen {
     width: 100%;
@@ -482,6 +482,15 @@ summary::-webkit-details-marker {
 	padding-left: 25px;
   margin-left: 15px;
 	font-size: 20px;
+	cursor: pointer;
+}
+
+.details-summary-loginResult {
+	position: relative;
+	padding-left: 25px;
+  margin-left: 15px;
+	font-size: 20px;
+  color: #F69454;
 	cursor: pointer;
 }
 
@@ -873,7 +882,15 @@ summary::-webkit-details-marker {
   margin-left: 15px;
 	font-size: 20px;
 	cursor: pointer;
+}
 
+.details-summary-loginResult {
+	position: relative;
+	padding-left: 25px;
+  margin-left: 15px;
+	font-size: 20px;
+  color: #F69454;
+	cursor: pointer;
 }
 
 /* 1つ目のアコーディオンのタイトル CSSのみでカスタマイズ */
@@ -1196,7 +1213,31 @@ h1.font-orange {
   text-align: center;
 }
 
-
+/*----- 三角の矢印 */
+.arrow {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+/* 下向き */
+.arrow.-bottom::before {
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-top: 8px solid #fff;
+  border-bottom: 0;
+  transform: translateY(1px);
+}
 
 
 
