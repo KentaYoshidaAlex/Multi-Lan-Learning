@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('choice2', 100);
             $table->string('choice3', 100);
             $table->string('choice4', 100);
-            $table->string('pathPronunciation', 50)->nullable();
-            $table->string('pathBackground', 50)->nullable();
+            $table->string('pathPronunciation',100)->nullable();
+            $table->string('pathBackground', 100)->nullable();
             $table->string('subLanguage', 20)->nullable();
             $table->string('jpGreetingWord', 20)->nullable(); 
         });

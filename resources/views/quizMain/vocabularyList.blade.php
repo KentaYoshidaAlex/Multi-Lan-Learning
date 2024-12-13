@@ -9,9 +9,14 @@ $player = session('player');
 $quizData = session('quizData');
 $language = session('language');
 
+// dd($quizData);
+
 $helloInOtherLan = '';
+$helloPronunciation = '';
 $thankyouInOtherLan = '';
+$thankyouPronunciation = '';
 $haveANiceDayInOtherLan = '';
+$haveANiceDayPronunciation = '';
 
 @endphp
 
@@ -122,12 +127,15 @@ $haveANiceDayInOtherLan = '';
                                     
                                     if ($quizDatum->jpGreetingWord === 'こんにちは') {
                                         $helloInOtherLan = $quizDatum->answer;
+                                        $helloPronunciation = $quizDatum->pathPronunciation;
                                     }
                                     if ($quizDatum->jpGreetingWord === 'ありがとう') {
                                         $thankyouInOtherLan = $quizDatum->answer;
+                                        $thankyouPronunciation = $quizDatum->pathPronunciation;
                                     }
                                     if ($quizDatum->jpGreetingWord === '良い一日を') {
                                         $haveANiceDayInOtherLan = $quizDatum->answer;
+                                        $haveANiceDayPronunciation = $quizDatum->pathPronunciation;
                                     }
 
                                 @endphp
@@ -140,7 +148,21 @@ $haveANiceDayInOtherLan = '';
                                                 @else
                                                     <td><img src="{!! $quizDatum->flag !!}" alt="picture" class="Countries">
                                                 @endif
-                                                    {!! $quizDatum->subLanguage !!}</td><td>{!! $helloInOtherLan !!}</td><td>{!! $thankyouInOtherLan !!}</td><td>{!! $haveANiceDayInOtherLan !!}</td>
+                                                    {!! $quizDatum->subLanguage !!}</td>
+                                                    <td>{!! $helloInOtherLan !!}
+                                                        <br>
+                                                        <audio class="pronunWidth"  src="{!! $helloPronunciation !!}" controls></audio>
+                                                    </td>
+                                                    <td>
+                                                        {!! $thankyouInOtherLan !!}
+                                                        <br>
+                                                        <audio class="pronunWidth"  src="{!! $thankyouPronunciation !!}" controls></audio>
+                                                    </td>
+                                                    <td>
+                                                        {!! $haveANiceDayInOtherLan !!}
+                                                        <br>
+                                                        <audio class="pronunWidth"  src="{!! $haveANiceDayPronunciation !!}" controls></audio>
+                                                    </td>
 
                                          </tr>
                                 @endif

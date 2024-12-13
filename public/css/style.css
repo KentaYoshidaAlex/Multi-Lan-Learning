@@ -570,6 +570,12 @@ summary::-webkit-details-marker {
 		content: '\e7f2';
 	}
 }
+
+.pronunWidth {
+  width: 100px;
+  height: 30px;
+}
+
 }
 
  /* ▲画面幅が440px以下の場合のスタイル▲   */
@@ -968,6 +974,10 @@ summary::-webkit-details-marker {
 	&:before {
 		content: '\e7f2';
 	}
+}
+
+.pronunWidth {
+  width: 200px;
 }
 
 }
