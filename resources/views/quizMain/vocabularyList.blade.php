@@ -151,17 +151,23 @@ $haveANiceDayPronunciation = '';
                                                     {!! $quizDatum->subLanguage !!}</td>
                                                     <td>{!! $helloInOtherLan !!}
                                                         <br>
-                                                        <audio class="pronunWidth"  src="{!! $helloPronunciation !!}" controls></audio>
+                                                        @if (!empty($helloPronunciation))
+                                                            <audio class="pronunWidth"  src="{!! $helloPronunciation !!}" controls></audio>
+                                                        @endif
                                                     </td>
                                                     <td>
                                                         {!! $thankyouInOtherLan !!}
                                                         <br>
-                                                        <audio class="pronunWidth"  src="{!! $thankyouPronunciation !!}" controls></audio>
+                                                        @if (!empty($helloPronunciation))
+                                                            <audio class="pronunWidth"  src="{!! $thankyouPronunciation !!}" controls></audio>
+                                                        @endif
                                                     </td>
                                                     <td>
                                                         {!! $haveANiceDayInOtherLan !!}
                                                         <br>
-                                                        <audio class="pronunWidth"  src="{!! $haveANiceDayPronunciation !!}" controls></audio>
+                                                        @if (!empty($helloPronunciation))
+                                                            <audio class="pronunWidth"  src="{!! $haveANiceDayPronunciation !!}" controls></audio>
+                                                        @endif
                                                     </td>
 
                                          </tr>
