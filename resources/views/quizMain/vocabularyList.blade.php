@@ -81,21 +81,21 @@ $haveANiceDayPronunciation = '';
                         <div class="child1">
                             <p>&nbsp;<事前学習></p>
                             @if ($language === 'qMyanmar')
-                                <p>&nbsp;<img src="../image/Flags/Myanmar.svg" alt="picture" width="30" height="15">
-                                    ミャンマー語 / 日本語</p>
+                                <img src="../image/Flags/Myanmar.svg" alt="picture" width="100" height="50"><br>
+                                    ミャンマー語 / 日本語
                             @elseif ($language === 'qTagalog')
-                                <p>&nbsp;<img src="../image/Flags/Philippines.svg" alt="picture" width="30" height="15">
-                                    タガログ語 / 日本語</p>
+                                <img src="../image/Flags/Philippines.svg" alt="picture" width="100" height="50"><br>
+                                    タガログ語 / 日本語
                             @elseif ($language === 'qKansaiben')
-                                <p>&nbsp;関西弁 / 標準語</p>
+                                &nbsp;関西弁 / 標準語
                             @elseif ($language === 'qWorldGreetings')
                                 &nbsp;世界の挨拶
                             @elseif ($language === 'qSpanish')
-                                <p>&nbsp;<img src="../image/Flags/Spain.svg" alt="picture" width="30" height="15">
-                                    スペイン語 / 日本語</p>
+                                <img src="../image/Flags/Spain.svg" alt="picture" width="100" height="50"><br>
+                                    スペイン語 / 日本語
                             @elseif ($language === 'qFrench')
-                                <p>&nbsp;<img src="../image/Flags/France.svg" alt="picture" width="30" height="15">
-                                    フランス語 / 日本語</p>
+                                <img src="../image/Flags/France.svg" alt="picture" width="100" height="50"><br>
+                                    フランス語 / 日本語
                             @endif
                         </div>
                         <div class="child2">
@@ -140,7 +140,7 @@ $haveANiceDayPronunciation = '';
 
                                 @endphp
                                 @if (($newNo % 3) === 0)
-                                        <tr >
+                                        <tr>
                                                 @if ($quizDatum->subLanguage === '英語') 
                                                     <td><img src="../image/Flags/America.svg" alt="picture" class="EnCountries">
                                                             <img src="../image/Flags/England.svg" alt="picture" class="EnCountries">
@@ -148,6 +148,7 @@ $haveANiceDayPronunciation = '';
                                                 @else
                                                     <td><img src="{!! $quizDatum->flag !!}" alt="picture" class="Countries">
                                                 @endif
+                                                    <br>
                                                     {!! $quizDatum->subLanguage !!}</td>
                                                     <td>{!! $helloInOtherLan !!}
                                                         <br>

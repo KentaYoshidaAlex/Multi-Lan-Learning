@@ -458,12 +458,12 @@ input.cmn-toggle-round:checked + label:after {
   /* ▲目標クイズ数達成時アニメーション */
 
   .EnCountries {
-    width: 25px; 
-    height: 12px; 
+    width: 18px; 
+    height: 9px; 
   }
-  .Contries {
-    width: 25px; 
-    height: 12px; 
+  .Countries {
+    width: 56px; 
+    height: 28px; 
   }
 
 
@@ -866,8 +866,8 @@ body.vocabularyList {
     height: 20px; 
   }
   .Countries {
-    width: 50px; 
-    height: 25px; 
+    width: 100px; 
+    height: 50px; 
   }
 
 
