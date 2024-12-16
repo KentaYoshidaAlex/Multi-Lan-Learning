@@ -110,7 +110,7 @@ class QSpanishTableSeeder extends Seeder
            'choice2' => 'アイネン シューネンターク', 
            'choice3' => 'ボンジョルネ', 
            'choice4' => 'ケテンガス ウン ブエンディーア', 
-           'pathPronunciation' => '../sound/spain_word_pronunciation/Que tengas un buen día.mp3', 
+           'pathPronunciation' => '../sound/spain_word_pronunciation/Que_tengas_un_buen_dia.mp3', 
            'pathBackground' => '../image/picture_spain/tougyu.jpeg', 
            'subLanguage' => 'スペイン語', 
            'jpGreetingWord' => '良い一日を', 
