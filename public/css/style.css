@@ -315,7 +315,7 @@ input.cmn-toggle-round:checked + label:after {
 }
 
   #index-left {
-    flex: 1; 
+    /* flex: 1;  */
     width: 190px;
 
     /* padding: 10px; */
@@ -323,9 +323,9 @@ input.cmn-toggle-round:checked + label:after {
   }
   
   #index-right {
-    flex: 1; 
+    /* flex: 1;  */
     width: 80px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 
     /* padding: 20px 30px 10px 0px; */
   }
