@@ -159,14 +159,14 @@ $haveANiceDayPronunciation = '';
                                                     <td>
                                                         {!! $thankyouInOtherLan !!}
                                                         <br>
-                                                        @if (!empty($helloPronunciation))
+                                                        @if (!empty($thankyouPronunciation))
                                                             <audio class="pronunWidth"  src="{!! $thankyouPronunciation !!}" controls></audio>
                                                         @endif
                                                     </td>
                                                     <td>
                                                         {!! $haveANiceDayInOtherLan !!}
                                                         <br>
-                                                        @if (!empty($helloPronunciation))
+                                                        @if (!empty($haveANiceDayPronunciation))
                                                             <audio class="pronunWidth"  src="{!! $haveANiceDayPronunciation !!}" controls></audio>
                                                         @endif
                                                     </td>
