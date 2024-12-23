@@ -145,13 +145,15 @@ if ((session('doneAnswer')) !== null || $missCount == 1) {
                             'tgrbtn' => $tgrbtn,
                             'reLoginId' => $reLoginId,
                             'reLoginPass' => $reLoginPass,
-                            'missCount' => $missCount
+                            'missCount' => $missCount,
+                            'amountOfQuenstions' => $amountOfQuenstions
                         ])
                     {{-- 通常時の画面表示（問題文が残っていない場合） --}}
                     @else
                         @include('quizMain/quizGamen',[
                             'tgrbtn' => $tgrbtn,
                             'reLoginId' => $reLoginId,
-                            'reLoginPass' => $reLoginPass
+                            'reLoginPass' => $reLoginPass,
+                            'amountOfQuenstions' => $amountOfQuenstions
                         ])
                     @endif
