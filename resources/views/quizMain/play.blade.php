@@ -14,6 +14,8 @@ if(!($selectedQuiz == '')) {
     $choice4 = $selectedQuiz->choice4;
     $language = $selectedQuiz->language;
     $no = $selectedQuiz->no;
+} else {
+    $language = session('language');
 }
 
 // 他の変数代入
@@ -35,6 +37,7 @@ if ((session('doneAnswer')) !== null || $missCount == 1) {
     $doneBackground = session('doneBackground');
     $tgrbtn = session('tgrbtn');
 }
+// dd($doneQuizList);
 
 @endphp
 
@@ -154,6 +157,6 @@ if ((session('doneAnswer')) !== null || $missCount == 1) {
                             'tgrbtn' => $tgrbtn,
                             'reLoginId' => $reLoginId,
                             'reLoginPass' => $reLoginPass,
-                            'amountOfQuenstions' => $amountOfQuenstions
+                            'language' => $language
                         ])
                     @endif
