@@ -337,6 +337,7 @@ class QuizMainController extends Controller
                 // 残りの問題がない場合
                 } else {
                     session(['selectedQuiz' => ""]);
+                    session(['language' => $language]);
                 }
 
                 // sessionに値を保存
