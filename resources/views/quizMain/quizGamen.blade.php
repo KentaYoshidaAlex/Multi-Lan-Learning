@@ -92,7 +92,9 @@
                         @elseif($amountOfQuenstions === "5")
                             5問&ensp;
                         @else
-                            全問
+                            <div class="rainbow">
+                                全問
+                            </div>
                         @endif
                         正解しました!!
                     </h3>
