@@ -86,7 +86,16 @@
                     
 
                     <h3>&ensp;目標達成おめでとうございます!!</h3>
-                    <h3>&ensp;全問正解しました!!</h3>
+                    <h3>&ensp;『{!! $language !!}』のクイズを&ensp;
+                        @if($amountOfQuenstions === "3")
+                            3問&ensp;
+                        @elseif($amountOfQuenstions === "5")
+                            5問&ensp;
+                        @else
+                            全問
+                        @endif
+                        正解しました!!
+                    </h3>
                 </div>
 
                 <div class="poyon">

@@ -62,7 +62,7 @@ class QTagalogTableSeeder extends Seeder
             'language' => 'タガログ語',            
             'question' => 'タガログ語で「良い一日を」は？',
             'answer' => 'インガット', 
-            'choice1' => 'スモガ ハリ アンダ ムニュナンカン', 
+            'choice1' => 'スモガ ハリ アンダ'.'<br>'.'&emsp;'.'&nbsp;'.'ムニュナンカン', 
             'choice2' => 'インガット', 
             'choice3' => 'サラマット', 
             'choice4' => 'テリマカシ', 
