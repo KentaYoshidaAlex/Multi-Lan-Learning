@@ -51,7 +51,7 @@ if((session('doneQuizList')) !== null) {
       
           <div class="honbun">
           <details class="details">
-            <summary class="details-summary icon-arrow">利用案内</summary>
+            <summary class="details-summary icon-arrow"><div id="riyou-annai">利用案内</div></summary>
             
               &nbsp;☆登録済みの方は、情報を入力し「ログイン」からお入り下さい<br>
               &nbsp;☆未登録の方は、「新規登録はこちら」から内容をご入力ください<br>
@@ -59,7 +59,7 @@ if((session('doneQuizList')) !== null) {
             
           </details>
           <details class="details-smartPhone">
-            <summary class="details-summary icon-arrow">利用案内</summary>
+            <summary class="details-summary icon-arrow"><div id="riyou-annai">利用案内</div></summary>
             
               &nbsp;☆登録済みの方は、情報を入力し「ログイン」からお入り下さい<br>
               &nbsp;☆未登録の方は、「新規登録はこちら」からお入り下さい<br>
@@ -67,6 +67,25 @@ if((session('doneQuizList')) !== null) {
             
           </details>
           </div>
+          <script>
+            const riyouAnnnai = document.getElementById('riyou-annai');
+            console.log(riyouAnnnai);
+            riyouAnnnai.addEventListener('mouseover',function(){
+              riyouAnnnai.style.color = 'orange'
+            })
+            
+            riyouAnnnai.addEventListener('mouseleave',function(){
+              riyouAnnnai.style.color = 'black'
+            })
+            </script>
+          {{-- @if(app('env')=='local')
+              <script src="{{ asset('js/main.js') }}"></script>
+          @endif
+          @if(app('env')=='production')
+            <script src="{{ secure_asset('js/main.js') }}"></script>
+          @endif --}}
+
+
           <br>
           <div class="main">
           <div id="index-left">
@@ -80,9 +99,10 @@ if((session('doneQuizList')) !== null) {
               &emsp; <input type="text" class="loginPass" name="loginPass" maxlength="20">
               <br>
             </div>
+
             <br>
             <br>
-            &emsp;&nbsp;<a href="{{ route('input') }}" class="newAccount"  id="KleeOne400">新規登録はこちら</a>
+            &emsp;&nbsp;<a href="{{ route('input') }}" id="KleeOne400">新規登録はこちら</a>
           </div>
           <div id="index-right">
             <div class="btn-wrap">
