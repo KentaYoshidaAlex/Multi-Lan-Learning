@@ -33,8 +33,7 @@ if((session('doneQuizList')) !== null) {
   <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sacramento&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=web_traffic" />
 <body class="loginTop">
   <div class="loginTop-smartPhone">
     <header>
@@ -49,15 +48,19 @@ if((session('doneQuizList')) !== null) {
     <div class="container" id="index-main-container">
       <h2 class="rainbow" id="KleeOne600"><span class="center">&nbsp;〜 Let's enjoy language learning 〜</span></h2>
       
-          <div class="honbun">
+      <div class="honbun">
           <details class="details">
-            <summary class="details-summary icon-arrow"><div id="riyou-annai">利用案内</div></summary>
+            <summary class="details-summary icon-arrow">
+              <div id="riyou-annai">利用案内          
+                <span class="material-symbols-outlined">web_traffic</span>
+              </div>
+            </summary>
             
               &nbsp;☆登録済みの方は、情報を入力し「ログイン」からお入り下さい<br>
               &nbsp;☆未登録の方は、「新規登録はこちら」から内容をご入力ください<br>
               &nbsp;☆登録せずに遊びたい方は、「ゲストログイン」からお入り下さい<br>
-            
           </details>
+
           <details class="details-smartPhone">
             <summary class="details-summary icon-arrow"><div id="riyou-annai">利用案内</div></summary>
             
