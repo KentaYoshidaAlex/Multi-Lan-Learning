@@ -113,6 +113,7 @@ label:hover {
   color: white;            /* 文字色 */
 }
 
+
 .cmn-toggle {
   position: absolute;
   margin-left: -9999px;
@@ -169,6 +170,17 @@ input.cmn-toggle-round:checked + label:after {
 .foo {
   text-align: right;
 }
+
+ /* ▼トップページ利用案内横アイコン▼  */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  /* padding: 10px 0px 0px 0px; */
+}
+ /* ▲トップページ利用案内横アイコン▲  */
 
 
 
