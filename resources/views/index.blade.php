@@ -33,7 +33,7 @@ if((session('doneQuizList')) !== null) {
   <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sacramento&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=web_traffic" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=web_traffic" rel="stylesheet"  />
 <body class="loginTop">
   <div class="loginTop-smartPhone">
     <header>
@@ -42,19 +42,22 @@ if((session('doneQuizList')) !== null) {
       </div>
     </header> 
     <br>
-  {{-- </div> --}}
-  {{-- <div class="rainbow-wrapper"> --}}
-  <div class="main-wrapper" id="index-main-wrapper">
-    <div class="container" id="index-main-container">
-      <h2 class="rainbow" id="KleeOne600"><span class="center">&nbsp;〜 Let's enjoy language learning 〜</span></h2>
-      
-      <div class="honbun">
+ 
+    <div class="main-wrapper" id="index-main-wrapper">
+      <div class="container" id="index-main-container">
+        <h2 class="rainbow" id="KleeOne600">
+          <span class="center">&nbsp;〜 Let's enjoy language learning 〜</span>
+        </h2>
+        
+        <div class="honbun">
           <details class="details">
-            <summary class="details-summary icon-arrow">
-              <div id="riyou-annai">利用案内          
-                <span class="material-symbols-outlined">web_traffic</span>
-              </div>
-            </summary>
+            <p>
+              <summary class="details-summary icon-arrow">
+                <div id="riyou-annai">利用案内          
+                  <span class="material-symbols-outlined position">web_traffic</span>
+                </div>
+              </summary>
+            </p>
             
               &nbsp;☆登録済みの方は、情報を入力し「ログイン」からお入り下さい<br>
               &nbsp;☆未登録の方は、「新規登録はこちら」から内容をご入力ください<br>
@@ -62,72 +65,67 @@ if((session('doneQuizList')) !== null) {
           </details>
 
           <details class="details-smartPhone">
-            <summary class="details-summary icon-arrow"><div id="riyou-annai">利用案内</div></summary>
+            <summary class="details-summary icon-arrow">
+              <div id="riyou-annai">利用案内
+                <span class="material-symbols-outlined">web_traffic</span>
+              </div>
+            </summary>
             
               &nbsp;☆登録済みの方は、情報を入力し「ログイン」からお入り下さい<br>
               &nbsp;☆未登録の方は、「新規登録はこちら」からお入り下さい<br>
               &nbsp;☆登録せず遊びたい方は、「ゲストログイン」からお入り下さい<br>
             
           </details>
-          </div>
-          <script>
-            const riyouAnnnai = document.getElementById('riyou-annai');
-            console.log(riyouAnnnai);
-            riyouAnnnai.addEventListener('mouseover',function(){
-              riyouAnnnai.style.color = 'orange'
-            })
-            
-            riyouAnnnai.addEventListener('mouseleave',function(){
-              riyouAnnnai.style.color = 'black'
-            })
-            </script>
-          {{-- @if(app('env')=='local')
-              <script src="{{ asset('js/main.js') }}"></script>
-          @endif
-          @if(app('env')=='production')
-            <script src="{{ secure_asset('js/main.js') }}"></script>
-          @endif --}}
-
+        </div>
+        <script>
+          const riyouAnnnai = document.getElementById('riyou-annai');
+          console.log(riyouAnnnai);
+          riyouAnnnai.addEventListener('mouseover',function(){
+            riyouAnnnai.style.color = 'orange'
+          })
+          
+          riyouAnnnai.addEventListener('mouseleave',function(){
+            riyouAnnnai.style.color = 'black'
+          })
+          </script>
 
           <br>
           <div class="main">
-          <div id="index-left">
-            <form action="{{ route('loginInput') }}" method="post" class="form">
-              @csrf
+            <div id="index-left">
+              <form action="{{ route('loginInput') }}" method="post" class="form">
+                @csrf
 
-            <div id="KleeOne400">
-              <p>&emsp;ID/ユーザー名</p>
-              &emsp; <input type="text" class="loginId_userName" name="loginId_userName" maxlength="100">
-              <p>&emsp;パスワード</p>
-              &emsp; <input type="text" class="loginPass" name="loginPass" maxlength="20">
-              <br>
-            </div>
-
-            <br>
-            <br>
-            &emsp;&nbsp;<a href="{{ route('input') }}" id="KleeOne400">新規登録はこちら</a>
-          </div>
-          <div id="index-right">
-            <div class="btn-wrap">
-              <br>
-              <br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-              <input type="submit" name="bttn" value="ログイン"  class="btn btn-switch" id="index-btn">
-            </div>
-          </form>
-            <form action="{{ route('loginInput') }}" method="post" class="form">
-              @csrf
-              <div class="btn-wrap">
+              <div id="KleeOne400">
+                <p>&emsp;ID/ユーザー名</p>
+                  &emsp; <input type="text" class="loginId_userName" name="loginId_userName" maxlength="100">
+                <p>&emsp;パスワード</p>
+                  &emsp; <input type="text" class="loginPass" name="loginPass" maxlength="20">
                 <br>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                <input type="submit" name="bttn" value="ゲストログイン"  class="btn btn-switch" id="index-btn">
               </div>
-                <input type="hidden" name="loginId_userName" name="loginId_userName" value="ゲスト">
-                <input type="hidden" class="loginPass" name="loginPass" value="9999">
+
+              <br><br>
+                &emsp;&nbsp;<a href="{{ route('input') }}" id="KleeOne400">新規登録はこちら</a>
+            </div>
+            <div id="index-right">
+              <div class="btn-wrap">
+                <br><br>
+                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="submit" name="bttn" value="ログイン"  class="btn btn-switch" id="index-btn">
+              </div>
             </form>
-          </div>
+              <form action="{{ route('loginInput') }}" method="post" class="form">
+                @csrf
+                <div class="btn-wrap">
+                  <br>
+                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                  <input type="submit" name="bttn" value="ゲストログイン"  class="btn btn-switch" id="index-btn">
+                </div>
+                  <input type="hidden" name="loginId_userName" name="loginId_userName" value="ゲスト">
+                  <input type="hidden" class="loginPass" name="loginPass" value="9999">
+              </form>
+            </div>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </body>

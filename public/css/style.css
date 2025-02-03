@@ -171,17 +171,6 @@ input.cmn-toggle-round:checked + label:after {
   text-align: right;
 }
 
- /* ▼トップページ利用案内横アイコン▼  */
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
-  /* padding: 10px 0px 0px 0px; */
-}
- /* ▲トップページ利用案内横アイコン▲  */
-
 
 
  /* ▼画面幅が440px以下の場合のスタイル▼  */
@@ -582,6 +571,20 @@ summary::-webkit-details-marker {
 		content: '\e7f2';
 	}
 }
+
+ /* ▼トップページ利用案内横アイコン▼  */
+ .material-symbols-outlined {
+  /* font-variation-settings: */
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+    display: inline-flex;
+    vertical-align: middle;
+    /* padding: 10px 0px 0px 0px;  */
+}
+
+ /* ▲トップページ利用案内横アイコン▲  */
 
 .pronunWidth {
   width: 100px;
@@ -987,6 +990,16 @@ summary::-webkit-details-marker {
 		content: '\e7f2';
 	}
 }
+
+ /* ▼トップページ利用案内横アイコン▼  */
+ .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+}
+ /* ▲トップページ利用案内横アイコン▲  */
 
 .pronunWidth {
   width: 200px;
