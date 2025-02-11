@@ -213,7 +213,8 @@ input.cmn-toggle-round:checked + label:after {
     background-size: cover; /* 画像が全体に広がるように */
     background-position: center ; /* 画像を中央に配置 */
     background-repeat: no-repeat; /* 画像が繰り返されないように */
-    height: 100vh; /* ビューポートの高さに合わせる */
+    background-attachment: fixed;
+    height: 100vh; 
     height: 100%;
   }
 
