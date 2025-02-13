@@ -43,7 +43,17 @@ if((session('doneQuizList')) !== null) {
         <div class="container">
             
             @if($collectionNumber == 1)
-                <p>ログインに成功しました！!</p>
+                <div class="container-left">
+                    ログインに成功しました！!
+                </div>
+
+                    {{-- &emsp;&emsp;&emsp;&emsp; --}}
+                <div class="container-right">
+                    <form method='post' action="{{ route('quizMain') }}"  class="quiz-form">
+                        <input type='submit' name='bttn' value="マイページ" class="buttons btn-hover blueColor" >
+                    </form>
+                </div>
+                
                 <p>ようこそ {{ $loginId_userName }} さん</p>
                 <p style="line-height: 2px">-----------------------------------------</p>
                 <p>さっそく学習を開始しましょう♫</p>

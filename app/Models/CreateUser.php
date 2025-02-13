@@ -16,6 +16,10 @@ class CreateUser extends Model
         'loginId_userName',
         'loginPass',
         'clearCount',
-        'missCount'
+        'missCount',
+        'max_consecutive_study_day',
+        'achievement_cource', 
+        'number_of_compeleted_quiz',
+        'perfect_clear_flag'
     ];
 }

@@ -7,13 +7,13 @@
             @if (($amountOfQuenstions != $currentQuizAmount) && (!($selectedQuiz == '')))
                 <div id="KleeOne400">
                     <br>
-                        <div class="question-width">
-                            <p>下記の問題の適切な回答を選択してください。</p>
+                    <div class="question-width">
+                        <p>下記の問題の適切な回答を選択してください。</p>
+                    </div>
+                        <div class="quiz-sentence">
+                            Q : {{ $question }}
                         </div>
-                            <div class="quiz-sentence">
-                                Q : {{ $question }}
-                            </div>
-                            <br>
+                        <br>
                         <div class="top-text">
                             <form method="post" action="{{ route('quizMain') }}">
                                 @csrf
@@ -38,43 +38,43 @@
                                     </div>
                                 </div>
                         </div>
-                                <br>
-                                <br>
+                        <br>
 
-                                <div class="parent">
-                                    <div class="sound-control-position">
-                                        &nbsp;＜効果音設定＞
-                                        <br>
-                                        （グレー：無 / 緑：有）
-                                        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type='checkbox' name='tgrbtn' value='1' 
+                        <div class="parent">
+                            <div class="sound-control-position">
+                                &nbsp;＜効果音設定＞
+                                <br>
+                                （グレー：無 / 緑：有）
+                                <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type='checkbox' name='tgrbtn' value='1' 
 
-                                        @if($tgrbtn == "1")  checked @endif >
-                                        <label for="cmn-toggle-1"></label>
-                                    </div>
-                                    <div class="child2">
+                                @if($tgrbtn == "1")  checked @endif >
+                                <label for="cmn-toggle-1"></label>
+                            </div>
+                            <div class="child2">
+                            </form>
+                </div>
+                                
+                <form action="{{ route('loginInput') }}" method="post">
+                    @csrf
+                        <br>
+                        <div class="btn-wrap">
+                            <input type="submit" value="言語選択画面に戻る" class="btn btn-switch" />
+                        </div>
+                            </div>
+                        </div>
+                    <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
+                    <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
+                    <input type="hidden" name="bttn" value= 'ログイン'>
+                </form>
+                    <div class="foo">
+                        <div class="rigit-side">
+                            <form action="{{ route('index') }}" method="get">
+                                <div class="btn-wrap-for-quizGamen">
+                                    <input type="submit" value="ログアウト" class="btn btn-switch" />
+                                </div>
                             </form>
                         </div>
-                                    
-                        <form action="{{ route('loginInput') }}" method="post">
-                            @csrf
-                            <div class="btn-wrap">
-                            <input type="submit" value="言語選択画面に戻る" class="btn btn-switch" />
-                            </div>
-                                    </div>
-                                </div>
-                            <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
-                            <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
-                            <input type="hidden" name="bttn" value= 'ログイン'>
-                        </form>
-                        <div class="foo">
-                            <div class="rigit-side">
-                                <form action="{{ route('index') }}" method="get">
-                                    <div class="btn-wrap-for-quizGamen">
-                                    <input type="submit" value="ログアウト" class="btn btn-switch" />
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                    </div>
 
                 </div>
             @else
@@ -111,7 +111,7 @@
                         <form action="{{ route('loginInput') }}" method="post">
                             @csrf
                             <div class="btn-wrap">
-                            <input type="submit" value="言語選択画面に戻る" class="btn btn-switch" />
+                                <input type="submit" value="言語選択画面に戻る" class="btn btn-switch" />
                             </div>
                             <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
                             <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
@@ -122,7 +122,7 @@
                         <form action="{{ route('index') }}" method="get">
                             @csrf
                             <div class="btn-wrap">
-                            <input type="submit" value="ログアウト" class="btn btn-switch" />
+                                <input type="submit" value="ログアウト" class="btn btn-switch" />
                             </div>
                         </form>
                     </div>
