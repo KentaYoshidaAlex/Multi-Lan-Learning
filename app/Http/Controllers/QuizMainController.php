@@ -33,7 +33,7 @@ class QuizMainController extends Controller
         }
 
         // 学習開始時
-        if ($request->bttn === '学習開始' || $request->bttn === '事前学習') {
+        if ($request->bttn === '学習開始' || $request->bttn === '事前学習' || $request->bttn === 'マイページ') {
 
             // リクエストパラメータを元に、ユーザーデータを再取得
             $userObj = CreateUser::where('loginId_userName', $request->loginId_userName)->get();        
@@ -43,6 +43,11 @@ class QuizMainController extends Controller
             $reLoginId = $player->loginId_userName;
             $reLoginPass = $player->loginPass;
 
+            // マイページ選択時の分岐
+            if ($request->bttn === 'マイページ') {
+                    return view('quizMain/myPage', compact('reLoginId','reLoginPass'));
+                }
+                
             // request内データを変数に代入
             $amountOfQuenstions = $request->amountOfQuenstions;
             $loginId_userName = $request->loginId_userName;
@@ -79,7 +84,7 @@ class QuizMainController extends Controller
             } 
             // dd($quizData);
 
-            // 共通で利用する変数をsessionに保存z
+            // 共通で利用する変数をsessionに保存
             session(['amountOfQuenstions' => $amountOfQuenstions]);
             session(['allQuizMusicData' => $allQuizMusicData]);
             session(['player' => $player]);     

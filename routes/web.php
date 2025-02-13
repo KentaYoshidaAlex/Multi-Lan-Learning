@@ -22,22 +22,10 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-// ▼1208コメントアウト
-// Route::get('/login/input', function () {
-//     return view('index');
-// })->name('loginInput');
-
-// Route::get('/quizMain', function () {
-//     return view('index');
-// })->name('quizMain');
-// ▲1208コメントアウト
-
-
 
 Route::prefix('createUser')
-// ->middleware(['auth'])
+
 ->controller(CreateUserController::class)
-// ->name('createUser.')
 ->group(function(){
     Route::get('/input', 'input')->name('input');
     Route::get('/input/{loginId_userName}{loginPass}', 'reInput')->name('reInput');
