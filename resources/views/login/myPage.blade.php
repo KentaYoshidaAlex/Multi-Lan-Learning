@@ -1,14 +1,3 @@
-@php
-
-// 回答済みの問題があれば初期化
-if((session('doneAnswer')) !== null) {
-  session(['doneAnswer' => null]);
-}
-if((session('doneQuizList')) !== null) {
-  session(['doneQuizList' => null]);
-}
-
-@endphp
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -16,7 +5,7 @@ if((session('doneQuizList')) !== null) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ログイン後ページ</title>
+    <title>マイページ</title>
 
     @if(app('env')=='local')
         <link rel="stylesheet" href={{ asset('/css/style.css') }} >
@@ -41,27 +30,18 @@ if((session('doneQuizList')) !== null) {
 
     <div class="main-wrapper" id="KleeOne400">
         <div class="container">
-            
-            @if($collectionNumber == 1)
-                <div class="main">
-                    <div class="container-left">
-                        <p>ログインに成功しました！!</p>
-                        <p>ようこそ {{ $loginId_userName }} さん</p>
-                    </div>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <div class="container-right">
-                        <form method='post' action="{{ route('quizMain') }}" class="quiz-form">
-                            @csrf
-                            <input type='submit' name='bttn' value="マイページ" class="buttons btn-hover-myPage blueColor" >
-                            <input type='hidden' name='loginId_userName' value='{{ $loginId_userName }}'> 
-                            <input type='hidden' name='collectionNumber' value='{{ $collectionNumber }}'> 
-                        </form>
-                    </div>
+            <div class="main">
+                <div class="container-left">
+                    <p>マイページ</p>
+                    <p>ユーザー名： {{ $reLoginId }} さん</p>
                 </div>
-
-
-
-                
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <div class="container-right">
+                    <form method='post' action="{{ route('quizMain') }}" >
+                        <input type='submit' name='bttn' value="マイページ" class="buttons btn-hover-myPage blueColor" >
+                    </form>
+                </div>
+            </div>
                 <p style="line-height: 2px">-----------------------------------------</p>
                 <p>さっそく学習を開始しましょう♫</p>
                 <p>学習したい言語と学習方法を一覧から選択してください</p>
@@ -129,8 +109,7 @@ if((session('doneQuizList')) !== null) {
                             </select>
                         </div>
                         <input type='submit' name='bttn' value='学習開始' class="buttons btn-hover greenColor">
-                        <input type='hidden' name='loginId_userName' value='{{ $loginId_userName }}'> 
-                        <input type='hidden' name='collectionNumber' value='{{ $collectionNumber }}'> 
+                        <input type='hidden' name='loginId_userName' value='{{ $reLoginId }}'> 
                     </form>
                     
             </div>
@@ -143,17 +122,7 @@ if((session('doneQuizList')) !== null) {
         </div>
                 
     </div>
-            @else
-                <h3>&nbsp;ログインに失敗しました</h3>
-                <form action="{{ route('index') }}" method="get">
-                    <div class="btn-wrap">
-                        <input type="submit" value="TOPページに戻る" class="btn btn-switch" >
-                    </div>
-                </form>
-        </div>
-    </div>
 
-            @endif
 </body>
 </html>
 

@@ -840,6 +840,25 @@ body.vocabularyList {
       transition: all .4s ease-in-out;
     }
 
+    .btn-hover-myPage {
+      width: 110px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      margin: 15px 15px 15px 30px;
+      height: 35px;
+      text-align:center;
+      border: none;
+      background-size: 300% 100%;
+    
+      border-radius: 50px;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
+
     .child1-play-gamen {
       width: 300px;
     }
@@ -1079,6 +1098,14 @@ table tr:last-child td:last-child {
   transition: all .4s ease-in-out;
 }
 
+.btn-hover-myPage:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
 .btn-hover:focus {
   outline: none;
 }
@@ -1091,6 +1118,20 @@ table tr:last-child td:last-child {
   background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
     box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
+.btn-hover-myPage:focus {
+  outline: none;
+}
+.btn-hover-myPage.blueColor {
+  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+.btn-hover-myPage.greenColor {
+  background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+
 /* ▲ログイン後画面の「事前学習」、「学習開始」ボタンデザイン */
 
 /* ▼全体ボタンデザイン */

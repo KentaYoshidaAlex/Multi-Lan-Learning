@@ -45,7 +45,7 @@ class QuizMainController extends Controller
 
             // マイページ選択時の分岐
             if ($request->bttn === 'マイページ') {
-                    return view('quizMain/myPage', compact('reLoginId','reLoginPass'));
+                    return view('login/myPage', compact('reLoginId','reLoginPass'));
                 }
                 
             // request内データを変数に代入
