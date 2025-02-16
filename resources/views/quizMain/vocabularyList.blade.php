@@ -79,7 +79,7 @@ $haveANiceDayPronunciation = '';
 
                     <div class="parent">
                         <div class="child1">
-                            <p>&nbsp;<事前学習></p>
+                            <p>【事前学習】</p>
                             @if ($language === 'qMyanmar')
                                 <img src="../image/Flags/Myanmar.svg" alt="picture" width="100" height="50"><br>
                                     ミャンマー語 / 日本語
