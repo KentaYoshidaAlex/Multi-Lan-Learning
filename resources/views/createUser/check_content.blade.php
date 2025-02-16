@@ -47,6 +47,8 @@
                 <input type="hidden" name="loginPass" class="loginPass" maxlength="20" value="{{ $loginPass }}"/>
                 <input type="hidden" name="clearCount" value=0>
                 <input type="hidden" name="missCount" value=0>
+                <input type="hidden" name="max_consecutive_study_day" value=0>
+
               </form>
               <br>
               <div>
