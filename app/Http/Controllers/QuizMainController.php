@@ -39,13 +39,24 @@ class QuizMainController extends Controller
             $userObj = CreateUser::where('loginId_userName', $request->loginId_userName)->get();        
             foreach ($userObj as $player) { }
 
-            // 学習画面→言語選択画面に戻る際に利用するため、代入
+            // 次画面で使用するために、変数代入
             $reLoginId = $player->loginId_userName;
             $reLoginPass = $player->loginPass;
+            $reMax_consecutive_study_day = $player->max_consecutive_study_day;
+            $reAchievement_cource = $player->achievement_cource;
+            $reNumber_of_compeleted_quiz = $player->number_of_compeleted_quiz;
+            $rePerfect_clear_flag = $player->perfect_clear_flag;
 
             // マイページ選択時の分岐
             if ($request->bttn === 'マイページ') {
-                    return view('login/myPage', compact('reLoginId','reLoginPass'));
+                    return view('login/myPage', 
+                        compact('reLoginId',
+                                'reLoginPass',
+                                'reMax_consecutive_study_day',
+                                'reAchievement_cource',
+                                'reNumber_of_compeleted_quiz',
+                                'rePerfect_clear_flag')
+                    );
                 }
                 
             // request内データを変数に代入
@@ -156,7 +167,13 @@ class QuizMainController extends Controller
             session(['selectedQuiz' => $selectedQuiz]);
             session(['judgeNum' => $judgeNum]);
             
-            return view('quizMain/play', compact('clearCount', 'missCount','reLoginId','reLoginPass'));
+            return view('quizMain/play', 
+                    compact('clearCount', 
+                            'missCount',
+                            'reLoginId',
+                            'reLoginPass',
+                            )
+                        );
         }
 
 
@@ -242,6 +259,67 @@ class QuizMainController extends Controller
                 $log->missCount = $player->missCount;
 
                 $log->save();
+
+                // 1問目の正解時は、連続学習日数記録の更新判定を行う
+                if ($player->clearCount === 1) {
+
+                    // リクエストパラメータを元に、今クイズ挑戦したlogデータを取得
+                    $currentRecord = Log::where('loginId_userName', $reLoginId)
+                        ->orderBy('created_at', 'desc')
+                        ->take(1)
+                        ->first();
+
+                    // 日付データだけ変数代入
+                    $currentDate = $currentRecord->created_at; 
+
+                    // 過去にクイズ挑戦したlogデータがある場合、
+                    // リクエストパラメータを元に、前回クイズ挑戦したlogデータを取得
+                    $previousDate = '';
+
+                    $count = Log::where('loginId_userName', $reLoginId)->count();
+                    if ($count > 1) {
+                        $previousRecord = Log::where('loginId_userName', $reLoginId)
+                        ->orderBy('created_at', 'desc')
+                        ->skip(1)
+                        ->take(1)
+                        ->first();
+
+                        // 日付データだけ変数代入
+                        $previousDate = $previousRecord->created_at; 
+
+                        // 今回と前回のクイズ挑戦日の間が何日空いているか確認
+                        $daysDifference = $currentDate->diffInDays($previousDate);
+
+                    // 過去ログがない場合
+                    } else {
+                        $daysDifference = '';
+                    }
+
+                    // 連続学習日数記録の更新分岐
+                    // ※前回クイズしたのが、前日以外の場合は変更なし
+
+                    // ①前回クイズしたのが前日の場合
+                    if ($daysDifference === 1) {
+                        $reMax_consecutive_study_day =+ 1;
+
+                        // 連続学習日数記録をupdate
+                        $user = CreateUser::where('loginId_userName', $reLoginId)->first();
+                        $user->max_consecutive_study_day = $reMax_consecutive_study_day;
+                        $user->save();
+                    }
+
+                    // ②初めてクイズ挑戦の場合
+                    if ($daysDifference === '') {
+                        $reMax_consecutive_study_day = 1;
+
+                        // 連続学習日数記録をupdate
+                        $user = CreateUser::where('loginId_userName', $reLoginId)->first();
+                        $user->max_consecutive_study_day = $reMax_consecutive_study_day;
+                        $user->save();
+                    }
+
+                }
+
 
                 // 一度出した問題は保存し、次出さないようにする
                 $doneAnswer = $doneQuiz->answer;

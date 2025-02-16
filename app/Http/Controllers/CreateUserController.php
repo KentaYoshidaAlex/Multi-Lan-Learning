@@ -38,6 +38,10 @@ class CreateUserController extends Controller
             'loginPass' => $request->loginPass,
             'clearCount' => $request->clearCount,
             'missCount' => $request->missCount,
+            'max_consecutive_study_day' => $request->max_consecutive_study_day,
+            'achievement_cource' => '',
+            'number_of_compeleted_quiz' => '',
+            'perfect_clear_flag' => '',
         ]);
 
         return view('createUser/store', compact('createUser'));

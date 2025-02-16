@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('loginPass', 20);
             $table->integer('clearCount');
             $table->integer('missCount');
-            $table->integer('max_consecutive_study_day');
-            $table->string('achievement_cource', 30);
-            $table->string('number_of_compeleted_quiz', 10);
-            $table->string('perfect_clear_flag', 1);
+            $table->integer('max_consecutive_study_day')->nullable();
+            $table->string('achievement_cource', 30)->nullable();
+            $table->string('number_of_compeleted_quiz', 10)->nullable();
+            $table->string('perfect_clear_flag', 1)->nullable();
             $table->timestamps();
         });
     }
