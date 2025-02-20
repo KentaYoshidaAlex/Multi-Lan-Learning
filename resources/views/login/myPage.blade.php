@@ -27,7 +27,8 @@
             <div class="main">
                 <div class="container-left">
                     <p>【マイページ】</p>
-                    <p>ユーザー名： {{ $reLoginId }}</p>
+                    🔷ユーザー名：<br>
+                    &emsp;『{{ $reLoginId }}』
                 </div>
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                 <div class="container-right">
@@ -43,20 +44,36 @@
                     </form>
                 </div>
             </div>
-            <p>【学習状況】</p>
-            <p style="line-height: 2px">&emsp;</p>
-            <p>🔷連続学習記録</p>
-            <p>&emsp;🔥&nbsp;{{ $reMax_consecutive_study_day }}&nbsp;日</p>
-            <p style="line-height: 2px">&emsp;</p>
-            <p>🔷達成コース</p>
-            <p>&emsp;🌏世界の挨拶&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
-            <p>&emsp;🇵🇭タガログ語&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
-            <p>&emsp;🇲🇲ミャンマー語&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
-            <p>&emsp;🇪🇸スペイン語&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
-            <p>&emsp;🇫🇷フランス語&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
-            <p>&emsp;🐙関西弁&emsp;&emsp;&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
+            @if ($reLoginId === "ゲスト")
+                ※個別のアカウントを作成しログインすると、
+                <br>
+                &emsp;学習状況が以下に表示されます
+            @endif
+            @if ($reLoginId === "ゲスト")
+                <div style="background-color:grey;">
+            @endif
+                    <p style="line-height: 2px">&emsp;</p>
+                    <p>【学習状況】</p>
+                    <p style="line-height: 2px">&emsp;</p>
+                    <p>🔷連続学習記録</p>
+                    @if ($reLoginId === "ゲスト")
+                        <p>&emsp;🔥&nbsp;？&nbsp;日</p>
+                    @else
+                        <p>&emsp;🔥&nbsp;{{ $reMax_consecutive_study_day }}&nbsp;日</p>
+                    @endif
+                    <p style="line-height: 2px">&emsp;</p>
+                    <p>🔷達成コース</p>
+                    <p>&emsp;🌏世界の挨拶&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
+                    <p>&emsp;🇵🇭タガログ語&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
+                    <p>&emsp;🇲🇲ミャンマー語&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
+                    <p>&emsp;🇪🇸スペイン語&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
+                    <p>&emsp;🇫🇷フランス語&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
+                    <p>&emsp;🐙関西弁&emsp;&emsp;&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
+                    <br>
 
-        </div>   
+            @if ($reLoginId === "ゲスト")
+                </div>   
+            @endif
     </div>
 
 </body>

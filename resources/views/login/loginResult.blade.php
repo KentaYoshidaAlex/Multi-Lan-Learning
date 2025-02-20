@@ -144,7 +144,7 @@ if((session('doneQuizList')) !== null) {
                 
     </div>
             @else
-                <h3>&nbsp;ログインに失敗しました</h3>
+                <h3 style="color: red">&nbsp;ログインに失敗しました。</h3>
                 <form action="{{ route('index') }}" method="get">
                     <div class="btn-wrap">
                         <input type="submit" value="TOPページに戻る" class="btn btn-switch" >
