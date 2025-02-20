@@ -31,7 +31,9 @@
 
         <div class="main-wrapper">
             <div class="container">
-                <x-input-error class="mb-4" :messages="$errors->all()"/>
+                <div style="color: red">
+                    <x-input-error class="mb-4" :messages="$errors->all()"/>
+                </div>
                 <form action="{{ route('check_content') }}" method="POST">
                     <div id="KleeOne400">
                         <h2 class="font-orange">&nbsp;下記の会員情報をご登録ください</h2>
