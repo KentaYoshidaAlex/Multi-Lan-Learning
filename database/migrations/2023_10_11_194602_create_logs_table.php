@@ -11,19 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('logs', function (Blueprint $table) {
-            $table->increments('logNo');
-            $table->string('loginId_userName', 30);
-            $table->string('language', 20);
-            $table->integer('quizNo');
-            $table->string('question', 100);
-            $table->timestamps();
-            $table->integer('logRight');
-            $table->integer('logWrong');
-            $table->integer('clearCount');
-            $table->integer('missCount');
+        // Schema::create('logs', function (Blueprint $table) {
+        //     $table->increments('logNo');
+        //     $table->string('loginId_userName', 30);
+        //     $table->string('language', 20);
+        //     $table->integer('quizNo');
+        //     $table->string('question', 100);
+        //     $table->timestamps();
+        //     $table->integer('logRight');
+        //     $table->integer('logWrong');
+        //     $table->integer('clearCount');
+        //     $table->integer('missCount');
 
-        });
+        // });
     }
 
     // /**
