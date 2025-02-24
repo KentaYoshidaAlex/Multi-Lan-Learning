@@ -44,12 +44,12 @@ if((session('doneQuizList')) !== null) {
             
             @if($collectionNumber == 1)
                 <div class="main">
-                    <div class="container-left">
-                        <p>ログインに成功しました！!</p>
-                        <p>ようこそ {{ $loginId_userName }} さん</p>
+                    <div class="container-left-top">
+                        ログインに成功しました！!<br>
+                        ようこそ {{ $loginId_userName }} さん
                     </div>
                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <div class="container-right">
+                    <div class="container-right-top">
                         <form method='post' action="{{ route('quizMain') }}" class="quiz-form">
                             @csrf
                             <input type='submit' name='bttn' value="マイページ" class="buttons btn-hover-myPage blueColor" >
