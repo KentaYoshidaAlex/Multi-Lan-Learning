@@ -92,6 +92,7 @@ class ComposerStaticInit507ae9d526731c5801aca0c891be7433
         ),
         'R' => 
         array (
+            'Revolution\\Vercel\\' => 18,
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
         ),
@@ -332,6 +333,10 @@ class ComposerStaticInit507ae9d526731c5801aca0c891be7433
         array (
             0 => __DIR__ . '/..' . '/spatie/backtrace/src',
         ),
+        'Revolution\\Vercel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/revolution/laravel-vercel-installer/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -554,6 +559,7 @@ class ComposerStaticInit507ae9d526731c5801aca0c891be7433
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
+        'App\\Http\\Middleware\\RedirectToHttps' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectToHttps.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
@@ -566,6 +572,12 @@ class ComposerStaticInit507ae9d526731c5801aca0c891be7433
         'App\\Models\\CreateUser' => __DIR__ . '/../..' . '/app/Models/CreateUser.php',
         'App\\Models\\Player' => __DIR__ . '/../..' . '/app/Models/Player.php',
         'App\\Models\\QuizDatum' => __DIR__ . '/../..' . '/app/Models/QuizDatum.php',
+        'App\\Models\\QuizFrenchDatum' => __DIR__ . '/../..' . '/app/Models/QuizFrenchDatum.php',
+        'App\\Models\\QuizKansaibenDatum' => __DIR__ . '/../..' . '/app/Models/QuizKansaibenDatum.php',
+        'App\\Models\\QuizMyanmarDatum' => __DIR__ . '/../..' . '/app/Models/QuizMyanmarDatum.php',
+        'App\\Models\\QuizSpanishDatum' => __DIR__ . '/../..' . '/app/Models/QuizSpanishDatum.php',
+        'App\\Models\\QuizTagalogDatum' => __DIR__ . '/../..' . '/app/Models/QuizTagalogDatum.php',
+        'App\\Models\\QuizWorldGreetingsDatum' => __DIR__ . '/../..' . '/app/Models/QuizWorldGreetingsDatum.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -689,7 +701,12 @@ class ComposerStaticInit507ae9d526731c5801aca0c891be7433
         'Database\\Seeders\\CreateUsersTableSeeder' => __DIR__ . '/../..' . '/database/seeders/CreateUsersTableSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'Database\\Seeders\\LogsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/LogsTableSeeder.php',
-        'Database\\Seeders\\QuizDataTableSeeder' => __DIR__ . '/../..' . '/database/seeders/QuizDataTableSeeder.php',
+        'Database\\Seeders\\QFrenchTableSeeder' => __DIR__ . '/../..' . '/database/seeders/QFrenchTableSeeder.php',
+        'Database\\Seeders\\QKansaibenTableSeeder' => __DIR__ . '/../..' . '/database/seeders/QKansaibenTableSeeder.php',
+        'Database\\Seeders\\QMyanmarTableSeeder' => __DIR__ . '/../..' . '/database/seeders/QMyanmarTableSeeder.php',
+        'Database\\Seeders\\QSpanishTableSeeder' => __DIR__ . '/../..' . '/database/seeders/QSpanishTableSeeder.php',
+        'Database\\Seeders\\QTagalogTableSeeder' => __DIR__ . '/../..' . '/database/seeders/QTagalogTableSeeder.php',
+        'Database\\Seeders\\QWorldGreetingsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/QWorldGreetingsTableSeeder.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
         'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
         'DateInvalidOperationException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateInvalidOperationException.php',
@@ -5145,6 +5162,8 @@ class ComposerStaticInit507ae9d526731c5801aca0c891be7433
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
         'Ramsey\\Uuid\\Validator\\GenericValidator' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/GenericValidator.php',
         'Ramsey\\Uuid\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
+        'Revolution\\Vercel\\Console\\InstallCommand' => __DIR__ . '/..' . '/revolution/laravel-vercel-installer/src/Console/InstallCommand.php',
+        'Revolution\\Vercel\\VercelInstallerServiceProvider' => __DIR__ . '/..' . '/revolution/laravel-vercel-installer/src/VercelInstallerServiceProvider.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',
         'SebastianBergmann\\CliParser\\OptionDoesNotAllowArgumentException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/OptionDoesNotAllowArgumentException.php',
