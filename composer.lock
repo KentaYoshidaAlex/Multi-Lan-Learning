@@ -6847,12 +6847,12 @@
             "version": "1.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kawax/laravel-vercel-installer.git",
+                "url": "https://github.com/invokable/laravel-vercel-installer.git",
                 "reference": "3117a4e83cb980e99ec31d1bbbd03ad0f698951c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-vercel-installer/zipball/3117a4e83cb980e99ec31d1bbbd03ad0f698951c",
+                "url": "https://api.github.com/repos/invokable/laravel-vercel-installer/zipball/3117a4e83cb980e99ec31d1bbbd03ad0f698951c",
                 "reference": "3117a4e83cb980e99ec31d1bbbd03ad0f698951c",
                 "shasum": ""
             },
@@ -6892,8 +6892,7 @@
                 "vercel"
             ],
             "support": {
-                "issues": "https://github.com/kawax/laravel-vercel-installer/issues",
-                "source": "https://github.com/kawax/laravel-vercel-installer/tree/1.1.2"
+                "source": "https://github.com/invokable/laravel-vercel-installer/tree/1.1.2"
             },
             "time": "2024-02-18T07:59:58+00:00"
         },

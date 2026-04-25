@@ -1,35 +1,31 @@
 {
-    
     "version": 2,
-   
-
-    "builds": [
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.6.2"
+        }
+    },
+    "routes": [
         {
-            "src": "/api/index.php",
-            "use": "vercel-php@0.6.1"
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
         },
         {
-            "src": "/public/**",
-            "use": "@vercel-php@0.6.1"
-        }
-    ],
-    "routes": [
+            "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|map))",
+            "dest": "/public/$1"
+        },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
     ],
     "env": {
-        "APP_NAME": "Laravel Vercel",
+        "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_CONFIG_CACHE": "/tmp/config.php",
-        "APP_EVENTS_CACHE": "/tmp/events.php",
-        "APP_PACKAGES_CACHE": "/tmp/packages.php",
-        "APP_ROUTES_CACHE": "/tmp/routes.php",
-        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "APP_URL": "https://multi-language-learning.app",
         "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
-        "VIEW_COMPILED_PATH": "/tmp"
+        "QUEUE_CONNECTION": "sync",
+        "LOG_CHANNEL": "stderr"
     }
 }
