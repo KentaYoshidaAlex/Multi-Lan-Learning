@@ -164,6 +164,7 @@ return [
         /*
          * Application Service Providers...
          */
+        Illuminate\View\ViewServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
