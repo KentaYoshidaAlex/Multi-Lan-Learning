@@ -1,16 +1,22 @@
 <?php
-try {
-    require __DIR__.'/../vendor/autoload.php';
-    echo "autoload OK<br>";
-    
-    $app = require_once __DIR__.'/../bootstrap/app.php';
-    echo "bootstrap OK<br>";
-    
-    require __DIR__.'/../public/index.php';
-} catch (\Throwable $e) {
-    echo "<pre>";
-    echo $e->getMessage() . "\n";
-    echo $e->getFile() . ":" . $e->getLine() . "\n";
-    echo $e->getTraceAsString();
-    echo "</pre>";
-}
+/**
+* Here is the serverless function entry
+* for deployment with Vercel.
+*/
+
+use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Http\Request;
+
+define('LARAVEL_START', microtime(true));
+
+require __DIR__.'/../vendor/autoload.php';
+
+$app = require __DIR__.'/../bootstrap/app.php';
+
+$kernel = $app->make(Kernel::class);
+
+$response = $kernel->handle(
+    $request = Request::capture()
+)->send();
+
+$kernel->terminate($request, $response);
