@@ -2,26 +2,29 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-try {
-    require __DIR__.'/../vendor/autoload.php';
-    
-    $app = require __DIR__.'/../bootstrap/app.php';
-    
-    $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-    
-    $response = $kernel->handle(
-        $request = Illuminate\Http\Request::capture()
-    );
-    
-    $response->send();
-    
-    $kernel->terminate($request, $response);
+require __DIR__.'/../vendor/autoload.php';
 
-} catch (\Throwable $e) {
-    http_response_code(500);
-    echo "<h1>Error</h1>";
-    echo "<p><strong>Message:</strong> " . $e->getMessage() . "</p>";
-    echo "<p><strong>File:</strong> " . $e->getFile() . "</p>";
-    echo "<p><strong>Line:</strong> " . $e->getLine() . "</p>";
-    echo "<pre>" . $e->getTraceAsString() . "</pre>";
-}
+$app = require __DIR__.'/../bootstrap/app.php';
+
+// サービスプロバイダーの登録状況を確認
+$providers = $app->getLoadedProviders();
+$hasView = array_key_exists('Illuminate\View\ViewServiceProvider', $providers);
+
+echo "ViewServiceProvider loaded: " . ($hasView ? 'YES' : 'NO') . "<br>";
+
+$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+
+// kernelをbootする
+$kernel->bootstrap();
+
+$providers2 = $app->getLoadedProviders();
+$hasView2 = array_key_exists('Illuminate\View\ViewServiceProvider', $providers2);
+
+echo "ViewServiceProvider after bootstrap: " . ($hasView2 ? 'YES' : 'NO') . "<br>";
+
+$response = $kernel->handle(
+    $request = Illuminate\Http\Request::capture()
+);
+
+$response->send();
+$kernel->terminate($request, $response);
