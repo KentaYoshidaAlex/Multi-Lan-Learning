@@ -100,7 +100,6 @@ class QuizMainController extends Controller
             session(['amountOfQuenstions' => $amountOfQuenstions]);
             session(['allQuizMusicData_id' => $allQuizMusicData->id]);
             session(['player_loginId' => $player->loginId_userName]);    
-            session(['quizData' => $quizData]); 
             session(['language' => $language]); 
 
             // 事前学習選択時の分岐
@@ -430,7 +429,7 @@ class QuizMainController extends Controller
                 session(['doneAnswer' => $doneAnswer]);
                 session(['donePronunciation' => $donePronunciation]);
                 session(['doneBackground' => $doneBackground]);
-                session(['player' => $player]);
+                session(['player_loginId' => $player->loginId_userName]);
                 session(['tgrbtn' => $tgrbtn]);
                 session(['doneQuizList' => $doneQuizList]);
 
@@ -463,7 +462,7 @@ class QuizMainController extends Controller
 
                 // sessionに値を保存
                 session(['judgeNum' => $judgeNum]);
-                session(['player' => $player]);
+                session(['player_loginId' => $player->loginId_userName]);
                 session(['judgeNum' => $judgeNum]);
                 session(['tgrbtn' => $tgrbtn]);
 
