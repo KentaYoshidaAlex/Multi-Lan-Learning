@@ -19,9 +19,9 @@ if(!($selectedQuiz == '')) {
 }
 
 // 他の変数代入
-$allQuizMusicData = session('allQuizMusicData');
+$allQuizMusicData = \App\Models\AllQuizMusic::find(session('allQuizMusicData_id'));
+$player = \App\Models\CreateUser::where('loginId_userName', session('player_loginId'))->first();
 $judgeNum = session('judgeNum');
-$player = session('player');
 
 // $tgrbtn初期化
 $tgrbtn = null;

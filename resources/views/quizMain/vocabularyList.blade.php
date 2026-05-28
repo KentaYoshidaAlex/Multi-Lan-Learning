@@ -4,9 +4,24 @@ use Illuminate\Support\Str;
 
 // sessionに保存していたものを変数に代入
 $amountOfQuenstions = session('amountOfQuenstions');
-$allQuizMusicData = session('allQuizMusicData');
-$player = session('player');
-$quizData = session('quizData');
+$allQuizMusicData = \App\Models\AllQuizMusic::find(session('allQuizMusicData_id'));
+$player = \App\Models\CreateUser::where('loginId_userName', session('player_loginId'))->first();
+$language = session('language');
+
+// quizDataをDBから直接取得
+if ($language == 'qMyanmar') {
+    $quizData = \App\Models\QuizMyanmarDatum::all();
+} elseif ($language == 'qTagalog') {
+    $quizData = \App\Models\QuizTagalogDatum::all();
+} elseif ($language == 'qKansaiben') {
+    $quizData = \App\Models\QuizKansaibenDatum::all();
+} elseif ($language == 'qWorldGreetings') {
+    $quizData = \App\Models\QuizWorldGreetingsDatum::all();
+} elseif ($language == 'qSpanish') {
+    $quizData = \App\Models\QuizSpanishDatum::all();
+} elseif ($language == 'qFrench') {
+    $quizData = \App\Models\QuizFrenchDatum::all();
+}
 $language = session('language');
 
 // dd($quizData);

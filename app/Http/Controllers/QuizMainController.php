@@ -64,6 +64,7 @@ class QuizMainController extends Controller
             $loginId_userName = $request->loginId_userName;
 
             $allQuizMusicData = '';
+            $quizData = '';
             // 全問題共通の効果音ファイルを再生するためのパスを取得
             foreach (AllQuizMusic::all() as $allQuizMusicData) { }
 
@@ -97,8 +98,8 @@ class QuizMainController extends Controller
 
             // 共通で利用する変数をsessionに保存
             session(['amountOfQuenstions' => $amountOfQuenstions]);
-            session(['allQuizMusicData' => $allQuizMusicData]);
-            session(['player' => $player]);     
+            session(['allQuizMusicData_id' => $allQuizMusicData->id]);
+            session(['player_loginId' => $player->loginId_userName]);    
             session(['quizData' => $quizData]); 
             session(['language' => $language]); 
 
@@ -198,8 +199,8 @@ class QuizMainController extends Controller
                 $anserJudge = 2;
             }
 
-            // sessionからplayerを取り出し
-            $player = session('player');
+            // player_IDをDBから取得
+            $player = CreateUser::where('loginId_userName', session('player_loginId'))->first();
 
             // 学習画面→言語選択画面に戻る際に利用するため、代入
             $reLoginId = $player->loginId_userName;
