@@ -31,12 +31,16 @@ if ((session('doneQuizList')) !== null) {
     $doneQuizList = session('doneQuizList');
 }
 
-if ((session('doneAnswer')) !== null || $missCount == 1) { 
-    $doneAnswer = session('doneAnswer');
-    $donePronunciation = session('donePronunciation');
-    $doneBackground = session('doneBackground');
-    $tgrbtn = session('tgrbtn');
-}
+$doneAnswer = session('doneAnswer') ?? '';
+$donePronunciation = session('donePronunciation') ?? '';
+$doneBackground = session('doneBackground') ?? '';
+$tgrbtn = session('tgrbtn') ?? null;
+// if ((session('doneAnswer')) !== null || $missCount == 1) { 
+//     $doneAnswer = session('doneAnswer');
+//     $donePronunciation = session('donePronunciation');
+//     $doneBackground = session('doneBackground');
+//     $tgrbtn = session('tgrbtn');
+// }
 // dd($doneQuizList);
 
 @endphp
