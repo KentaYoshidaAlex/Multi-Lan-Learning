@@ -10,11 +10,16 @@
     },
     "routes": [
         {
+      
+            "src": "/sound/(.*)",
+            "dest": "/public/sound/$1"
+        },
+        {
             "src": "/build/(.*)",
             "dest": "/public/build/$1"
         },
         {
-            "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|map))",
+            "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|map|mp3|m4a))",
             "dest": "/public/$1"
         },
         {
