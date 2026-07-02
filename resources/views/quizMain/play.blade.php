@@ -4,6 +4,7 @@
 $currentQuizAmount = session('currentQuizAmount');
 $amountOfQuenstions = session('amountOfQuenstions');
 $selectedQuiz = session('selectedQuiz');
+$currentBackground = session('currentBackground') ?? '';
 
 // 問題文が残っていれば、変数代入
 if(!($selectedQuiz == '')) {
@@ -74,11 +75,7 @@ $tgrbtn = session('tgrbtn') ?? null;
     </div>
 </header>
 
-@if(!empty($selectedQuiz->pathBackground)) 
-    <body style="background-image: url({{ $selectedQuiz->pathBackground }})" class="quiz-gamen">
-@else
-    <body style="background-image: url({{ $doneBackground }})" class="quiz-gamen">
-@endif
+<body style="background-image: url({{ $currentBackground }})" class="quiz-gamen">
     
     <div class="main-wrapper">
 

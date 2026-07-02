@@ -39,6 +39,11 @@ class QuizMainController extends Controller
             $userObj = CreateUser::where('loginId_userName', $request->loginId_userName)->get();        
             foreach ($userObj as $player) { }
 
+            // クイズ開始時にclearCountとmissCountを0にリセット ← 追加
+            $player->clearCount = 0;
+            $player->missCount = 0;
+            $player->save();
+
             // 次画面で使用するために、変数代入
             $reLoginId = $player->loginId_userName;
             $reLoginPass = $player->loginPass;
@@ -101,6 +106,9 @@ class QuizMainController extends Controller
             session(['allQuizMusicData_id' => $allQuizMusicData->id]);
             session(['player_loginId' => $player->loginId_userName]);    
             session(['language' => $language]); 
+
+            // 新しいクイズ開始時、前回の回答情報をクリア
+            session()->forget(['doneAnswer', 'donePronunciation', 'doneBackground', 'tgrbtn', 'doneQuizList']);
 
             // 事前学習選択時の分岐
             if ($request->bttn === '事前学習') {
@@ -166,6 +174,9 @@ class QuizMainController extends Controller
             session(['currentQuizAmount' => $currentQuizAmount]);
             session(['selectedQuiz' => $selectedQuiz]);
             session(['judgeNum' => $judgeNum]);
+
+            // 背景画像をランダムに選択してセッション保存
+            session(['currentBackground' => $this->getRandomBackground($language)]);
             
             return view('quizMain/play', 
                     compact('clearCount', 
@@ -222,6 +233,9 @@ class QuizMainController extends Controller
 
                 // ミスカウントをリセット
                 $player->missCount = 0;
+
+                // DBに保存
+                $player->save();
 
                 // $clearCount, $missCountを変数代入
                 $clearCount = $player->clearCount;
@@ -433,6 +447,8 @@ class QuizMainController extends Controller
                 session(['tgrbtn' => $tgrbtn]);
                 session(['doneQuizList' => $doneQuizList]);
 
+                // 次の問題用に背景画像をランダムに再選択
+                session(['currentBackground' => $this->getRandomBackground($language)]);
 
                 // 再度、問題画面に戻す
                 return view('quizMain/play', compact('clearCount', 'missCount','reLoginId','reLoginPass'));
@@ -447,6 +463,9 @@ class QuizMainController extends Controller
 
                 // ミスカウントをプラス１
                 $player->missCount = $player->missCount + 1;
+
+                // DBに保存
+                $player->save();
 
                 // $clearCount, $missCountを変数代入
                 $clearCount = $player->clearCount;
@@ -475,6 +494,18 @@ class QuizMainController extends Controller
     // ログアウト押下時の処理
     public function quizLogOut(Request $request) 
     {
+        // リクエストパラメータを元に、対象ユーザーのクリア数・ミス数をリセット
+        $loginId_userName = $request->loginId_userName;  // ← 追加
+
+        if (!empty($loginId_userName)) {
+            $player = CreateUser::where('loginId_userName', $loginId_userName)->first();
+            if ($player) {
+                $player->clearCount = 0;
+                $player->missCount = 0;
+                $player->save();
+            }
+        }
+
         // doneQuizListを初期化
         if(session('doneQuizList') !== null) {
             $doneQuizList = session('doneQuizList');
@@ -485,5 +516,34 @@ class QuizMainController extends Controller
         // ログイン画面に戻る
         return view('index');
       
+    }
+
+    // 現在の言語のテーブルから、背景画像パスをランダムに1つ取得
+    private function getRandomBackground($language)
+    {
+        $model = match ($language) {
+            'qMyanmar', 'ミャンマー語' => \App\Models\QuizMyanmarDatum::class,
+            'qTagalog', 'タガログ語' => \App\Models\QuizTagalogDatum::class,
+            'qKansaiben', '関西弁' => \App\Models\QuizKansaibenDatum::class,
+            'qWorldGreetings', '世界の挨拶' => \App\Models\QuizWorldGreetingsDatum::class,
+            'qSpanish', 'スペイン語' => \App\Models\QuizSpanishDatum::class,
+            'qFrench', 'フランス語' => \App\Models\QuizFrenchDatum::class,
+            default => null,
+        };
+
+        if (!$model) {
+            return null;
+        }
+
+        $paths = $model::whereNotNull('pathBackground')
+            ->where('pathBackground', '!=', '')
+            ->pluck('pathBackground')
+            ->toArray();
+
+        if (empty($paths)) {
+            return null;
+        }
+
+        return $paths[array_rand($paths)];
     }
 }

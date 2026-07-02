@@ -65,10 +65,13 @@
                     <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
                     <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
                     <input type="hidden" name="bttn" value= 'ログイン'>
+                    <input type="hidden" name="resetCount" value= '1'>
                 </form>
                     <div class="foo">
                         <div class="rigit-side">
-                            <form action="{{ route('index') }}" method="get">
+                            <form action="{{ route('quizLogOut') }}" method="post">
+                                @csrf
+                                <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
                                 <div class="btn-wrap-for-quizGamen">
                                     <input type="submit" value="ログアウト" class="btn btn-switch" />
                                 </div>
@@ -116,11 +119,13 @@
                             <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
                             <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
                             <input type="hidden" name="bttn" value= 'ログイン' >
+                            <input type="hidden" name="resetCount" value= '1'>
                         </form>
                     </div>
                     <div class="child2">
-                        <form action="{{ route('index') }}" method="get">
+                        <form action="{{ route('quizLogOut') }}" method="post">
                             @csrf
+                            <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
                             <div class="btn-wrap">
                                 <input type="submit" value="ログアウト" class="btn btn-switch" />
                             </div>

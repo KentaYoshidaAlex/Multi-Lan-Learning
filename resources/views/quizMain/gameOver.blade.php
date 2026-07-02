@@ -22,9 +22,10 @@
         <input type="hidden" name="loginId_userName" value= '{{ $reLoginId }}' >
         <input type="hidden" name="loginPass" value= '{{ $reLoginPass }}' >
         <input type="hidden" name="bttn" value= 'ログイン' >
+        <input type="hidden" name="resetCount" value= '1'>
     </form>
 
-    <form action="{{ route('index') }}" method="get">
+    <form action="{{ route('quizLogOut') }}" method="get">
         <div class="btn-wrap">
         <input type="submit" value="ログアウト" class="btn btn-switch" />
         </div>
