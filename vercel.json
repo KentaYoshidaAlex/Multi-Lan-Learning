@@ -5,15 +5,11 @@
     "buildCommand": "",
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-php@0.9.1",
-            "config": {
-              "nodeVersion": "20.x"
-             }
+            "runtime": "@php-runtime/vercel"
          }
     },
     "routes": [
         {
-      
             "src": "/sound/(.*)",
             "dest": "/public/sound/$1"
         },
