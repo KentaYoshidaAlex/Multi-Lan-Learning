@@ -5,7 +5,7 @@
     "buildCommand": "",
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-php@0.9.1"
+            "runtime": "vercel-php@0.9.1",
             "config": {
               "nodeVersion": "20.x"
              }
