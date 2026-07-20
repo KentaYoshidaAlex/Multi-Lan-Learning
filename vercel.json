@@ -5,11 +5,12 @@
     "buildCommand": "",
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-laravel@0.3.0"
+            "runtime": "vercel-php@0.7.2"
         }
     },
     "routes": [
         {
+      
             "src": "/sound/(.*)",
             "dest": "/public/sound/$1"
         },
