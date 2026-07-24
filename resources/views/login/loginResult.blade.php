@@ -79,7 +79,7 @@ if((session('doneQuizList')) !== null) {
             </details>
 
             <details class="details-smartPhone">
-                <summary class="details-summary-loginResult icon-webfont">遊び方 ▼ ［ 初めての方へ ］<</summary>
+                <summary class="details-summary-loginResult icon-webfont">遊び方 ▼ ［ 初めての方へ ］</summary>
                     
                     <p style="line-height: 0.1">
                     </p>
