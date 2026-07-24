@@ -53,7 +53,7 @@ if((session('doneQuizList')) !== null) {
           <details class="details">
             <p>
               <summary class="details-summary icon-arrow">
-                <div id="riyou-annai">利用案内          
+                <div id="riyou-annai">利用案内チェック
                   <span class="material-symbols-outlined position">web_traffic</span>
                 </div>
               </summary>
@@ -66,7 +66,7 @@ if((session('doneQuizList')) !== null) {
 
           <details class="details-smartPhone">
             <summary class="details-summary icon-arrow">
-              <div id="riyou-annai">利用案内
+              <div id="riyou-annai">利用案内チェック
                 <span class="material-symbols-outlined">web_traffic</span>
               </div>
             </summary>

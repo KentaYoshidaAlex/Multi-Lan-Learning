@@ -46,13 +46,13 @@ if((session('doneQuizList')) !== null) {
                 <div class="main">
                     <div class="container-left-top">
                         ログインに成功しました！!<br>
-                        ようこそ {{ $loginId_userName }} さん
+                        ようこそ<br class="sp-br"> {{ $loginId_userName }} さん
                     </div>
                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <div class="container-right-top">
                         <form method='post' action="{{ route('quizMain') }}" class="quiz-form">
                             @csrf
-                            <input type='submit' name='bttn' value="マイページ" class="buttons btn-hover-myPage blueColor" >
+                            {{-- <input type='submit' name='bttn' value="マイページ" class="buttons btn-hover-myPage blueColor" > --}}
                             <input type='hidden' name='loginId_userName' value='{{ $loginId_userName }}'> 
                             <input type='hidden' name='collectionNumber' value='{{ $collectionNumber }}'> 
                         </form>
@@ -67,7 +67,7 @@ if((session('doneQuizList')) !== null) {
                 <p>学習したい言語と学習方法を一覧から選択してください</p>
 
             <details class="details">
-                <summary class="details-summary-loginResult icon-webfont">遊び方▽</summary>
+                <summary class="details-summary-loginResult icon-webfont">遊び方 ▼ ［ 初めての方へ ］</summary>
                     
                     <p style="line-height: 0.1">
                     </p>
@@ -79,7 +79,7 @@ if((session('doneQuizList')) !== null) {
             </details>
 
             <details class="details-smartPhone">
-                <summary class="details-summary-loginResult icon-webfont">遊び方▽</summary>
+                <summary class="details-summary-loginResult icon-webfont">遊び方 ▼ ［ 初めての方へ ］<</summary>
                     
                     <p style="line-height: 0.1">
                     </p>

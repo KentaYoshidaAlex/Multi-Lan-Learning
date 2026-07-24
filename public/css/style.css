@@ -196,6 +196,10 @@ input.cmn-toggle-round:checked + label:after {
   
   }
 
+  .sp-br {
+    display: inline;  /* ログイン後のページで、ようこその後に改行をつける */
+  }
+
   .loginTop-smartPhone {
     background-image: url(../image/international_exchange_many_people2.jpg);
     width: 100%;
@@ -650,6 +654,10 @@ summary::-webkit-details-marker {
     border-radius: 10px;
     background-color: white;
     opacity: 0.93;
+  }
+
+  .sp-br {
+    display: none;  /* ログイン後のページで、ようこその後に改行なし */
   }
 
   .container {
