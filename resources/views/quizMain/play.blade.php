@@ -104,7 +104,7 @@ $tgrbtn = session('tgrbtn') ?? null;
                     現在のクリア数は{{ $player->clearCount }} 問です。
                     <br>
 
-                    @if(!empty($donePronunciation))  
+                    @if(!empty($donePronunciation) && ($missCount < 3 )) 
                     <br>
                     今、正解した「{!! $doneAnswer !!} 」の発音を確認したい方はコチラ↓
                     <br>
