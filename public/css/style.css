@@ -297,7 +297,7 @@ input.cmn-toggle-round:checked + label:after {
     width: 230px;
   }
   .container-left-top {
-    flex: 7; 
+    flex: 9; 
   }
 
   .container-right {
@@ -307,7 +307,7 @@ input.cmn-toggle-round:checked + label:after {
   }
 
   .container-right-top {
-    flex: 3; 
+    flex: 1; 
   }
 
   .container-complete {
