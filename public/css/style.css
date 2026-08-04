@@ -233,7 +233,7 @@ input.cmn-toggle-round:checked + label:after {
   
     width: 375px;
     margin: auto;
-    opacity: 0.98;
+    opacity: 0.90;
 
   }
 
@@ -243,7 +243,7 @@ input.cmn-toggle-round:checked + label:after {
   
     width: 100%;
     background-color: white;
-    opacity: 0.98;
+    opacity: 0.90;
     border-radius: 10px;
     border: black solid 1px;
     padding: 10px;
