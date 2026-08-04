@@ -175,8 +175,8 @@ class QuizMainController extends Controller
             session(['selectedQuiz' => $selectedQuiz]);
             session(['judgeNum' => $judgeNum]);
 
-            // 背景画像をランダムに選択してセッション保存
-            session(['currentBackground' => $this->getRandomBackground($language)]);
+            // 選択した問題に紐づく背景画像をセッション保存
+            session(['currentBackground' => $selectedQuiz->pathBackground]);
             
             return view('quizMain/play', 
                     compact('clearCount', 
@@ -431,10 +431,16 @@ class QuizMainController extends Controller
 
                     session(['selectedQuiz' => $nextObj]);
 
+                    // 次の問題に紐づく背景画像をセッション保存
+                    session(['currentBackground' => $nextObj->pathBackground]);
+
                 // 残りの問題がない場合
                 } else {
                     session(['selectedQuiz' => ""]);
                     session(['language' => $language]);
+
+                    // 特定の問題に紐づかないため、この場合のみランダムに選択
+                    session(['currentBackground' => $this->getRandomBackground($language)]);
                 }
 
                 // sessionに値を保存
@@ -446,9 +452,6 @@ class QuizMainController extends Controller
                 session(['player_loginId' => $player->loginId_userName]);
                 session(['tgrbtn' => $tgrbtn]);
                 session(['doneQuizList' => $doneQuizList]);
-
-                // 次の問題用に背景画像をランダムに再選択
-                session(['currentBackground' => $this->getRandomBackground($language)]);
 
                 // 再度、問題画面に戻す
                 return view('quizMain/play', compact('clearCount', 'missCount','reLoginId','reLoginPass'));
