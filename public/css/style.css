@@ -233,7 +233,18 @@ input.cmn-toggle-round:checked + label:after {
   
     width: 375px;
     margin: auto;
-    opacity: 0.90;
+    opacity: 0.98;
+
+  }
+
+   /* スマホ用はクイズ画面専用のopacity設定 */
+    .main-wrapper-quizGamen {
+    display: flex;
+    flex-direction: column; 
+  
+    width: 375px;
+    margin: auto;
+    opacity: 0.85;
 
   }
 
@@ -243,7 +254,6 @@ input.cmn-toggle-round:checked + label:after {
   
     width: 100%;
     background-color: white;
-    opacity: 0.90;
     border-radius: 10px;
     border: black solid 1px;
     padding: 10px;
@@ -646,6 +656,17 @@ summary::-webkit-details-marker {
 @media screen and (min-width: 441px) and (max-width: 2000px) {
 
   .main-wrapper {
+    display: flex;
+    flex-direction: column; 
+    width: 520px;
+    margin: auto;
+    border: 1px solid #000; 
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.93;
+  }
+
+    .main-wrapper-quizGamen {
     display: flex;
     flex-direction: column; 
     width: 520px;
