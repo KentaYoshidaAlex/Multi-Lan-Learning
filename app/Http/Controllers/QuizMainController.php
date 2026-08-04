@@ -538,6 +538,7 @@ class QuizMainController extends Controller
         $paths = $model::whereNotNull('pathBackground')
             ->where('pathBackground', '!=', '')
             ->pluck('pathBackground')
+            ->unique()
             ->filter(fn($path) => file_exists(public_path(ltrim($path, '/'))))
             ->values()
             ->toArray();
