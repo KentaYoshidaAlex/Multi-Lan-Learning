@@ -218,6 +218,7 @@ input.cmn-toggle-round:checked + label:after {
     background-size: cover; /* 画像が全体に広がるように */
     background-position: center ; /* 画像を中央に配置 */
     background-repeat: no-repeat; /* 画像が繰り返されないように */
+    height: auto;       /* 追加: html/body共通ルールのheight:100%を打ち消す */
     min-height: 100%; /* heightをmin-heightに変更し、コンテンツが長い時は伸びるように */
   }
 
