@@ -49,6 +49,13 @@ html, body {
   height: 100%;
 }
 
+.loginId_userName,
+.loginPass {
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
 /* 追加: クイズ画面の背景専用（ビューポート固定でコンテンツの高さに影響されない） */
 .quiz-background {
   position: fixed;
