@@ -49,6 +49,18 @@ html, body {
   height: 100%;
 }
 
+/* 追加: クイズ画面の背景専用（ビューポート固定でコンテンツの高さに影響されない） */
+.quiz-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
 
 
 /* ▼背景写真▼ */
@@ -214,13 +226,6 @@ input.cmn-toggle-round:checked + label:after {
 
   .quiz-gamen {
     width: 100%;
-
-    background-size: cover; /* 画像が全体に広がるように */
-    background-position: center ; /* 画像を中央に配置 */
-    background-repeat: no-repeat; /* 画像が繰り返されないように */
-    height: auto;       /* 追加: html/body共通ルールのheight:100%を打ち消す */
-    min-height: 100vh;   /* dvh未対応ブラウザ向けのフォールバック */
-    min-height: 100dvh;  /* 対応ブラウザではこちらが優先され、ツールバーの増減に追従 */
     }
 
   /* background-image {

@@ -75,8 +75,9 @@ $tgrbtn = session('tgrbtn') ?? null;
     </div>
 </header>
 
-<body style="background-image: url({{ $currentBackground }})" class="quiz-gamen">
-    
+<body class="quiz-gamen">
+    <div class="quiz-background" style="background-image: url('{{ $currentBackground }}')"></div>
+
     <div class="main-wrapper-quizGamen">
 
         {{-- 目標クイズ数正解時、白枠背景を伸ばす --}}
