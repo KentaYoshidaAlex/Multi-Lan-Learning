@@ -219,8 +219,9 @@ input.cmn-toggle-round:checked + label:after {
     background-position: center ; /* 画像を中央に配置 */
     background-repeat: no-repeat; /* 画像が繰り返されないように */
     height: auto;       /* 追加: html/body共通ルールのheight:100%を打ち消す */
-    min-height: 100%; /* heightをmin-heightに変更し、コンテンツが長い時は伸びるように */
-  }
+    min-height: 100vh;   /* dvh未対応ブラウザ向けのフォールバック */
+    min-height: 100dvh;  /* 対応ブラウザではこちらが優先され、ツールバーの増減に追従 */
+    }
 
   /* background-image {
     width:50%;
