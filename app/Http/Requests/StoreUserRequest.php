@@ -26,4 +26,14 @@ class StoreUserRequest extends FormRequest
             'loginPass' => ['required', 'alpha_num','max:20','min:4'],
         ];
     }
+
+    /**
+     * バリデーションルールのエラーメッセージ
+     */
+    public function messages(): array
+    {
+        return [
+            'loginId_userName.unique' => '既に登録済みのID/ユーザー名です',
+        ];
+    }
 }
