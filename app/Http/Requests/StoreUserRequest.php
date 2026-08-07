@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use App\Models\CreateUser;
 
 class StoreUserRequest extends FormRequest
 {
@@ -22,8 +24,8 @@ class StoreUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'loginId_userName' => ['required','max:30'],
-            'loginPass' => ['required', 'alpha_num','max:20','min:4'],
+            'loginId_userName' => ['required', 'max:30', Rule::unique(CreateUser::class, 'loginId_userName')],
+            'loginPass' => ['required', 'alpha_num', 'max:20', 'min:4'],
         ];
     }
 
