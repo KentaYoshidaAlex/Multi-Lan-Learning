@@ -256,7 +256,7 @@ input.cmn-toggle-round:checked + label:after {
   
     width: 375px;
     margin: auto;
-    opacity: 0.87;
+    opacity: 0.85;
 
   }
 
