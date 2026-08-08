@@ -15,7 +15,7 @@
                         </div>
                         <br>
                         <div class="top-text">
-                            <form method="post" action="{{ route('quizMain') }}">
+                            <form method="post" action="{{ route('quizMain') }}" onsubmit="document.getElementById('btn-width-answer').disabled = true;">
                                 @csrf
                                 <div class="parent">
                                     <div class="child1-play-gamen">

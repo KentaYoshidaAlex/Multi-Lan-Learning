@@ -199,6 +199,19 @@ class QuizMainController extends Controller
             // 出題した問題を取り出し
             $selectedQuiz = session('selectedQuiz');
 
+            
+            // 二重送信対策：送信された問題番号が現在の問題と一致しない場合、
+            // 既に別のリクエストで次の問題へ進んでいるとみなし、この回答は処理せず現在の状態をそのまま返す
+            if (!$selectedQuiz || (string)$no !== (string)$selectedQuiz->no) {
+                $player = CreateUser::where('loginId_userName', session('player_loginId'))->first();
+                $reLoginId = $player->loginId_userName;
+                $reLoginPass = $player->loginPass;
+                $clearCount = $player->clearCount;
+                $missCount = $player->missCount;
+
+                return view('quizMain/play', compact('clearCount', 'missCount', 'reLoginId', 'reLoginPass'));
+            }
+
             //回答の成否判定　
             //正解時、1を代入
             if ($choice === $selectedQuiz->answer) {

@@ -232,7 +232,7 @@ class QWorldGreetingsTableSeeder extends Seeder
             'choice2' => 'ドゥーデェ', 
             'choice3' => 'ヂュウ ニィ ヨゥ ユゥ'.'<br>'.'&emsp;'.'&nbsp;'.'クワィ ダ イ ティン', 
             'choice4' => 'ネイホゥ', 
-            'pathPronunciation' => '../sound/chinese_word_pronunciation/have_a_nice_day_in_chinese', 
+            'pathPronunciation' => '../sound/chinese_word_pronunciation/have_a_nice_day_in_chinese.mp3', 
             'pathBackground' => '/image/picture_china/pandas.jpg', 
             'subLanguage' => '中国語', 
             'jpGreetingWord' => '良い一日を',
