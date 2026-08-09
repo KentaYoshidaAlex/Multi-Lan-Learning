@@ -191,16 +191,22 @@ input.cmn-toggle-round:checked + label:after {
   text-align: right;
 }
 
-.achieved {
+.achieved-perfect {
   display: inline-block;
   font-weight: bold;
-  padding: 4px 12px;
+  padding: 6px 14px;
   margin-right: 4px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #ffd54f, #ff8c00);
-  color: #fff;
-  box-shadow: 0 0 8px rgba(255, 140, 0, 0.7);
-  animation: shine 2s infinite alternate;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fff176, #ffd700, #ffb300);
+  color: #7a4a00;
+  font-size: 1.15em;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.9);
+  animation: perfectGlow 1.4s infinite alternate;
+}
+
+.achieved-perfect::before {
+  content: "🏆 ";
 }
 
 .not-achieved {
@@ -215,6 +221,11 @@ input.cmn-toggle-round:checked + label:after {
 @keyframes shine {
   from { box-shadow: 0 0 4px rgba(255, 140, 0, 0.5); }
   to   { box-shadow: 0 0 12px rgba(255, 140, 0, 0.9); }
+}
+
+@keyframes perfectGlow {
+  from { box-shadow: 0 0 8px rgba(255, 215, 0, 0.6); transform: scale(1); }
+  to   { box-shadow: 0 0 18px rgba(255, 215, 0, 1); transform: scale(1.06); }
 }
 
 .achieved,

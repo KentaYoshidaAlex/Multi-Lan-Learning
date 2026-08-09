@@ -99,15 +99,15 @@ if((session('doneQuizList')) !== null) {
 
                         &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qWorldGreetings" checked>世界の挨拶</input></label>
                         <br>
-                        &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qTagalog">タガログ語</input></label>
+                        &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qTagalog">タガログ語　</input></label>
                         <br>
                         &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qMyanmar">ミャンマー語</input></label>
                         <br>
-                        &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qSpanish">スペイン語</input></label>
+                        &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qSpanish">スペイン語　</input></label>
                         <br>
-                        &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qFrench">フランス語</input></label>                        
+                        &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qFrench">フランス語　</input></label>                        
                         <br>
-                        &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qKansaiben">関西弁</input></label>
+                        &emsp;<label><input type="radio" class="cp_sl06" name="language" id="language" value="qKansaiben">関西弁　　</input></label>
                         <br>
 
             </div>
