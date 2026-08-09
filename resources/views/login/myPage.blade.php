@@ -77,11 +77,16 @@
 
                     <p>🔷達成コース</p>
                     @foreach ($courses as $key => $label)
-                        <p>
-                            &emsp;{{ $label }}&emsp;&emsp;
+                        @php $isPerfect = !empty($achievements[$key.'_全問']); @endphp
+                        <p class="{{ $isPerfect ? 'row-perfect' : '' }}">
+                            &emsp;{{ $label }}
+                            @if ($isPerfect)
+                                <span class="perfect-label">🎉パーフェクト</span>
+                            @endif
+                            &emsp;&emsp;
                             @foreach ($amounts as $amountKey => $amountLabel)
                                 @if (!empty($achievements[$key.'_'.$amountKey]))
-                                    <span class="{{ $amountKey === '全問' ? 'achieved-perfect' : 'achieved' }}">✅{{ $amountLabel }}</span>
+                                    <span class="achieved">✅{{ $amountLabel }}</span>
                                 @else
                                     <span class="not-achieved">{{ $amountLabel }}</span>
                                 @endif
