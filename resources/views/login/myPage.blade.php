@@ -81,7 +81,7 @@
                             &emsp;{{ $label }}&emsp;&emsp;
                             @foreach ($amounts as $amountKey => $amountLabel)
                                 @if (!empty($achievements[$key.'_'.$amountKey]))
-                                    <span class="{{ $amountKey === '全問' ? 'achieved-perfect' : 'achieved' }}">✅{{ $amountLabel }}</span>
+                                    <span class="achieved">✅{{ $amountLabel }}</span>
                                 @else
                                     <span class="not-achieved">{{ $amountLabel }}</span>
                                 @endif

@@ -191,6 +191,17 @@ input.cmn-toggle-round:checked + label:after {
   text-align: right;
 }
 
+.achieved {
+  display: inline-block;
+  font-weight: bold;
+  padding: 4px 12px;
+  margin-right: 4px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffb347, #ff8c00);
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .achieved-perfect {
   display: inline-block;
   font-weight: bold;
@@ -216,11 +227,6 @@ input.cmn-toggle-round:checked + label:after {
   border-radius: 16px;
   background: #eeeeee;
   color: #aaaaaa;
-  filter: grayscale(100%);
-}
-@keyframes shine {
-  from { box-shadow: 0 0 4px rgba(255, 140, 0, 0.5); }
-  to   { box-shadow: 0 0 12px rgba(255, 140, 0, 0.9); }
 }
 
 @keyframes perfectGlow {
@@ -229,12 +235,11 @@ input.cmn-toggle-round:checked + label:after {
 }
 
 .achieved,
+.achieved-perfect,
 .not-achieved {
   line-height: 1.8;
   vertical-align: middle;
 }
-
-
 
  /* ▼画面幅が440px以下の場合のスタイル▼  */
 
