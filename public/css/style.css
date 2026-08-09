@@ -212,6 +212,10 @@ input.cmn-toggle-round:checked + label:after {
   color: #aaaaaa;
   filter: grayscale(100%);
 }
+@keyframes shine {
+  from { box-shadow: 0 0 4px rgba(255, 140, 0, 0.5); }
+  to   { box-shadow: 0 0 12px rgba(255, 140, 0, 0.9); }
+}
 
 .achieved,
 .not-achieved {
