@@ -192,11 +192,21 @@ input.cmn-toggle-round:checked + label:after {
 }
 
 .achieved {
+  display: inline-block;
   font-weight: bold;
-  color: #F69454;
-  background-color: #fff3e0;
-  border-radius: 6px;
-  padding: 2px 6px;
+  color: #fff;
+  background: linear-gradient(135deg, #ffb347, #ff8c00);
+  border-radius: 12px;
+  padding: 2px 10px;
+  margin-right: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.not-achieved {
+  display: inline-block;
+  color: #bbbbbb;
+  padding: 2px 10px;
+  margin-right: 4px;
 }
 
 

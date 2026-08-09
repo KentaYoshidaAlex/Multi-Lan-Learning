@@ -72,15 +72,20 @@
                             'フランス語' => '🇫🇷フランス語',
                             '関西弁' => '🐙関西弁',
                         ];
+                        $amounts = ['3' => '3問', '5' => '5問', '全問' => '全問'];
                     @endphp
 
                     <p>🔷達成コース</p>
                     @foreach ($courses as $key => $label)
                         <p>
                             &emsp;{{ $label }}&emsp;&emsp;
-                            <span class="{{ !empty($achievements[$key.'_3']) ? 'achieved' : '' }}">3️⃣</span>&emsp;
-                            <span class="{{ !empty($achievements[$key.'_5']) ? 'achieved' : '' }}">5️⃣</span>&emsp;
-                            <span class="{{ !empty($achievements[$key.'_全問']) ? 'achieved' : '' }}">全問</span>
+                            @foreach ($amounts as $amountKey => $amountLabel)
+                                @if (!empty($achievements[$key.'_'.$amountKey]))
+                                    <span class="achieved">✅{{ $amountLabel }}</span>
+                                @else
+                                    <span class="not-achieved">{{ $amountLabel }}</span>
+                                @endif
+                            @endforeach
                         </p>
                     @endforeach
                     <br>
