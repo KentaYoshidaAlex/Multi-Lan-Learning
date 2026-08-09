@@ -62,13 +62,27 @@
                         <p>&emsp;🔥&nbsp;{{ $reMax_consecutive_study_day }}&nbsp;日</p>
                     @endif
                     <p style="line-height: 2px">&emsp;</p>
+                    @php
+                        $achievements = $reAchievement_cource ?? [];
+                        $courses = [
+                            '世界の挨拶' => '🌏世界の挨拶',
+                            'タガログ語' => '🇵🇭タガログ語',
+                            'ミャンマー語' => '🇲🇲ミャンマー語',
+                            'スペイン語' => '🇪🇸スペイン語',
+                            'フランス語' => '🇫🇷フランス語',
+                            '関西弁' => '🐙関西弁',
+                        ];
+                    @endphp
+
                     <p>🔷達成コース</p>
-                    <p>&emsp;🌏世界の挨拶&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
-                    <p>&emsp;🇵🇭タガログ語&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
-                    <p>&emsp;🇲🇲ミャンマー語&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
-                    <p>&emsp;🇪🇸スペイン語&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
-                    <p>&emsp;🇫🇷フランス語&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
-                    <p>&emsp;🐙関西弁&emsp;&emsp;&emsp;&emsp;3️⃣&emsp;5️⃣&emsp;全問</p>
+                    @foreach ($courses as $key => $label)
+                        <p>
+                            &emsp;{{ $label }}&emsp;&emsp;
+                            <span class="{{ !empty($achievements[$key.'_3']) ? 'achieved' : '' }}">3️⃣</span>&emsp;
+                            <span class="{{ !empty($achievements[$key.'_5']) ? 'achieved' : '' }}">5️⃣</span>&emsp;
+                            <span class="{{ !empty($achievements[$key.'_全問']) ? 'achieved' : '' }}">全問</span>
+                        </p>
+                    @endforeach
                     <br>
 
             @if ($reLoginId === "ゲスト")

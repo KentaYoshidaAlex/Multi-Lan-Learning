@@ -11,7 +11,6 @@ class CreateUser extends Model
 
     protected $table = 'createUsers';
 
-    //複数代入を可能にするモデル属性を定義
     protected $fillable = [
         'loginId_userName',
         'loginPass',
@@ -21,5 +20,10 @@ class CreateUser extends Model
         'achievement_cource', 
         'number_of_compeleted_quiz',
         'perfect_clear_flag'
+    ];
+
+    // 追加: achievement_courceをPHP配列として自動的にJSON変換
+    protected $casts = [
+        'achievement_cource' => 'array',
     ];
 }

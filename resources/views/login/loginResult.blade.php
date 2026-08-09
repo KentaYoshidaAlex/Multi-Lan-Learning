@@ -52,7 +52,7 @@ if((session('doneQuizList')) !== null) {
                     <div class="container-right-top">
                         <form method='post' action="{{ route('quizMain') }}" class="quiz-form">
                             @csrf
-                            {{-- <input type='submit' name='bttn' value="マイページ" class="buttons btn-hover-myPage blueColor" > --}}
+                            <input type='submit' name='bttn' value="マイページ" class="buttons btn-hover-myPage blueColor" >
                             <input type='hidden' name='loginId_userName' value='{{ $loginId_userName }}'> 
                             <input type='hidden' name='collectionNumber' value='{{ $collectionNumber }}'> 
                         </form>

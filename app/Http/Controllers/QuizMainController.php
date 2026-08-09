@@ -199,7 +199,7 @@ class QuizMainController extends Controller
             // 出題した問題を取り出し
             $selectedQuiz = session('selectedQuiz');
 
-            
+
             // 二重送信対策：送信された問題番号が現在の問題と一致しない場合、
             // 既に別のリクエストで次の問題へ進んでいるとみなし、この回答は処理せず現在の状態をそのまま返す
             if (!$selectedQuiz || (string)$no !== (string)$selectedQuiz->no) {
@@ -264,6 +264,11 @@ class QuizMainController extends Controller
                 if(!(session('amountOfQuenstions') == '全問')) {
                     $currentQuizAmount++; 
                 } 
+
+                // 目標問題数に到達した場合、達成記録を保存
+                if (!(session('amountOfQuenstions') == '全問') && $currentQuizAmount == session('amountOfQuenstions')) {
+                    $this->recordAchievement($player, $language, session('amountOfQuenstions'));
+                }
                 
                 // 問題開始時(0),正解時(1),不正解時(2)を判定する変数用意
                 $judgeNum = 1;
@@ -327,7 +332,7 @@ class QuizMainController extends Controller
 
                     // ①前回クイズしたのが前日の場合
                     if ($daysDifference === 1) {
-                        $reMax_consecutive_study_day =+ 1;
+                        $reMax_consecutive_study_day = $player->max_consecutive_study_day + 1;
 
                         // 連続学習日数記録をupdate
                         $user = CreateUser::where('loginId_userName', $reLoginId)->first();
@@ -454,6 +459,11 @@ class QuizMainController extends Controller
 
                     // 特定の問題に紐づかないため、この場合のみランダムに選択
                     session(['currentBackground' => $this->getRandomBackground($language)]);
+
+                    // 「全問」モードでの達成記録を保存
+                    if (session('amountOfQuenstions') == '全問') {
+                        $this->recordAchievement($player, $language, '全問');
+                    }
                 }
 
                 // sessionに値を保存
@@ -564,5 +574,15 @@ class QuizMainController extends Controller
         }
 
         return $paths[array_rand($paths)];
+    }
+
+    // 達成コース(言語×問題数)を記録
+    private function recordAchievement(CreateUser $player, string $language, string $amount): void
+    {
+        $achievements = $player->achievement_cource ?? [];
+        $key = $language . '_' . $amount;
+        $achievements[$key] = true;
+        $player->achievement_cource = $achievements;
+        $player->save();
     }
 }

@@ -191,6 +191,14 @@ input.cmn-toggle-round:checked + label:after {
   text-align: right;
 }
 
+.achieved {
+  font-weight: bold;
+  color: #F69454;
+  background-color: #fff3e0;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
 
 
  /* ▼画面幅が440px以下の場合のスタイル▼  */
