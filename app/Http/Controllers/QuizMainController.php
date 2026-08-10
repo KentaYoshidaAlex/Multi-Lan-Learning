@@ -203,7 +203,7 @@ class QuizMainController extends Controller
             // 二重送信対策：送信された問題番号が現在の問題と一致しない場合、
             // 既に別のリクエストで次の問題へ進んでいるとみなし、この回答は処理せず現在の状態をそのまま返す
             if (!$selectedQuiz || (string)$no !== (string)$selectedQuiz->no) {
-                $player = CreateUser::where('loginId_userName', session('player_loginId'))->first();
+                \Illuminate\Support\Facades\Log::info('二重送信ガード発火: player_loginId=' . session('player_loginId'));                $player = CreateUser::where('loginId_userName', session('player_loginId'))->first();
                 $reLoginId = $player->loginId_userName;
                 $reLoginPass = $player->loginPass;
                 $clearCount = $player->clearCount;
