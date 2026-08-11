@@ -241,6 +241,16 @@ input.cmn-toggle-round:checked + label:after {
   vertical-align: middle;
 }
 
+.course-label {
+  display: inline-block;
+  width: 160px;
+  vertical-align: middle;
+}
+
+.course-row {
+  white-space: nowrap;
+}
+
  /* ▼画面幅が440px以下の場合のスタイル▼  */
 
 @media screen and (max-width: 440px) {
@@ -671,6 +681,24 @@ summary::-webkit-details-marker {
   width: 100px;
   height: 30px;
 }
+
+.course-label {
+    width: 110px;
+    font-size: 13px;
+  }
+
+  .achieved,
+  .achieved-perfect,
+  .not-achieved {
+    font-size: 11px;
+    padding: 2px 6px;
+    margin-right: 2px;
+  }
+
+  .achieved-perfect {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
 
 }
 

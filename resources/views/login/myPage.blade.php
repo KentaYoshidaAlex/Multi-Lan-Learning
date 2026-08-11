@@ -65,11 +65,11 @@
                     @php
                         $achievements = $reAchievement_cource ?? [];
                         $courses = [
-                            '世界の挨拶' => '🌏世界の挨拶  ',
-                            'タガログ語' => '🇵🇭タガログ語  ',
+                            '世界の挨拶' => '🌏世界の挨拶',
+                            'タガログ語' => '🇵🇭タガログ語',
                             'ミャンマー語' => '🇲🇲ミャンマー語',
-                            'スペイン語' => '🇪🇸スペイン語  ',
-                            'フランス語' => '🇫🇷フランス語  ',
+                            'スペイン語' => '🇪🇸スペイン語',
+                            'フランス語' => '🇫🇷フランス語',
                             '関西弁' => '🐙関西弁    ',
                         ];
                         $amounts = ['3' => '3問', '5' => '5問', '全問' => '全問'];
@@ -77,8 +77,8 @@
 
                     <p>🔷達成コース</p>
                     @foreach ($courses as $key => $label)
-                        <p>
-                            &emsp;{{ $label }}&emsp;&emsp;
+                        <p class="course-row">
+                            <span class="course-label">&emsp;{{ $label }}</span>
                             @foreach ($amounts as $amountKey => $amountLabel)
                                 @if (!empty($achievements[$key.'_'.$amountKey]))
                                     <span class="{{ $amountKey === '全問' ? 'achieved-perfect' : 'achieved' }}">✅{{ $amountLabel }}</span>
