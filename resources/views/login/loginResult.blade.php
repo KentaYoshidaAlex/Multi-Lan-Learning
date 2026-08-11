@@ -48,7 +48,7 @@ if((session('doneQuizList')) !== null) {
                         ログインに成功しました！!<br>
                         ようこそ<br class="sp-br"> {{ $loginId_userName }} さん
                     </div>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        <span class="pc-spacer">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
                     <div class="container-right-top">
                         <form method='post' action="{{ route('quizMain') }}" class="quiz-form">
                             @csrf

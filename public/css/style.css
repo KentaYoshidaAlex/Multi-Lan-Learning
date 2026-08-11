@@ -376,18 +376,41 @@ input.cmn-toggle-round:checked + label:after {
     flex: 1; 
     width: 230px;
   }
+
   .container-left-top {
-    flex: 9; 
+    flex: 1;
+  }
+
+  .container-right-top {
+    flex: 0 0 auto;
+  }
+
+  .pc-spacer {
+    display: none;
+  }
+
+  .btn-hover-myPage {
+    width: 84px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 4px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
   }
 
   .container-right {
     flex: 1; 
     width: 120px;
     /* padding: 20px 30px 10px 0px; */
-  }
-
-  .container-right-top {
-    flex: 1; 
   }
 
   .container-complete {
