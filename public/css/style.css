@@ -834,13 +834,13 @@ summary::-webkit-details-marker {
   .course-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding-right: 16px;
+    padding-right: 4px;
   }
 
   .course-label {
     width: 160px;
     font-size: 16px;
+    margin-right: 10px;
   }
 
   .achieved,
@@ -848,7 +848,7 @@ summary::-webkit-details-marker {
   .not-achieved {
     font-size: 14px;
     padding: 5px 14px;
-    margin-right: 0;
+    margin-right: 14px;
   }
 
   .achieved-perfect {
