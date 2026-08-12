@@ -707,12 +707,13 @@ summary::-webkit-details-marker {
 
   .course-row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 6px;
+    padding-right: 10px;
   }
 
   .course-label {
-    width: auto;
+    width: 120px;
     font-size: 14px;
   }
 
@@ -830,29 +831,30 @@ summary::-webkit-details-marker {
   padding: 10px;
 }
 
-.course-row {
+  .course-row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 10px;
+    padding-right: 16px;
   }
 
-.course-label {
-  width: auto;
-  font-size: 16px;
-}
+  .course-label {
+    width: 160px;
+    font-size: 16px;
+  }
 
-.achieved,
-.achieved-perfect,
-.not-achieved {
-  font-size: 14px;
-  padding: 5px 14px;
-  margin-right: 0;
-}
+  .achieved,
+  .achieved-perfect,
+  .not-achieved {
+    font-size: 14px;
+    padding: 5px 14px;
+    margin-right: 0;
+  }
 
-.achieved-perfect {
-  font-size: 15px;
-  padding: 6px 16px;
-}
+  .achieved-perfect {
+    font-size: 15px;
+    padding: 6px 16px;
+  }
 
 .main-wrapper-world-greet {
   display: flex;
