@@ -320,7 +320,11 @@ class QuizMainController extends Controller
                         $previousDate = $previousRecord->created_at; 
 
                         // 今回と前回のクイズ挑戦日の間が何日空いているか確認
-                        $daysDifference = $currentDate->diffInDays($previousDate);
+                        // ※時刻込みの単純な経過時間だと「1日と数時間」でも1日扱いになり、
+                        // 間に学習していない日があっても連続扱いされてしまうため、
+                        // 日付部分だけを取り出して比較する
+                        $daysDifference = $currentDate->copy()->startOfDay()
+                            ->diffInDays($previousDate->copy()->startOfDay());
 
                     // 過去ログがない場合
                     } else {
@@ -328,9 +332,8 @@ class QuizMainController extends Controller
                     }
 
                     // 連続学習日数記録の更新分岐
-                    // ※前回クイズしたのが、前日以外の場合は変更なし
 
-                    // ①前回クイズしたのが前日の場合
+                    // ①前回クイズしたのが前日の場合 → 連続日数+1
                     if ($daysDifference === 1) {
                         $reMax_consecutive_study_day = $player->max_consecutive_study_day + 1;
 
@@ -340,8 +343,8 @@ class QuizMainController extends Controller
                         $user->save();
                     }
 
-                    // ②初めてクイズ挑戦の場合
-                    if ($daysDifference === '') {
+                    // ②初めてクイズ挑戦、または2日以上間が空いた場合 → 1からカウントし直す
+                    if ($daysDifference === '' || (is_int($daysDifference) && $daysDifference > 1)) {
                         $reMax_consecutive_study_day = 1;
 
                         // 連続学習日数記録をupdate
@@ -350,8 +353,9 @@ class QuizMainController extends Controller
                         $user->save();
                     }
 
-                }
+                    // ③同日内に複数回学習した場合（$daysDifference === 0）は変更なし
 
+                }
 
                 // 一度出した問題は保存し、次出さないようにする
                 $doneAnswer = $doneQuiz->answer;
