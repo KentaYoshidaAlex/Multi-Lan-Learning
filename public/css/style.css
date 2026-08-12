@@ -700,27 +700,33 @@ summary::-webkit-details-marker {
 
  /* ▲トップページ利用案内横アイコン▲  */
 
-.pronunWidth {
-  width: 100px;
-  height: 30px;
-}
+  .pronunWidth {
+    width: 100px;
+    height: 30px;
+  }
 
-.course-label {
-    width: 110px;
-    font-size: 13px;
+  .course-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .course-label {
+    width: auto;
+    font-size: 14px;
   }
 
   .achieved,
   .achieved-perfect,
   .not-achieved {
-    font-size: 11px;
-    padding: 2px 6px;
-    margin-right: 2px;
+    font-size: 12px;
+    padding: 3px 8px;
+    margin-right: 0;
   }
 
   .achieved-perfect {
-    font-size: 12px;
-    padding: 3px 8px;
+    font-size: 13px;
+    padding: 4px 10px;
   }
 
 }
@@ -822,6 +828,30 @@ summary::-webkit-details-marker {
   background-color: white;
   border-radius: 10px;
   padding: 10px;
+}
+
+.course-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.course-label {
+  width: auto;
+  font-size: 16px;
+}
+
+.achieved,
+.achieved-perfect,
+.not-achieved {
+  font-size: 14px;
+  padding: 5px 14px;
+  margin-right: 0;
+}
+
+.achieved-perfect {
+  font-size: 15px;
+  padding: 6px 16px;
 }
 
 .main-wrapper-world-greet {
