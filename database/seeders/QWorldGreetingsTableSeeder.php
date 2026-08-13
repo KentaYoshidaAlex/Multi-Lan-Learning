@@ -151,7 +151,6 @@ class QWorldGreetingsTableSeeder extends Seeder
             'flag' => '/image/Flags/Myanmar.svg',
           ],
 
-
           [
             'language' => '世界の挨拶',            
             'question' => 'セルビア語で「こんにちは」は？',
@@ -161,7 +160,7 @@ class QWorldGreetingsTableSeeder extends Seeder
             'choice3' => 'ズドラーヴォ', 
             'choice4' => 'ジヴェリー', 
             'pathPronunciation' => '../sound/serbian_word_pronunciation/hello_in_serbia.mp3', 
-            'pathBackground' => '/image/picture_serbia/serbia_man_statue_in_town.jpg', 
+            'pathBackground' => '/image/picture_serbia/serbia_man_statue.jpg', 
             'subLanguage' => 'セルビア語', 
             'jpGreetingWord' => 'こんにちは', 
             'flag' => '/image/Flags/Serbia.svg',

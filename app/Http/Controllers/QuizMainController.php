@@ -95,11 +95,17 @@ class QuizMainController extends Controller
             if ($language == 'qSpanish') {	
                 $quizData = QuizSpanishDatum::all();
             } 
+            
             //フランス語選択
             if ($language == 'qFrench') {	
                 $quizData = QuizFrenchDatum::all();
             } 
             // dd($quizData);
+
+            // 選択した言語のクイズデータが1件も無い場合は、エラー画面ではなく言語選択画面に戻す
+            if (count($quizData) === 0) {
+                return back()->with('error', '選択した言語のクイズデータが見つかりませんでした。管理者にお問い合わせください。');
+            }
 
             // 共通で利用する変数をsessionに保存
             session(['amountOfQuenstions' => $amountOfQuenstions]);
