@@ -556,7 +556,7 @@ class QWorldGreetingsTableSeeder extends Seeder
             'choice3' => 'グーテンターク', 
             'choice4' => 'ボンジュール', 
             'pathPronunciation' => '../sound/german_word_pronunciation/Guten_Tag.mp3', 
-            'pathBackground' => '/image/picture_germany/Dresden.jpg', 
+            'pathBackground' => '/image/picture_germany/germany.jpg', 
             'subLanguage' => 'ドイツ語', 
             'jpGreetingWord' => 'こんにちは', 
             'flag' => '/image/Flags/German.svg',
