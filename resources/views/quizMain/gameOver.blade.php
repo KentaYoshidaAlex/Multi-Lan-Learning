@@ -25,7 +25,8 @@
         <input type="hidden" name="resetCount" value= '1'>
     </form>
 
-    <form action="{{ route('quizLogOut') }}" method="get">
+    <form action="{{ route('quizLogOut') }}" method="post">
+        @csrf
         <div class="btn-wrap">
         <input type="submit" value="ログアウト" class="btn btn-switch" />
         </div>
