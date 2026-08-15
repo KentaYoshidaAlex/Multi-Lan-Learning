@@ -31,7 +31,7 @@ class CreateUserController extends Controller
         return view('createUser/check_content', compact('loginId_userName', 'loginPass'));
     }
 
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
         $createUser = CreateUser::create([
             'loginId_userName' => $request->loginId_userName,
@@ -39,7 +39,7 @@ class CreateUserController extends Controller
             'clearCount' => $request->clearCount,
             'missCount' => $request->missCount,
             'max_consecutive_study_day' => $request->max_consecutive_study_day,
-            'achievement_cource' => '',
+            'achievement_cource' => null,
             'number_of_compeleted_quiz' => '',
             'perfect_clear_flag' => '',
         ]);

@@ -21,7 +21,6 @@ if((session('doneQuizList')) !== null) {
 
   @if(app('env')=='local')
     <link rel="stylesheet" href={{ asset('/css/style.css') }} >
-    <media=”screen” >
   @endif
   @if(app('env')=='production')
   <link rel="stylesheet" href={{ secure_asset('/css/style.css') }} >
@@ -34,7 +33,8 @@ if((session('doneQuizList')) !== null) {
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sacramento&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=web_traffic" rel="stylesheet"  />
-<body class="loginTop">
+</head>
+  <body class="loginTop">
   <div class="loginTop-smartPhone">
     <header>
       <div class="header">
@@ -129,3 +129,4 @@ if((session('doneQuizList')) !== null) {
     </div>
   </div>
 </body>
+</html>

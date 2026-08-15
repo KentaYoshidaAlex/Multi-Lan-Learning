@@ -53,6 +53,9 @@ class LoginController extends Controller
                 return view('login/loginResult', compact('collectionNumber','loginId_userName','collection'));
 
             }
+
+            // 想定外のbttn値の場合は、TOPページへ戻す
+            return redirect()->route('index');
         
         } else {
             // ログイン失敗時

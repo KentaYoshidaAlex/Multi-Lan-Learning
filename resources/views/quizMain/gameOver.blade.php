@@ -1,12 +1,4 @@
 
-    <!-- クリアカウント数を0に変更 -->
-    @php
-    
-    $player->clearCount = 0;
-    $player->missCount = 0;
-
-    @endphp
-
     <!-- ゲームオーバーの効果音 -->
     @if($tgrbtn == "1") 
         <audio src="{{ $allQuizMusicData->gameOverS }}" autoplay></audio>
