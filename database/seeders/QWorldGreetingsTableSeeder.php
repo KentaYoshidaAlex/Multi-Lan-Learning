@@ -602,7 +602,7 @@ class QWorldGreetingsTableSeeder extends Seeder
             'pathBackground' => '/image/picture_turkey/turkey_baloon_in_the_sky.jpg', 
             'subLanguage' => 'トルコ語', 
             'jpGreetingWord' => 'こんにちは', 
-            'flag' => '/image/Flags/Turkey.gif',
+            'flag' => '/image/Flags/tr.jpg',
           ],
           [ 
             'language' => '世界の挨拶',            
@@ -616,7 +616,7 @@ class QWorldGreetingsTableSeeder extends Seeder
             'pathBackground' => '/image/picture_turkey/turkey_tower_in_town.jpg', 
             'subLanguage' => 'トルコ語', 
             'jpGreetingWord' => 'ありがとう', 
-            'flag' => '/image/Flags/Turkey.gif',
+            'flag' => '/image/Flags/tr.jpg',
           ],
           [ 
             'language' => '世界の挨拶',            
@@ -630,7 +630,7 @@ class QWorldGreetingsTableSeeder extends Seeder
             'pathBackground' => '/image/picture_turkey/turkey_stoe.jpg', 
             'subLanguage' => 'トルコ語', 
             'jpGreetingWord' => '良い一日を', 
-            'flag' => '/image/Flags/Turkey.gif',
+            'flag' => '/image/Flags/tr.jpg',
           ],
 
           [ 
@@ -641,7 +641,7 @@ class QWorldGreetingsTableSeeder extends Seeder
             'choice2' => 'シクンジェマ', 
             'choice3' => 'シュクラン', 
             'choice4' => 'アッサラーム'.'<br>'.'&emsp;'.'&nbsp;'.'アライクム', 
-            'pathPronunciation' => '../sound/african_word_pronunciation/Habari.mp3', 
+            'pathPronunciation' => '../sound/arabic_word_pronunciation/hello_in_arabic.mp3', 
             'pathBackground' => '/image/picture_africa/pot_on_head.jpg', 
             'subLanguage' => 'アラビア語', 
             'jpGreetingWord' => 'こんにちは', 
