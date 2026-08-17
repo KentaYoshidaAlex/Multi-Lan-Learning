@@ -160,6 +160,10 @@ $haveANiceDayPronunciation = '';
                                                     <td><img src="../image/Flags/America.svg" alt="picture" class="EnCountries">
                                                             <img src="../image/Flags/England.svg" alt="picture" class="EnCountries">
                                                             <img src="../image/Flags/Australia.svg" alt="picture" class="EnCountries">
+                                                @elseif ($quizDatum->subLanguage === 'アラビア語') 
+                                                    <td><img src="../image/Flags/UAE.jpg" alt="picture" class="EnCountries">
+                                                            <img src="../image/Flags/eg.jpg" alt="picture" class="EnCountries">
+                                                            <img src="../image/Flags/sa.jpg" alt="picture" class="EnCountries">
                                                 @else
                                                     <td><img src="{!! $quizDatum->flag !!}" alt="picture" class="Countries">
                                                 @endif
