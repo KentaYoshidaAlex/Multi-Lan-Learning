@@ -139,10 +139,10 @@ class QWorldGreetingsTableSeeder extends Seeder
           [
             'language' => '世界の挨拶',            
             'question' => 'ミャンマー語で「良い一日を」は？',
-            'answer' => 'カントン ネィ レイ ピ パスィ', 
+            'answer' => 'カントン ネィ'.'<br>'.'&emsp;'.'&nbsp;'.'レイ ピ パスィ', 
             'choice1' => 'スモガ ハリアンダ'.'<br>'.'&emsp;'.'&nbsp;'.'ムニュナンカン', 
             'choice2' => 'インガット カ パラギ', 
-            'choice3' => 'カントン ネィ レイ ピ パスィ', 
+            'choice3' => 'カントン ネィ'.'<br>'.'&emsp;'.'&nbsp;'.'レイ ピ パスィ', 
             'choice4' => 'テレマカシ', 
             'pathPronunciation' => '../sound/myanmar_word_pronunciation/have_a_nice_day.m4a', 
             'pathBackground' => '/image/picture_myanmar/goldenRock2.jpg', 

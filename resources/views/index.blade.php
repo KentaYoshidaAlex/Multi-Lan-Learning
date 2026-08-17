@@ -89,6 +89,12 @@ if((session('doneQuizList')) !== null) {
           })
           </script>
 
+          @if ($errors->any())
+            <div style="color: red">
+              <x-input-error class="mb-4" :messages="$errors->all()"/>
+            </div>
+          @endif
+
           <br>
           <div class="main">
             <div id="index-left">

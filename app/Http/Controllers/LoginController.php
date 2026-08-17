@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CreateUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -14,6 +15,16 @@ class LoginController extends Controller
         $loginPass = $request->loginPass;
         $bttn = $request->bttn;
         $resetCount = $request->resetCount; // 追加
+
+        // 未入力チェック（ID/ユーザー名・パスワードのどちらかが未入力の場合はTOPページへエラー付きで戻す）
+        $validator = Validator::make($request->all(), [
+            'loginId_userName' => 'required',
+            'loginPass' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('index')->withErrors($validator);
+        }
 
         // リクエストパラメータを元に、ログインユーザーデータを取得
         $collection = CreateUser::
@@ -58,12 +69,10 @@ class LoginController extends Controller
             return redirect()->route('index');
         
         } else {
-            // ログイン失敗時
-            $collectionNumber = 0;
-
-            // ログイン結果画面に遷移
-            return view('login/loginResult', compact('collectionNumber'));
-
+            // ログイン失敗時：TOPページへエラー付きで戻す
+            return redirect()->route('index')->withErrors([
+                'login' => 'ID/ユーザー名、またはパスワードが正しくありません。',
+            ]);
         }
     }
 }
