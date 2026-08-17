@@ -670,7 +670,7 @@ class QWorldGreetingsTableSeeder extends Seeder
             'choice3' => 'ヤウム サイード', 
             'choice4' => 'シクンジェマ', 
             'pathPronunciation' => '../sound/arabic_word_pronunciation/have_a_nice_day_in_arabic.mp3', 
-            'pathBackground' => '/image/picture_arabic/white_buildings_by_palm_trees.jpg', 
+            'pathBackground' => '/image/picture_arabic/white_buildings.jpg', 
             'subLanguage' => 'アラビア語', 
             'jpGreetingWord' => '良い一日を', 
             'flag' => '/image/Flags/Flag_of_the_African_Union.png',
