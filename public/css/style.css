@@ -495,8 +495,11 @@ input.cmn-toggle-round:checked + label:after {
   }
 
   #btn-width-answer {
-    width: 5em;
-    margin-right: 1em;
+    width: 7em;
+    height: 3.4em;
+    font-size: 1.15em;
+    font-weight: bold;
+    margin-right: 0.3em;
   }
 
   /* .responsive-small p {
