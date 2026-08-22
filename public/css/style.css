@@ -254,7 +254,6 @@ input.cmn-toggle-round:checked + label:after {
 .streak-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
  /* ▼画面幅が440px以下の場合のスタイル▼  */
@@ -739,6 +738,17 @@ summary::-webkit-details-marker {
     padding: 4px 10px;
   }
 
+  .streak-badge {
+    font-size: 12px;
+    padding: 3px 8px;
+    margin-right: 4px;
+  }
+
+  .streak-100 {
+    font-size: 13px;
+    padding: 4px 10px;
+  }
+
 }
 
  /* ▲画面幅が440px以下の場合のスタイル▲   */
@@ -861,6 +871,17 @@ summary::-webkit-details-marker {
   }
 
   .achieved-perfect {
+    font-size: 15px;
+    padding: 6px 16px;
+  }
+
+  .streak-badge {
+    font-size: 14px;
+    padding: 5px 14px;
+    margin-right: 10px;
+  }
+
+  .streak-100 {
     font-size: 15px;
     padding: 6px 16px;
   }

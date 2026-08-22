@@ -59,26 +59,26 @@
                     @if ($reLoginId === "ゲスト")
                         <p>&emsp;🔥&nbsp;？&nbsp;日</p>
                     @else
-                        <p class="streak-row">
-                            <span>&emsp;🔥&nbsp;{{ $reMax_consecutive_study_day }}&nbsp;日</span>
-                            <span>
-                                @if ($reLongestStreak >= 10)
-                                    <span class="streak-badge streak-10">継続10日✨</span>
-                                @else
-                                    <span class="not-achieved">継続10日</span>
-                                @endif
-                                @if ($reLongestStreak >= 50)
-                                    <span class="streak-badge streak-50">継続50日🕺</span>
-                                @else
-                                    <span class="not-achieved">継続50日</span>
-                                @endif
-                                @if ($reLongestStreak >= 100)
-                                    <span class="streak-badge streak-100">継続100日🏆</span>
-                                @else
-                                    <span class="not-achieved">継続100日</span>
-                                @endif
-                            </span>
-                        </p>
+                    <p class="streak-row">
+                        <span class="course-label">&emsp;🔥&nbsp;{{ $reMax_consecutive_study_day }}&nbsp;日</span>
+                        <span>
+                            @if ($reLongestStreak >= 10)
+                                <span class="streak-badge streak-10">継続10日✨</span>
+                            @else
+                                <span class="not-achieved">継続10日</span>
+                            @endif
+                            @if ($reLongestStreak >= 50)
+                                <span class="streak-badge streak-50">継続50日🕺</span>
+                            @else
+                                <span class="not-achieved">継続50日</span>
+                            @endif
+                            @if ($reLongestStreak >= 100)
+                                <span class="streak-badge streak-100">継続100日🏆</span>
+                            @else
+                                <span class="not-achieved">継続100日</span>
+                            @endif
+                        </span>
+                    </p>
                     @endif
                     <p style="line-height: 2px">&emsp;</p>
                     @php
