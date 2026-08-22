@@ -59,7 +59,16 @@
                     @if ($reLoginId === "ゲスト")
                         <p>&emsp;🔥&nbsp;？&nbsp;日</p>
                     @else
-                        <p>&emsp;🔥&nbsp;{{ $reMax_consecutive_study_day }}&nbsp;日</p>
+                        <p class="streak-row">
+                            <span>&emsp;🔥&nbsp;{{ $reMax_consecutive_study_day }}&nbsp;日</span>
+                            @if ($reMax_consecutive_study_day >= 100)
+                                <span class="streak-badge streak-100">継続100日🏆</span>
+                            @elseif ($reMax_consecutive_study_day >= 50)
+                                <span class="streak-badge streak-50">継続50日🕺</span>
+                            @elseif ($reMax_consecutive_study_day >= 10)
+                                <span class="streak-badge streak-10">継続10日✨</span>
+                            @endif
+                        </p>
                     @endif
                     <p style="line-height: 2px">&emsp;</p>
                     @php

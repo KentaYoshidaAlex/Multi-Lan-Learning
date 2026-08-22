@@ -216,7 +216,7 @@ input.cmn-toggle-round:checked + label:after {
   animation: perfectGlow 1.4s infinite alternate;
 }
 
-.achieved-perfect::before {
+.achieved-perfect::after {
   content: "🏆 ";
 }
 
@@ -249,6 +249,12 @@ input.cmn-toggle-round:checked + label:after {
 
 .course-row {
   white-space: nowrap;
+}
+
+.streak-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
  /* ▼画面幅が440px以下の場合のスタイル▼  */
@@ -994,6 +1000,34 @@ body.vocabularyList {
       font-size: 20px;
       width: 100%;
       font-weight: bold;
+    }
+
+    .streak-badge {
+      display: inline-block;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 16px;
+      margin-right: 10px;
+    }
+
+    .streak-10 {
+      background: linear-gradient(135deg, #8ec5fc, #e0c3fc);
+      color: #3a3a3a;
+    }
+
+    .streak-50 {
+      background: linear-gradient(135deg, #a770ef, #cf8bf3);
+      color: #fff;
+      font-size: 1.05em;
+    }
+
+    .streak-100 {
+      background: linear-gradient(135deg, #fff176, #ffd700, #ffb300);
+      color: #7a4a00;
+      font-size: 1.15em;
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.9);
+      animation: perfectGlow 1.4s infinite alternate;
     }
 
   /* ▼クイズ画面回答ボタンサイズ */
