@@ -48,6 +48,7 @@ class QuizMainController extends Controller
             $reLoginId = $player->loginId_userName;
             $reLoginPass = $player->loginPass;
             $reMax_consecutive_study_day = $player->max_consecutive_study_day;
+            $reLongestStreak = $player->longest_consecutive_study_day ?? 0;
             $reAchievement_cource = $player->achievement_cource;
             $reNumber_of_compeleted_quiz = $player->number_of_compeleted_quiz;
             $rePerfect_clear_flag = $player->perfect_clear_flag;
@@ -58,6 +59,7 @@ class QuizMainController extends Controller
                         compact('reLoginId',
                                 'reLoginPass',
                                 'reMax_consecutive_study_day',
+                                'reLongestStreak',
                                 'reAchievement_cource',
                                 'reNumber_of_compeleted_quiz',
                                 'rePerfect_clear_flag')
@@ -95,7 +97,7 @@ class QuizMainController extends Controller
             if ($language == 'qSpanish') {	
                 $quizData = QuizSpanishDatum::all();
             } 
-            
+
             //フランス語選択
             if ($language == 'qFrench') {	
                 $quizData = QuizFrenchDatum::all();
@@ -346,6 +348,9 @@ class QuizMainController extends Controller
                         // 連続学習日数記録をupdate
                         $user = CreateUser::where('loginId_userName', $reLoginId)->first();
                         $user->max_consecutive_study_day = $reMax_consecutive_study_day;
+
+                        // 過去最長記録を更新（現在の記録が過去最長を上回った場合のみ）
+                        $user->longest_consecutive_study_day = max($user->longest_consecutive_study_day ?? 0, $reMax_consecutive_study_day);
                         $user->save();
                     }
 
@@ -356,6 +361,9 @@ class QuizMainController extends Controller
                         // 連続学習日数記録をupdate
                         $user = CreateUser::where('loginId_userName', $reLoginId)->first();
                         $user->max_consecutive_study_day = $reMax_consecutive_study_day;
+
+                        // 過去最長記録を更新（現在の記録が過去最長を上回った場合のみ）
+                        $user->longest_consecutive_study_day = max($user->longest_consecutive_study_day ?? 0, $reMax_consecutive_study_day);
                         $user->save();
                     }
 

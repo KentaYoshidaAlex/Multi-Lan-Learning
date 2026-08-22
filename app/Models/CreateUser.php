@@ -17,6 +17,7 @@ class CreateUser extends Model
         'clearCount',
         'missCount',
         'max_consecutive_study_day',
+        'longest_consecutive_study_day',
         'achievement_cource', 
         'number_of_compeleted_quiz',
         'perfect_clear_flag'
