@@ -46,7 +46,7 @@ if((session('doneQuizList')) !== null) {
     <div class="main-wrapper" id="index-main-wrapper">
       <div class="container" id="index-main-container">
         <h2 class="rainbow" id="KleeOne600">
-          <span class="center">&nbsp;〜 Let's enjoy language learning 〜</span>
+          <span class="center">&nbsp;〜 Let's enjoy learning languages 〜</span>
         </h2>
         
         <div class="honbun">

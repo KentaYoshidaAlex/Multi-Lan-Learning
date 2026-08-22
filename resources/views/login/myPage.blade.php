@@ -55,7 +55,7 @@
                     <p style="line-height: 2px">&emsp;</p>
                     <p>【学習状況】</p>
                     <p style="line-height: 2px">&emsp;</p>
-                    <p>🔷連続学習記録</p>
+                    <p>🔷現在の連続学習日数&emsp;</p>
                     @if ($reLoginId === "ゲスト")
                         <p>&emsp;🔥&nbsp;？&nbsp;日</p>
                     @else
